@@ -1,0 +1,19 @@
+/* Sticky footer */
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.hero {
+  background-color: #162636;
+  padding-top: 55px;
+}
