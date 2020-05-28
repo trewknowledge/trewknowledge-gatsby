@@ -1,16 +1,23 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-const NewsCard = ({ postContext }) => (
-  <div className="news-card">
-    <img src={postContext.featuredImage ? postContext.featuredImage.sourceUrl : null} alt=""/>
-    <h3 dangerouslySetInnerHTML={{ __html: postContext.title }} />
-    <p>{postContext.date}</p>
-    <p dangerouslySetInnerHTML={{ __html: postContext.excerpt }} />
-    <div>
-      <Link to={postContext.uri}>Read More</Link>
-    </div>
-  </div>
-);
+const NewsCard = ({ postContext }) => {
+
+  const formatDate = () => {
+    return new Date(postContext.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+
+  return (
+    <Link to={postContext.uri}>
+      <div className="news-card">
+        <figure>
+          <img src={postContext.featuredImage ? postContext.featuredImage.sourceUrl : null} alt=""/>
+        </figure>
+        <h3 dangerouslySetInnerHTML={{ __html: postContext.title }} />
+        <p>{formatDate()}</p>
+      </div>
+    </Link>
+  )
+};
 
 export default NewsCard;

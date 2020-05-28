@@ -100,6 +100,13 @@
 		right: 0;
 	}
 
+	.wp-block-quote {
+		margin: 36px auto 90px;
+		padding: 0 38px;
+		font-size: 30px;
+		color: #151e25;
+	}
+
 	.wp-block-quote.is-large {
 		margin: 0 auto 16px;
 	}
@@ -112,4 +119,12 @@
 		margin: 3em auto;
 		padding: 0;
 	}
+}
+
+.wp-block-quote {
+	margin: 36px auto 90px;
+	padding: 0 38px;
+	font-size: 30px;
+	color: #151e25;
+	border: none;
 }

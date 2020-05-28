@@ -1,28 +1,21 @@
 import React from 'react'
 import Layout from '../components/layout';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import Search from '../components/Search'
 
 export default ({ pageContext }) => {
 
-  const { localSearchPosts } = useStaticQuery(graphql`
-    query localSearchPosts {
-      localSearchPosts {
-        index
-        store
-      }
-    } 
-  `)
+  const formatDate = () => {
+    return new Date(pageContext.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
 
   return (
     <Layout>
-      <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
-      <h2>This is a standard post template</h2>
-      <div dangerouslySetInnerHTML={{ __html: pageContext.content }}/>
-
-      <Search searchIndex={ localSearchPosts } />
-      
-      <Link to={`/`}>Back Home</Link>
+      <div className="hero"></div>
+        <div className="grid-container">
+        <h2 dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
+        <p className="article-date">{formatDate()}</p>
+        
+        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}/>
+      </div>
     </Layout> 
   )
 }
