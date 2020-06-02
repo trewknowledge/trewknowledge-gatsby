@@ -18,9 +18,15 @@ const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = () => {
-    setMenuOpen(!menuOpen)
-    document.body.classList.toggle('no-scroll');
-    document.querySelector('.header').classList.toggle('is-open');
+    if (menuOpen) {
+      setMenuOpen(false);
+      document.body.classList.remove('no-scroll');
+      document.querySelector('.header').classList.remove('is-open');
+    } else {
+      setMenuOpen(true);
+      document.body.classList.add('no-scroll');
+      document.querySelector('.header').classList.add('is-open');
+    }
   }
 
   return (
