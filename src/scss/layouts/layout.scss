@@ -3,6 +3,7 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  position: relative;
 }
 
 .site-content {
@@ -11,5 +12,16 @@
 
 .hero {
   background-color: #162636;
-  padding-top: 55px;
+
+  @include mq( tablet ) {
+    padding-top: 155px;
+  }
+}
+
+.hero-empty {
+  background-color: #fff;
+  
+  @include mq( tablet ) {
+    padding-top: 155px;
+  }
 }

@@ -9,12 +9,14 @@ export default ({ pageContext }) => {
 
   return (
     <Layout>
-      <div className="hero"></div>
-        <div className="grid-container">
-        <h2 dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
-        <p className="article-date">{formatDate()}</p>
-        
-        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}/>
+      <div className="hero-empty"></div>
+      <div className="grid-container">
+        <div className="grid-container-narrow">
+          <h2 dangerouslySetInnerHTML={{ __html: pageContext.title }}/>
+          <p className="article-date">{formatDate()}</p>
+          
+          <div dangerouslySetInnerHTML={{ __html: pageContext.content }}/>
+        </div>
       </div>
     </Layout> 
   )

@@ -8,7 +8,7 @@ export default ({ pageContext }) => (
   <Layout>
     <div className="hero"></div>
     <div className="grid-container">
-      {/* <div className="grid-container-narrow"> */}
+      <div className="grid-container-narrow">
         <div className="grid-x grid-margin-x grid-margin-y">
           {pageContext.posts.map((post, index) => {
             if (index === 0 && pageContext.currentPage === 1) {
@@ -30,7 +30,7 @@ export default ({ pageContext }) => (
         <Pagination 
           pageContext={pageContext}
         />
-      {/* </div> */}
+      </div>
     </div>
   </Layout>
 )

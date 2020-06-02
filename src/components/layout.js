@@ -9,7 +9,7 @@ import React, { useState } from "react"
 
 import Header from "./Header"
 import Footer from "./Footer"
-import MobileMenu from "./MobileMenu"
+import MainMenu from "./MainMenu"
 
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
@@ -17,14 +17,16 @@ import '../scss/main.scss'
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleMobileMenu = () => {
+  const handleMenu = () => {
     setMenuOpen(!menuOpen)
+    document.body.classList.toggle('no-scroll');
+    document.querySelector('.header').classList.toggle('is-open');
   }
 
   return (
     <div className="site">
-      <Header handleMobileMenu={handleMobileMenu} />
-      <MobileMenu menuOpen={menuOpen} handleMobileMenu={handleMobileMenu} />
+      <Header handleMenu={handleMenu} />
+      <MainMenu menuOpen={menuOpen} />
       <div className="site-content">
         {children}
       </div>

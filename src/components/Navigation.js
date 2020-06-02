@@ -1,20 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'gatsby';
-
-const NavigationWrapper = styled.nav`
-  display: none;
-
-  @media( min-width: 767px ) {
-    display: flex;
-  }
-`
-
-const MenuItem = styled(Link)`
-  color: #fff;
-  display: block;
-  padding: 8px 32px 8px 0;
-`
 
 const Navigation = ({ data }) => {
   const { url } = data.wpgraphql.generalSettings; 
@@ -24,13 +9,13 @@ const Navigation = ({ data }) => {
   }));
 
   return (
-    <NavigationWrapper>
+    <ul className="nav-menu">
       {menuItems.map(item => (
-        <MenuItem to={item.url} key={item.id}>
+        <Link className="nav-menu__item" to={item.url} key={item.id}>
           {item.label}
-        </MenuItem>
+        </Link>
       ))}
-    </NavigationWrapper>
+    </ul>
   ) 
 }
 

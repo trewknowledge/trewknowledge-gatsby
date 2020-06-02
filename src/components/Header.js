@@ -1,32 +1,9 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components'
+import tkLogo from '../images/logo-main.svg'
 
-import Navigation from './Navigation'
-
-const MainMenuContainer = styled.div`
-  background-color: #162636;
-  height: 50px;
-  display: flex;
-`
-
-const MainMenuWrapper = styled.div`
-  width: 100%;
-  margin: 0 auto;
-`
-
-const Hamburger = styled.div`
-  display: block;
-  height: 50px;
-  color: #fff;
-  border: 1px solid #fff;
-
-  @media (min-width: 767px) {
-    display: none;
-  }
-`
-
-const Header = ({ handleMobileMenu }) => {
+const Header = ({ handleMenu }) => {
   const data = useStaticQuery(graphql`
     query MenuQuery {
       wpgraphql {
@@ -49,14 +26,20 @@ const Header = ({ handleMobileMenu }) => {
   `)
 
   return(
-    <MainMenuContainer>
-      <MainMenuWrapper className="grid-container">
-        <Navigation data={data} />
-        <Hamburger onClick={handleMobileMenu}>
-          Click Me
-        </Hamburger>
-      </MainMenuWrapper>
-    </MainMenuContainer>
+    <header className="header">
+      <div className="grid-container header-wrapper">
+        <div className="nav-logo">
+          <a href="#">
+            <img src={tkLogo} alt="Trew Knowledge Logo"/>
+          </a>
+        </div>
+        <button className="hamburger-button" onClick={handleMenu}>
+          <span className="line"></span>
+          <span className="line"></span>
+          <span className="line"></span>
+        </button>
+      </div>
+    </header>
   )
 }
 
