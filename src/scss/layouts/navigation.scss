@@ -114,7 +114,7 @@
   bottom: 0;
   left: 0;
   z-index: -1;
-  pointer-events: 'none';
+  pointer-events: none;
   transition: all 0.3s ease;
 
   @include mq( tablet ) {
@@ -139,7 +139,7 @@
 .nav-wrapper.is-open {
   opacity: 1;
   z-index: 5;
-  pointer-events: 'auto';
+  pointer-events: auto;
 }
 
 .nav-menu {

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Navigation from './Navigation'
 
-const MobileMenu = ({menuOpen}) => {
+const MobileMenu = ({menuOpen, handleMenu}) => {
   const data = useStaticQuery(graphql`
     query MobileMenuQuery {
       wpgraphql {
@@ -25,11 +25,11 @@ const MobileMenu = ({menuOpen}) => {
   `)
 
   return(
-    <div className="nav-wrapper" className={menuOpen ? "nav-wrapper is-open" : "nav-wrapper"}>
+    <div className={menuOpen ? "nav-wrapper is-open" : "nav-wrapper"}>
       <div className="grid-container">
         <div className="grid-x">
           <div className="cell large-4 large-order-2">
-            <Navigation data={data} />
+            <Navigation data={data} handleMenu={handleMenu} />
           </div>
           <div className="cell large-auto large-order-1 nav-menu-secondary">
             <ul className="nav-menu-social">

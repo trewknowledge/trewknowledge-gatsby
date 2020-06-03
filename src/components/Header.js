@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import styled from 'styled-components'
+import { Link, graphql, useStaticQuery } from "gatsby"
 import tkLogo from '../images/logo-main.svg'
+import MainMenu from './MainMenu';
 
-const Header = ({ handleMenu }) => {
+const Header = ({ menuOpen, handleMenu }) => {
   const data = useStaticQuery(graphql`
     query MenuQuery {
       wpgraphql {
@@ -26,12 +26,12 @@ const Header = ({ handleMenu }) => {
   `)
 
   return(
-    <header className="header">
+    <header className={menuOpen ? "header is-open" : "header"}>
       <div className="grid-container header-wrapper">
         <div className="nav-logo">
-          <a href="#">
+          <Link to={"/"}>
             <img src={tkLogo} alt="Trew Knowledge Logo"/>
-          </a>
+          </Link>
         </div>
         <button className="hamburger-button" onClick={handleMenu}>
           <span className="line"></span>
@@ -39,6 +39,7 @@ const Header = ({ handleMenu }) => {
           <span className="line"></span>
         </button>
       </div>
+      <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
     </header>
   )
 }

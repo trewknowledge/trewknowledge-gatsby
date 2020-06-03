@@ -21,18 +21,16 @@ const Layout = ({ children }) => {
     if (menuOpen) {
       setMenuOpen(false);
       document.body.classList.remove('no-scroll');
-      document.querySelector('.header').classList.remove('is-open');
     } else {
       setMenuOpen(true);
       document.body.classList.add('no-scroll');
-      document.querySelector('.header').classList.add('is-open');
     }
   }
 
   return (
     <div className="site">
-      <Header handleMenu={handleMenu} />
-      <MainMenu menuOpen={menuOpen} />
+      <Header menuOpen={menuOpen} handleMenu={handleMenu} />
+      {/* <MainMenu menuOpen={menuOpen} /> */}
       <div className="site-content">
         {children}
       </div>

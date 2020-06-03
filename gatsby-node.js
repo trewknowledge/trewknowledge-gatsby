@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const searchPageTemplate = path.resolve('./src/templates/searchPage.js');
   // const bookPostTemplate = path.resolve('./src/templates/bookCustomPost.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
+  const archiveWork = path.resolve('./src/templates/archive-work.js');
 
   const result = await graphql(`
     {
@@ -31,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
             link
           }
         }
-        posts {
+        posts(first: 100) {
           nodes {
             id
             uri
@@ -44,6 +45,19 @@ exports.createPages = async ({ graphql, actions }) => {
               sourceUrl
             }
           } 
+        }
+        tk_works(first: 100) {
+          nodes {
+            id
+            uri
+            slug
+            title
+            content
+            date
+            featuredImage {
+              sourceUrl
+            }
+          }
         }
         readingSettings {
           postsPerPage
@@ -59,6 +73,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { 
     pages,
     posts,
+    tk_works,
     readingSettings
   }  = result.data.wpgraphql;
 
@@ -85,22 +100,102 @@ exports.createPages = async ({ graphql, actions }) => {
     // }
   })
 
-  // WP archive for default posts
-  const defaultPosts = posts.nodes;
-  const postsPerPage = readingSettings.postsPerPage;
-  const numberOfPages = Math.ceil(defaultPosts.length / postsPerPage )
+  // // WP archive for default posts
+  // const defaultPosts = posts.nodes;
+  // const postsPerPage = readingSettings.postsPerPage;
+  // const numberOfPages = Math.ceil(defaultPosts.length / postsPerPage )
+
+  // Array.from({ length: numberOfPages }).forEach((page, index) => {
+  //   createPage({
+  //     component: slash(archiveNews),
+  //     path: index === 0 ? `/news` : `/news/${index + 1}`,
+  //     context: {
+  //       posts: defaultPosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
+  //       numberOfPages,
+  //       currentPage: index + 1
+  //     }
+  //   })
+  // })
+
+  // const worksPosts = tk_works.nodes;
+
+  // Array.from({ length: numberOfPages }).forEach((page, index) => {
+  //   createPage({
+  //     component: slash(archiveNews),
+  //     path: index === 0 ? `/work` : `/work/${index + 1}`,
+  //     context: {
+  //       posts: worksPosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
+  //       numberOfPages,
+  //       currentPage: index + 1
+  //     }
+  //   })
+  // })
+
+// ----------------------
+
+
+// ------------- Posts Archive Constructor ------------- 
+const createArchive = (archiveConfigObject) => {
+  const defaultPosts = archiveConfigObject.postsArray;
+  const postsPerPage = archiveConfigObject.postsPerPage;
+  const numberOfPages = Math.ceil(defaultPosts.length / postsPerPage);
+  const allPosts = archiveConfigObject.allPosts;
 
   Array.from({ length: numberOfPages }).forEach((page, index) => {
     createPage({
-      component: slash(archiveNews),
-      path: index === 0 ? `/news` : `/news/${index + 1}`,
+      component: slash(archiveConfigObject.pageTemplate),
+      path: index === 0 ? `${archiveConfigObject.path}` : `${archiveConfigObject.path}/${index + 1}`,
       context: {
         posts: defaultPosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
         numberOfPages,
-        currentPage: index + 1
+        currentPage: index + 1,
+        archivePath: archiveConfigObject.path,
+        archiveTitle: archiveConfigObject.archiveTitle,
+        allPosts: allPosts,
       }
     })
   })
+}
+
+// ------------- Archive Config Objects -------------
+
+const postsArchiveConfig = {
+  postsArray: posts.nodes,
+  postsPerPage: readingSettings.postsPerPage, 
+  pageTemplate: archiveNews,
+  path: '/news',
+  archiveTitle: 'News',
+  allPosts: posts
+}
+
+const athletesArchiveConfig = {
+  postsArray: tk_works.nodes,
+  postsPerPage: 9, 
+  pageTemplate: archiveNews,
+  path: '/work',
+  archiveTitle: 'Work',
+  allPosts: tk_works
+}
+
+// ------------- WP archive for default posts -------------
+createArchive(postsArchiveConfig);
+
+// ------------- Athletes Archive -------------
+createArchive(athletesArchiveConfig);
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------
+
 
   // WP default posts
   posts.nodes.forEach(node => {
@@ -111,12 +206,11 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // WP custom post type
-  // allWordpressWpGstBook.edges.forEach(edge => {
-  //   createPage({
-  //     path: `/book/${edge.node.slug}`,
-  //     component: slash(bookPostTemplate),
-  //     context: edge.node
-  //   })
-  // })
+  tk_works.nodes.forEach(node => {
+    createPage({
+      path: node.uri,
+      component: slash(postTemplate),
+      context: node
+    })
+  })
 }
