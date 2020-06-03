@@ -26,7 +26,7 @@ export default ({ pageContext }) => (
             }
           })}
         </div>
-        
+
         <Pagination 
           pageContext={pageContext}
         />

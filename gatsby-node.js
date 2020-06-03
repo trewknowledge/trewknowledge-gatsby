@@ -16,9 +16,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const postTemplate = path.resolve('./src/templates/post.js');
   const homePageTemplate = path.resolve('./src/templates/home.js');
   const searchPageTemplate = path.resolve('./src/templates/searchPage.js');
-  // const bookPostTemplate = path.resolve('./src/templates/bookCustomPost.js');
+  
   const archiveNews = path.resolve('./src/templates/archive-news.js');
-  const archiveWork = path.resolve('./src/templates/archive-work.js');
+  const archiveWorks = path.resolve('./src/templates/archive-works.js');
 
   const result = await graphql(`
     {
@@ -100,45 +100,11 @@ exports.createPages = async ({ graphql, actions }) => {
     // }
   })
 
-  // // WP archive for default posts
-  // const defaultPosts = posts.nodes;
-  // const postsPerPage = readingSettings.postsPerPage;
-  // const numberOfPages = Math.ceil(defaultPosts.length / postsPerPage )
-
-  // Array.from({ length: numberOfPages }).forEach((page, index) => {
-  //   createPage({
-  //     component: slash(archiveNews),
-  //     path: index === 0 ? `/news` : `/news/${index + 1}`,
-  //     context: {
-  //       posts: defaultPosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
-  //       numberOfPages,
-  //       currentPage: index + 1
-  //     }
-  //   })
-  // })
-
-  // const worksPosts = tk_works.nodes;
-
-  // Array.from({ length: numberOfPages }).forEach((page, index) => {
-  //   createPage({
-  //     component: slash(archiveNews),
-  //     path: index === 0 ? `/work` : `/work/${index + 1}`,
-  //     context: {
-  //       posts: worksPosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
-  //       numberOfPages,
-  //       currentPage: index + 1
-  //     }
-  //   })
-  // })
-
-// ----------------------
-
-
 // ------------- Posts Archive Constructor ------------- 
 const createArchive = (archiveConfigObject) => {
-  const defaultPosts = archiveConfigObject.postsArray;
+  const archivePosts = archiveConfigObject.postsArray;
   const postsPerPage = archiveConfigObject.postsPerPage;
-  const numberOfPages = Math.ceil(defaultPosts.length / postsPerPage);
+  const numberOfPages = Math.ceil(archivePosts.length / postsPerPage);
   const allPosts = archiveConfigObject.allPosts;
 
   Array.from({ length: numberOfPages }).forEach((page, index) => {
@@ -146,7 +112,7 @@ const createArchive = (archiveConfigObject) => {
       component: slash(archiveConfigObject.pageTemplate),
       path: index === 0 ? `${archiveConfigObject.path}` : `${archiveConfigObject.path}/${index + 1}`,
       context: {
-        posts: defaultPosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
+        posts: archivePosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
         numberOfPages,
         currentPage: index + 1,
         archivePath: archiveConfigObject.path,
@@ -159,7 +125,7 @@ const createArchive = (archiveConfigObject) => {
 
 // ------------- Archive Config Objects -------------
 
-const postsArchiveConfig = {
+const newsArchiveConfig = {
   postsArray: posts.nodes,
   postsPerPage: readingSettings.postsPerPage, 
   pageTemplate: archiveNews,
@@ -168,36 +134,23 @@ const postsArchiveConfig = {
   allPosts: posts
 }
 
-const athletesArchiveConfig = {
+const worksArchiveConfig = {
   postsArray: tk_works.nodes,
   postsPerPage: 9, 
-  pageTemplate: archiveNews,
+  pageTemplate: archiveWorks,
   path: '/work',
   archiveTitle: 'Work',
   allPosts: tk_works
 }
 
-// ------------- WP archive for default posts -------------
-createArchive(postsArchiveConfig);
-
-// ------------- Athletes Archive -------------
-createArchive(athletesArchiveConfig);
+// ------------- Create archive pages -------------
+createArchive(newsArchiveConfig);
+createArchive(worksArchiveConfig);
 
 
 
 
-
-
-
-
-
-
-
-
-// ----------------------
-
-
-  // WP default posts
+// ------------- Create posts pages -------------
   posts.nodes.forEach(node => {
     createPage({
       path: node.uri,

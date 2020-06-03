@@ -8,6 +8,7 @@
     position: fixed;
     width: 100%;
     height: 155px;
+    z-index: 10;
   }
 }
 
@@ -40,6 +41,8 @@
   line-height: 1;
   cursor: pointer;
   z-index: 10;
+  position: relative;
+  top: 7px;
 
   &:hover,
   &:active,
@@ -115,7 +118,8 @@
   left: 0;
   z-index: -1;
   pointer-events: none;
-  transition: all 0.3s ease;
+  -webkit-transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out;
 
   @include mq( tablet ) {
     padding-top: 155px;

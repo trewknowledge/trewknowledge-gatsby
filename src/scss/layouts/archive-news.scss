@@ -1,6 +1,7 @@
-.news-card {
+.news-card,
+.works-card {
   background-color: #fff;
-
+  
   &:hover h3 {
     color: #53e4c0;
   }
@@ -37,4 +38,16 @@
   p {
     color: #8b8b8b;
   }
+}
+
+.news-card {
+  margin-bottom: 72px;
+
+  @include mq( tablet ) {
+    margin-bottom: 60px;
+  }
+}
+
+.works-card {
+  margin-bottom: 16px;
 }
