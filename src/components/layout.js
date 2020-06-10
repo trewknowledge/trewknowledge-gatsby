@@ -14,7 +14,7 @@ import MainMenu from "./MainMenu"
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
 
-const Layout = ({ children }) => {
+const Layout = ( {children} ) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = () => {

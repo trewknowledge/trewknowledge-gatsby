@@ -155,7 +155,10 @@ createArchive(worksArchiveConfig);
     createPage({
       path: node.uri,
       component: slash(postTemplate),
-      context: node
+      context: {
+        node: node,
+        allWorks: tk_works
+      }
     })
   })
 
@@ -163,7 +166,10 @@ createArchive(worksArchiveConfig);
     createPage({
       path: node.uri,
       component: slash(postTemplate),
-      context: node
+      context: {
+        node: node,
+        allWorks: tk_works
+      }
     })
   })
 }

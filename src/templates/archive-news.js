@@ -4,9 +4,11 @@ import Layout from '../components/layout'
 import Pagination from '../components/Pagination';
 import NewsCard from '../components/NewsCard';
 
-export default ({ pageContext }) => (
-  <Layout>
-    <div className="hero"></div>
+const ArchiveNews = ({pageContext}) => {
+
+  return (
+  <Layout >
+    <div className="hero" data-title={pageContext.archiveTitle}></div>
     <div className="grid-container main-content">
       <div className="grid-container-narrow">
         <div className="grid-x grid-margin-x">
@@ -33,4 +35,7 @@ export default ({ pageContext }) => (
       </div>
     </div>
   </Layout>
-)
+  )
+}
+
+export default ArchiveNews;
