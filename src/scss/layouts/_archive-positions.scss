@@ -1,0 +1,9 @@
+.archive-positions {
+  h1 {
+    font-size: 35px;
+
+    @include mq( desktop ) {
+      font-size: 55px;
+    }
+  }
+}

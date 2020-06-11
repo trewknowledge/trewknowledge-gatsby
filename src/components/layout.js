@@ -27,6 +27,8 @@ const Layout = ( {children} ) => {
     }
   }
 
+  
+
   return (
     <div className="site">
       <Header menuOpen={menuOpen} handleMenu={handleMenu} />

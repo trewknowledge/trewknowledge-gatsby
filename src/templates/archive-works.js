@@ -6,7 +6,7 @@ import WorksCard from '../components/WorksCard';
 
 export default ({ pageContext }) => (
   <Layout>
-    <div className="hero"></div>
+    <div className="hero bg-dark"></div>
     <div className="grid-container main-content">
       <div className="grid-container-narrow">
         <div className="grid-x grid-margin-x">

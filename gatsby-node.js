@@ -20,6 +20,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
   const archiveWorks = path.resolve('./src/templates/archive-works.js');
+  const archivePositions = path.resolve('./src/templates/archive-positions.js');
+  const positionsSingle = path.resolve('./src/templates/positions-single.js');
 
   const result = await graphql(`
     {
@@ -65,6 +67,17 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        tk_positions {
+          nodes {
+            id
+            uri
+            slug
+            title
+            content
+            excerpt
+            date
+          }
+        }
         readingSettings {
           postsPerPage
         }
@@ -80,6 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
     pages,
     posts,
     tk_works,
+    tk_positions,
     readingSettings
   }  = result.data.wpgraphql;
 
@@ -149,12 +163,19 @@ const worksArchiveConfig = {
   allPosts: tk_works
 }
 
+const positionsArchiveConfig = {
+  postsArray: tk_positions.nodes,
+  postsPerPage: 9, 
+  pageTemplate: archivePositions,
+  path: '/positions',
+  archiveTitle: 'Positions',
+  allPosts: posts.nodes.slice(0, 2)
+}
+
 // ------------- Create archive pages -------------
 createArchive(newsArchiveConfig);
 createArchive(worksArchiveConfig);
-
-
-
+createArchive(positionsArchiveConfig);
 
 // ------------- Create posts pages -------------
   posts.nodes.forEach(node => {
@@ -175,6 +196,16 @@ createArchive(worksArchiveConfig);
       context: {
         node: node,
         allWorks: tk_works
+      }
+    })
+  })
+
+  tk_positions.nodes.forEach(node => {
+    createPage({
+      path: node.uri,
+      component: slash(positionsSingle),
+      context: {
+        node: node
       }
     })
   })

@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout';
-import WorksSlider from '../components/WorksSlider'
 
 export default ({ pageContext }) => {
   console.log(pageContext)
@@ -22,7 +21,6 @@ export default ({ pageContext }) => {
           </article>
           <hr/>
 
-          <WorksSlider pageContext={pageContext} />
         </div>
       </div>
     </Layout> 
