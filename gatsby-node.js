@@ -16,7 +16,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const postTemplate = path.resolve('./src/templates/post.js');
   const homePageTemplate = path.resolve('./src/templates/home.js');
   const searchPageTemplate = path.resolve('./src/templates/searchPage.js');
-  
+
+  const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
   const archiveWorks = path.resolve('./src/templates/archive-works.js');
 
@@ -30,6 +31,11 @@ exports.createPages = async ({ graphql, actions }) => {
             uri
             content
             link
+            template {
+              ... on WPGraphQL_CareersTemplate {
+                templateName
+              }
+            }
           }
         }
         posts(first: 100) {
@@ -79,25 +85,25 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // WP default pages
   pages.nodes.forEach(node => {
-    // if (node.template.__typename === 'WPGraphQL_HomeTemplate') {
-    //   createPage({
-    //     path: `/${node.slug}`,
-    //     component: slash(homePageTemplate),
-    //     context: node
-    //   })
+    if (node.template.templateName === 'Careers') {
+      createPage({
+        path: node.uri,
+        component: slash(careersTemplate),
+        context: node
+      })
     // } else if (node.template === 'WPGraphQL_SearchTemplate') {
     //   createPage({
     //     path: `/${node.slug}`,
     //     component: slash(searchPageTemplate),
     //     context: node
     //   })
-    // } else {
+    } else {
       createPage({
         path: node.uri,
         component: slash(pageTemplate),
         context: node
       })
-    // }
+    }
   })
 
 // ------------- Posts Archive Constructor ------------- 

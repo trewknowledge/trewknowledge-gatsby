@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout';
+import WorksSlider from '../components/WorksSlider'
 
 export default ({ pageContext }) => {
-  console.log(pageContext)
+  // console.log(pageContext)
 
   const formatDate = () => {
     return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -13,10 +14,15 @@ export default ({ pageContext }) => {
       <div className="hero-empty"></div>
       <div className="grid-container">
         <div className="grid-container-narrow">
-          <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
-          <p className="article-date">{formatDate()}</p>
-          
-          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
+          <article className="article-content">
+            <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
+            <p className="article-date">{formatDate()}</p>
+            
+            <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
+          </article>
+          <hr/>
+
+          <WorksSlider pageContext={pageContext} />
         </div>
       </div>
     </Layout> 
