@@ -184,7 +184,8 @@ createArchive(positionsArchiveConfig);
       component: slash(postTemplate),
       context: {
         node: node,
-        allWorks: tk_works
+        allWorks: tk_works,
+        pageTitle: "News"
       }
     })
   })
@@ -195,7 +196,8 @@ createArchive(positionsArchiveConfig);
       component: slash(postTemplate),
       context: {
         node: node,
-        allWorks: tk_works
+        allWorks: tk_works,
+        pageTitle: "Work"
       }
     })
   })
@@ -205,7 +207,8 @@ createArchive(positionsArchiveConfig);
       path: node.uri,
       component: slash(positionsSingle),
       context: {
-        node: node
+        node: node,
+        pageTitle: "Careers"
       }
     })
   })

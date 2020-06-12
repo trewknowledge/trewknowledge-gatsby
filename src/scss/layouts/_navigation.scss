@@ -19,13 +19,36 @@
   align-items: flex-end;
 }
 
-.nav-logo img {
-  width: 45px;
-  height: 45px;
+.nav-logo {
+  display: flex;
+  align-items: center;
 
-  @include mq( tablet ) {
-    width: 75px;
-    height: 75px;
+  img {
+    width: 45px;
+    height: 45px;
+
+    @include mq( tablet ) {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  span {
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 12px;
+    transition: opacity .25s ease-out;
+    opacity: 1;
+
+    @include mq( tablet ) {
+      font-size: 55px
+    }
+  }
+} 
+
+.nav-logo.is-stuck {
+  span {
+    opacity: 0;
   }
 }
 

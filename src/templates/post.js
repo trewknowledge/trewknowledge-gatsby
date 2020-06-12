@@ -3,14 +3,13 @@ import Layout from '../components/layout';
 import WorksSlider from '../components/WorksSlider'
 
 export default ({ pageContext }) => {
-  console.log(pageContext)
 
   const formatDate = () => {
     return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   }
 
   return (
-    <Layout>
+    <Layout pageTitle={pageContext.pageTitle}>
       <div className="hero-empty"></div>
       <div className="grid-container">
         <div className="grid-container-narrow">

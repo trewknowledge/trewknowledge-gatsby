@@ -9,7 +9,7 @@ export default ({ pageContext }) => {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle={pageContext.pageTitle}>
       <div className="hero-empty"></div>
       <div className="grid-container">
         <div className="grid-container-narrow">

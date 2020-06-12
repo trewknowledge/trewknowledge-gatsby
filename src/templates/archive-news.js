@@ -5,8 +5,9 @@ import Pagination from '../components/Pagination';
 import NewsCard from '../components/NewsCard';
 
 const ArchiveNews = ({pageContext}) => {
+  
   return (
-  <Layout>
+  <Layout pageTitle={pageContext.archiveTitle}>
     <div className="hero bg-dark"></div>
     <div className="grid-container main-content">
       <div className="grid-container-narrow">

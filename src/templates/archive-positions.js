@@ -3,9 +3,11 @@ import Layout from '../components/layout'
 import { Link } from 'gatsby'
 
 const ArchivePositions = ({pageContext}) => {
-  console.log(pageContext)
+  
+  // console.log(pageContext.archiveTitle)
+
   return (
-  <Layout>
+  <Layout pageTitle={pageContext.archiveTitle}>
     <div className="hero hero-empty"></div>
     <div className="grid-container archive-positions">
       <div className="grid-container-narrow">

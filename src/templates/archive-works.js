@@ -5,7 +5,7 @@ import Pagination from '../components/Pagination';
 import WorksCard from '../components/WorksCard';
 
 export default ({ pageContext }) => (
-  <Layout>
+  <Layout pageTitle={pageContext.archiveTitle}>
     <div className="hero bg-dark"></div>
     <div className="grid-container main-content">
       <div className="grid-container-narrow">

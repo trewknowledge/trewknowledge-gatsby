@@ -13,8 +13,9 @@ import MainMenu from "./MainMenu"
 
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
+import { useEffect } from "react"
 
-const Layout = ( {children} ) => {
+const Layout = ( props ) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = () => {
@@ -27,14 +28,28 @@ const Layout = ( {children} ) => {
     }
   }
 
+  const [navStuck, setNavStuck] = useState(false);
   
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if(window.scrollY > 50) {
+        setNavStuck(true)
+      } else {
+        setNavStuck(false)
+      }
+    })
+  })
 
   return (
     <div className="site">
-      <Header menuOpen={menuOpen} handleMenu={handleMenu} />
-      {/* <MainMenu menuOpen={menuOpen} /> */}
+      <Header 
+        menuOpen={menuOpen} 
+        handleMenu={handleMenu} 
+        pageTitle={props.pageTitle} 
+        navStuck={navStuck}
+      />
       <div className="site-content">
-        {children}
+        {props.children}
       </div>
       <Footer />
     </div>
