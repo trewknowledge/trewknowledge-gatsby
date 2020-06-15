@@ -3,12 +3,12 @@ import Layout from '../components/layout'
 import { Link } from 'gatsby'
 import NewsCard from '../components/NewsCard'
 
-const ArchivePositions = ({pageContext}) => {
+const ArchivePositions = ({pageContext, location}) => {
 
   console.log(pageContext)
 
   return (
-  <Layout pageTitle={pageContext.archiveTitle}>
+  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname}>
     <div className="hero hero-empty"></div>
     <div className="grid-container archive-positions">
       <div className="grid-container-narrow">

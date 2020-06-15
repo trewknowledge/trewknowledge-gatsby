@@ -9,7 +9,6 @@ import React, { useState } from "react"
 
 import Header from "./Header"
 import Footer from "./Footer"
-import MainMenu from "./MainMenu"
 
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
@@ -31,14 +30,19 @@ const Layout = ( props ) => {
   const [navStuck, setNavStuck] = useState(false);
   
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    function handleScrollEvent() {
       if(window.scrollY > 50) {
         setNavStuck(true)
       } else {
         setNavStuck(false)
       }
-    })
-  }, [])
+    }
+    
+    window.addEventListener("scroll", handleScrollEvent, true);
+    return () => {
+      window.removeEventListener("scroll", handleScrollEvent, true);
+    }
+  }, [props.location])
 
   return (
     <div className="site">
@@ -46,6 +50,7 @@ const Layout = ( props ) => {
         menuOpen={menuOpen} 
         handleMenu={handleMenu} 
         pageTitle={props.pageTitle} 
+        pageType={props.pageType}
         navStuck={navStuck}
       />
       <div className="site-content">

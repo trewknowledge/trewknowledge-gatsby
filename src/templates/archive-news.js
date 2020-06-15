@@ -4,10 +4,10 @@ import Layout from '../components/layout'
 import Pagination from '../components/Pagination';
 import NewsCard from '../components/NewsCard';
 
-const ArchiveNews = ({pageContext}) => {
+const ArchiveNews = ({pageContext, location}) => {
   
   return (
-  <Layout pageTitle={pageContext.archiveTitle}>
+  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname}>
     <div className="grid-container-narrow section-overlap-hero">
       <div className="grid-x grid-margin-x">
         {pageContext.posts.map((post, index) => {

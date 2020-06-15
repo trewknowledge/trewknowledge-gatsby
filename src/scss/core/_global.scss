@@ -35,10 +35,18 @@ img {
 		padding: 100px 118px;
 	}
 
+	@media screen and (max-width: 1140px) and (min-width: 1024px) {
+		max-width: 790px;
+	}
+
 	@include mq( desktop ) {
 		padding-left: 0;
     padding-right: 0;
 	}
+}
+
+.grid-container-narrow.article {
+	padding-top: 50px;
 }
 
 .no-scroll {

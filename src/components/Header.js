@@ -30,12 +30,11 @@ const Header = ({ menuOpen, handleMenu, pageTitle, pageType, navStuck }) => {
   useEffect(() => {
     if (pageTitle === 'Careers') {
       setHeaderColor('hero-bg-light')
-    } else if (pageType === 'Post') {
+    } 
+    if (pageType === 'Post') {
       setHeaderColor('hero-empty')
-    } else {
-      setHeaderColor('hero-bg-dark')
     }
-  }, pageTitle)
+  }, [])
 
   return(
     <header className={headerColor}>

@@ -4,8 +4,8 @@ import Layout from '../components/layout'
 import Pagination from '../components/Pagination';
 import WorksCard from '../components/WorksCard';
 
-export default ({ pageContext }) => (
-  <Layout pageTitle={pageContext.archiveTitle}>
+export default ({ pageContext, location }) => (
+  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname}>
       <div className="grid-container-narrow section-overlap-hero">
         <div className="grid-x grid-margin-x">
           {pageContext.posts.map((post, index) => {
