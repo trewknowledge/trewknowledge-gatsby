@@ -1,10 +1,11 @@
 import React from 'react';
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
+import NewsCard from '../components/NewsCard'
 
 const ArchivePositions = ({pageContext}) => {
-  
-  // console.log(pageContext.archiveTitle)
+
+  console.log(pageContext)
 
   return (
   <Layout pageTitle={pageContext.archiveTitle}>
@@ -13,7 +14,9 @@ const ArchivePositions = ({pageContext}) => {
       <div className="grid-container-narrow">
         <div className="grid-x grid-margin-x">
           
-          <h1>Open Positions</h1>
+          <div className="cell">
+            <h1>Open Positions</h1>
+          </div>
           
           {pageContext.posts.map((post, i) => (
             <div className="cell" key={i}>
@@ -24,8 +27,23 @@ const ArchivePositions = ({pageContext}) => {
             </div>
           ))}
         </div>
+
+        <hr/>
+
+        <section>
+          <h1>Latest News</h1>
+            <div className="grid-x grid-margin-x">
+            {pageContext.allPosts.map((post, id) => (
+              <div className="cell medium-6">
+                <NewsCard postContext={post} />
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
+
     </div>
+
   </Layout>
   )
 }

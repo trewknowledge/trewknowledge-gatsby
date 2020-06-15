@@ -38,7 +38,7 @@ const Layout = ( props ) => {
         setNavStuck(false)
       }
     })
-  })
+  }, [])
 
   return (
     <div className="site">

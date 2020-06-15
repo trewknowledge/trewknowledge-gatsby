@@ -1,5 +1,4 @@
 .header {
-  // background-color: #162636;
   height: 82px;
   display: flex;
 
@@ -10,6 +9,10 @@
     height: 155px;
     z-index: 10;
   }
+}
+
+.header.bg-dark {
+  background-color: #162636;
 }
 
 .header-wrapper {
@@ -39,6 +42,7 @@
     margin-left: 12px;
     transition: opacity .25s ease-out;
     opacity: 1;
+    color: #53e4c0;
 
     @include mq( tablet ) {
       font-size: 55px

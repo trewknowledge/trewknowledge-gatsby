@@ -168,7 +168,7 @@ const positionsArchiveConfig = {
   postsPerPage: 9, 
   pageTemplate: archivePositions,
   path: '/positions',
-  archiveTitle: 'Positions',
+  archiveTitle: 'Careers',
   allPosts: posts.nodes.slice(0, 2)
 }
 
