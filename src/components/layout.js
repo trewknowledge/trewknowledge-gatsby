@@ -51,6 +51,8 @@ const Layout = ( props ) => {
         handleMenu={handleMenu} 
         pageTitle={props.pageTitle} 
         headerStyle={props.headerStyle}
+        headerContent={props.headerContent}
+        pageType={props.pageType}
         navStuck={navStuck}
       />
       <div className="site-content">

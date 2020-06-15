@@ -76,6 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
             content
             excerpt
             date
+            __typename
           }
         }
         readingSettings {
@@ -106,6 +107,7 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           node: node,
           headerStyle: 'blue',
+          headerContent: 'HeroCareers',
         }
       })
     // } else if (node.template === 'WPGraphQL_SearchTemplate') {
@@ -217,7 +219,7 @@ createArchive(positionsArchiveConfig);
       context: {
         node: node,
         pageTitle: "Careers",
-        headerStyle: "empty"
+        headerStyle: "blue"
       }
     })
   })

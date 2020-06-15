@@ -4,7 +4,12 @@ import { Link } from 'gatsby'
 
 export default ({pageContext, location}) => (
 
-  <Layout pageTitle={pageContext.node.title} location={location.pathname} headerStyle={pageContext.headerStyle}>
+  <Layout 
+    pageTitle={pageContext.node.title} 
+    location={location.pathname} 
+    headerStyle={pageContext.headerStyle}
+  >
+  {console.log(pageContext)}
     <div className="grid-container-narrow">
       <main>
         <div className="callout">

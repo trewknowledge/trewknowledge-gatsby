@@ -8,7 +8,11 @@ const ArchivePositions = ({pageContext, location}) => {
   console.log(pageContext)
 
   return (
-  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname} headerStyle={pageContext.headerStyle}>
+  <Layout 
+    pageTitle={pageContext.archiveTitle} 
+    location={location.pathname} 
+    headerStyle={pageContext.headerStyle}
+  >
       <div className="grid-container-narrow archive-positions">
         <div className="grid-x grid-margin-x">
           
