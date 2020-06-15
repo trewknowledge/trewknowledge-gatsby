@@ -24,14 +24,20 @@ img {
 	max-width: 905px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 50px 14px;
 	
+	@media(min-width: 375px) {
+		padding-left: 28px;
+		padding-right: 28px;
+	}
+
 	@include mq( tablet ) {
-		padding-left: 90px;
-    padding-right: 90px;
+		padding: 100px 118px;
 	}
 
 	@include mq( desktop ) {
-		max-width: none;
+		padding-left: 0;
+    padding-right: 0;
 	}
 }
 

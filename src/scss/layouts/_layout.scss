@@ -38,9 +38,8 @@
   }
 }
 
-.main-content {
-  z-index: 2;
-  position: relative;
+.section-overlap-hero {
+  padding-top: 0;
   transform: translateY(-48px);
   
   @include mq( tablet ) {

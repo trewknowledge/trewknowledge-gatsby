@@ -6,9 +6,7 @@ import WorksCard from '../components/WorksCard';
 
 export default ({ pageContext }) => (
   <Layout pageTitle={pageContext.archiveTitle}>
-    <div className="hero bg-dark"></div>
-    <div className="grid-container main-content">
-      <div className="grid-container-narrow">
+      <div className="grid-container-narrow section-overlap-hero">
         <div className="grid-x grid-margin-x">
           {pageContext.posts.map((post, index) => {
             if (index === 0 && pageContext.currentPage === 1) {
@@ -31,6 +29,5 @@ export default ({ pageContext }) => (
           pageContext={pageContext}
         />
       </div>
-    </div>
   </Layout>
 )

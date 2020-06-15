@@ -18,8 +18,8 @@ const ArchivePositions = ({pageContext}) => {
             <h1>Open Positions</h1>
           </div>
           
-          {pageContext.posts.map((post, i) => (
-            <div className="cell" key={i}>
+          {pageContext.posts.map((post, id) => (
+            <div className="cell" key={id}>
               <Link to={post.uri}>
                 <h2>{post.title}</h2>
                 <p dangerouslySetInnerHTML={{ __html: post.excerpt}} />
@@ -34,7 +34,7 @@ const ArchivePositions = ({pageContext}) => {
           <h1>Latest News</h1>
             <div className="grid-x grid-margin-x">
             {pageContext.allPosts.map((post, id) => (
-              <div className="cell medium-6">
+              <div className="cell medium-6" key={id}>
                 <NewsCard postContext={post} />
               </div>
             ))}
