@@ -8,6 +8,7 @@ export default ({pageContext, location}) => (
     pageTitle={pageContext.node.title} 
     location={location.pathname} 
     headerStyle={pageContext.headerStyle}
+    pageRef={pageContext.node.template.templateName}
   >
   {console.log(pageContext)}
     <div className="grid-container-narrow">

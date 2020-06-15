@@ -12,14 +12,10 @@ const ArchivePositions = ({pageContext, location}) => {
     pageTitle={pageContext.archiveTitle} 
     location={location.pathname} 
     headerStyle={pageContext.headerStyle}
+    pageRef={pageContext.pageRef}
   >
       <div className="grid-container-narrow archive-positions">
-        <div className="grid-x grid-margin-x">
-          
-          <div className="cell">
-            <h1>Open Positions</h1>
-          </div>
-          
+        <div className="grid-x grid-margin-x">      
           {pageContext.posts.map((post, id) => (
             <div className="cell" key={id}>
               <Link to={post.uri}>

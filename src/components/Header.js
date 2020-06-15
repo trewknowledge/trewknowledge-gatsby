@@ -4,7 +4,7 @@ import tkLogo from '../images/logo-main.svg'
 import MainMenu from './MainMenu';
 import HeroCareers from './header-content/HeroCareers'
 import HeroPositionSingle from './header-content/HeroPositionSingle'
-
+import HeroPositions from './header-content/HeroPositions'
 
 const Header = ({ 
   menuOpen, 
@@ -12,7 +12,7 @@ const Header = ({
   pageTitle, 
   headerStyle, 
   headerContent,
-  pageType,
+  pageRef,
   navStuck 
 }) => {
   const data = useStaticQuery(graphql`
@@ -42,6 +42,9 @@ const Header = ({
     if (headerStyle === 'blue') {
       setHeaderColor('hero-bg-light')
     } 
+    if (headerStyle === 'white') {
+      setHeaderColor('hero-bg-white')
+    } 
     if (headerStyle === 'empty') {
       setHeaderColor('hero-empty')
     }
@@ -64,7 +67,9 @@ const Header = ({
       </nav>
       <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
       <div className="grid-container-narrow">
-        {pageType === "WPGraphQL_Tk_position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
+        {pageRef === "Careers" ? <HeroCareers/> : null}
+        {pageRef === "positionsArchive" ? <HeroPositions/> : null}
+        {pageRef === "WPGraphQL_Tk_position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
       </div>
     </header>
   )

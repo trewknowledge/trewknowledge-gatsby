@@ -25,6 +25,8 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 50px 14px;
+	align-self: center;
+  width: 100%;
 	
 	@media(min-width: 375px) {
 		padding-left: 28px;

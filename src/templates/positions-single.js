@@ -14,7 +14,7 @@ export default ({ pageContext, location }) => {
       headerStyle={pageContext.headerStyle} 
       location={location.pathname}
       headerContent={pageContext.node.title}
-      pageType={pageContext.node.__typename}
+      pageRef={pageContext.node.__typename}
     >
       <div className="grid-container-narrow article">
         <article className="article-content">

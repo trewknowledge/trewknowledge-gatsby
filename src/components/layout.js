@@ -52,7 +52,7 @@ const Layout = ( props ) => {
         pageTitle={props.pageTitle} 
         headerStyle={props.headerStyle}
         headerContent={props.headerContent}
-        pageType={props.pageType}
+        pageRef={props.pageRef}
         navStuck={navStuck}
       />
       <div className="site-content">

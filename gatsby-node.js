@@ -132,6 +132,7 @@ const createArchive = (archiveConfigObject) => {
   const numberOfPages = Math.ceil(archivePosts.length / postsPerPage);
   const allPosts = archiveConfigObject.allPosts;
   const headerStyle = archiveConfigObject.headerStyle;
+  const pageRef = archiveConfigObject.pageRef;
 
   Array.from({ length: numberOfPages }).forEach((page, index) => {
     createPage({
@@ -145,6 +146,7 @@ const createArchive = (archiveConfigObject) => {
         archiveTitle: archiveConfigObject.archiveTitle,
         allPosts: allPosts,
         headerStyle: headerStyle,
+        pageRef: pageRef,
       }
     })
   })
@@ -177,7 +179,8 @@ const positionsArchiveConfig = {
   path: '/positions',
   archiveTitle: 'Careers',
   allPosts: posts.nodes.slice(0, 2),
-  headerStyle: "empty" 
+  headerStyle: "white",
+  pageRef: "positionsArchive" 
 }
 
 // ------------- Create archive pages -------------
