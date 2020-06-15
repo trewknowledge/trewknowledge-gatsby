@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import tkLogo from '../images/logo-main.svg'
 import MainMenu from './MainMenu';
 
-const Header = ({ menuOpen, handleMenu, pageTitle, navStuck }) => {
+const Header = ({ menuOpen, handleMenu, pageTitle, pageType, navStuck }) => {
   const data = useStaticQuery(graphql`
     query MenuQuery {
       wpgraphql {
@@ -25,9 +25,20 @@ const Header = ({ menuOpen, handleMenu, pageTitle, navStuck }) => {
     }
   `)
 
+  const [headerColor, setHeaderColor] = useState('hero-bg-dark');
+
+  useEffect(() => {
+    if (pageTitle === 'Careers') {
+      setHeaderColor('hero-bg-light')
+    } 
+    if (pageType === 'Post') {
+      setHeaderColor('hero-empty')
+    }
+  }, [])
+
   return(
-    <header className={menuOpen ? "header is-open" : "header"}>
-      <div className="grid-container header-wrapper">
+    <header className={headerColor}>
+      <nav className={menuOpen ? "grid-container nav is-open" : "grid-container nav"}>
         <div className={navStuck ? "nav-logo is-stuck" : "nav-logo"}>
           <Link to={"/"}>
             <img src={tkLogo} alt="Trew Knowledge Logo"/>
@@ -39,8 +50,9 @@ const Header = ({ menuOpen, handleMenu, pageTitle, navStuck }) => {
           <span className="line"></span>
           <span className="line"></span>
         </button>
-      </div>
+      </nav>
       <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
+      <div className="grid-container-narrow"></div>
     </header>
   )
 }

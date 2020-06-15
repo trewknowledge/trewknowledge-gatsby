@@ -185,7 +185,8 @@ createArchive(positionsArchiveConfig);
       context: {
         node: node,
         allWorks: tk_works,
-        pageTitle: "News"
+        pageTitle: "News",
+        pageType: "Post"
       }
     })
   })
@@ -197,7 +198,8 @@ createArchive(positionsArchiveConfig);
       context: {
         node: node,
         allWorks: tk_works,
-        pageTitle: "Work"
+        pageTitle: "Work",
+        pageType: "Post"
       }
     })
   })
@@ -208,7 +210,8 @@ createArchive(positionsArchiveConfig);
       component: slash(positionsSingle),
       context: {
         node: node,
-        pageTitle: "Careers"
+        pageTitle: "Careers",
+        pageType: "Post"
       }
     })
   })

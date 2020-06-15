@@ -28,10 +28,10 @@ const MobileMenu = ({menuOpen, handleMenu}) => {
     <div className={menuOpen ? "nav-wrapper is-open" : "nav-wrapper"}>
       <div className="grid-container">
         <div className="grid-x">
-          <div className="cell large-4 large-order-2">
+          <div className="cell xlarge-4 xlarge-order-2">
             <Navigation data={data} handleMenu={handleMenu} />
           </div>
-          <div className="cell large-auto large-order-1 nav-menu-secondary">
+          <div className="cell xlarge-auto xlarge-order-1 nav-menu-secondary">
             <ul className="nav-menu-social">
               <li><a href="https://twitter.com/trewknowledge" target="_blank">Twitter</a></li>
               <li><a href="https://www.facebook.com/trewknowledge" target="_blank">Facebook</a></li>
