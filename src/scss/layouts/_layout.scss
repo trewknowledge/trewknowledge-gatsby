@@ -22,19 +22,24 @@
   }
 }
 
-.hero.bg-dark {
+
+// Header
+.hero-bg-dark {
   background-color: $black;
+  color: $white;
 }
 
-.hero.bg-light {
+.hero-bg-light {
   background-color: $blue;
+  color: $white;
 }
 
 .hero-empty {
-  background-color: #fff;
-  
-  @include mq( tablet ) {
-    padding-top: 155px;
+  background-color: none;
+  color: $black;
+
+  > .grid-container-narrow {
+    display: none;
   }
 }
 

@@ -8,10 +8,8 @@ const ArchivePositions = ({pageContext, location}) => {
   console.log(pageContext)
 
   return (
-  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname}>
-    <div className="hero hero-empty"></div>
-    <div className="grid-container archive-positions">
-      <div className="grid-container-narrow">
+  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname} headerStyle={pageContext.headerStyle}>
+      <div className="grid-container-narrow archive-positions">
         <div className="grid-x grid-margin-x">
           
           <div className="cell">
@@ -41,9 +39,6 @@ const ArchivePositions = ({pageContext, location}) => {
           </div>
         </section>
       </div>
-
-    </div>
-
   </Layout>
   )
 }

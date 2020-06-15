@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import tkLogo from '../images/logo-main.svg'
 import MainMenu from './MainMenu';
 
-const Header = ({ menuOpen, handleMenu, pageTitle, pageType, navStuck }) => {
+const Header = ({ menuOpen, handleMenu, pageTitle, headerStyle, navStuck }) => {
   const data = useStaticQuery(graphql`
     query MenuQuery {
       wpgraphql {
@@ -28,10 +28,10 @@ const Header = ({ menuOpen, handleMenu, pageTitle, pageType, navStuck }) => {
   const [headerColor, setHeaderColor] = useState('hero-bg-dark');
 
   useEffect(() => {
-    if (pageTitle === 'Careers') {
+    if (headerStyle === 'blue') {
       setHeaderColor('hero-bg-light')
     } 
-    if (pageType === 'Post') {
+    if (headerStyle === 'empty') {
       setHeaderColor('hero-empty')
     }
   }, [])
@@ -52,7 +52,9 @@ const Header = ({ menuOpen, handleMenu, pageTitle, pageType, navStuck }) => {
         </button>
       </nav>
       <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
-      <div className="grid-container-narrow"></div>
+      <div className="grid-container-narrow">
+
+      </div>
     </header>
   )
 }

@@ -8,20 +8,6 @@ header {
   
 }
 
-.hero-bg-dark {
-  background-color: $black;
-  color: white;
-}
-
-.hero-empty {
-  background-color: none;
-  color: black;
-
-  > .grid-container-narrow {
-    display: none;
-  }
-}
-
 .nav {
   width: 100%;
   display: flex;

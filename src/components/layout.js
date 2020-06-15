@@ -50,7 +50,7 @@ const Layout = ( props ) => {
         menuOpen={menuOpen} 
         handleMenu={handleMenu} 
         pageTitle={props.pageTitle} 
-        pageType={props.pageType}
+        headerStyle={props.headerStyle}
         navStuck={navStuck}
       />
       <div className="site-content">

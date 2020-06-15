@@ -103,7 +103,10 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: node.uri,
         component: slash(careersTemplate),
-        context: node
+        context: {
+          node: node,
+          headerStyle: 'blue',
+        }
       })
     // } else if (node.template === 'WPGraphQL_SearchTemplate') {
     //   createPage({
@@ -126,6 +129,7 @@ const createArchive = (archiveConfigObject) => {
   const postsPerPage = archiveConfigObject.postsPerPage;
   const numberOfPages = Math.ceil(archivePosts.length / postsPerPage);
   const allPosts = archiveConfigObject.allPosts;
+  const headerStyle = archiveConfigObject.headerStyle;
 
   Array.from({ length: numberOfPages }).forEach((page, index) => {
     createPage({
@@ -138,6 +142,7 @@ const createArchive = (archiveConfigObject) => {
         archivePath: archiveConfigObject.path,
         archiveTitle: archiveConfigObject.archiveTitle,
         allPosts: allPosts,
+        headerStyle: headerStyle,
       }
     })
   })
@@ -169,7 +174,8 @@ const positionsArchiveConfig = {
   pageTemplate: archivePositions,
   path: '/positions',
   archiveTitle: 'Careers',
-  allPosts: posts.nodes.slice(0, 2)
+  allPosts: posts.nodes.slice(0, 2),
+  headerStyle: "empty" 
 }
 
 // ------------- Create archive pages -------------
@@ -186,7 +192,7 @@ createArchive(positionsArchiveConfig);
         node: node,
         allWorks: tk_works,
         pageTitle: "News",
-        pageType: "Post"
+        headerStyle: "empty"
       }
     })
   })
@@ -199,7 +205,7 @@ createArchive(positionsArchiveConfig);
         node: node,
         allWorks: tk_works,
         pageTitle: "Work",
-        pageType: "Post"
+        headerStyle: "empty"
       }
     })
   })
@@ -211,7 +217,7 @@ createArchive(positionsArchiveConfig);
       context: {
         node: node,
         pageTitle: "Careers",
-        pageType: "Post"
+        headerStyle: "empty"
       }
     })
   })

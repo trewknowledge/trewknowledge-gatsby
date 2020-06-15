@@ -9,7 +9,7 @@ export default ({ pageContext, location }) => {
   }
 
   return (
-    <Layout pageTitle={pageContext.pageTitle} pageType={pageContext.pageType} location={location.pathname}>
+    <Layout pageTitle={pageContext.pageTitle} headerStyle={pageContext.headerStyle} location={location.pathname}>
       <div className="grid-container-narrow article">
         <article className="article-content">
           <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
