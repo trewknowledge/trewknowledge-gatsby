@@ -62,6 +62,13 @@ img {
 	}
 }
 
+.hero-title.large-title {
+	@include mq( tablet ) {
+		font-size: 75px;
+    line-height: 85px;
+	}
+}
+
 .headline {
 	margin-bottom: 16px;
 
@@ -83,4 +90,11 @@ img {
 .sub-headline {
 	font-size: 1.25rem;
   font-style: italic;
+}
+
+.email-link {
+	line-height: inherit;
+	color: $green;
+	text-decoration: none;
+	cursor: pointer;
 }
