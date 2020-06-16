@@ -211,11 +211,19 @@ p {
 
 h1, .h1 {
 	font-size: $font__size-h1;
+
+	@include mq( tablet ) {
+		font-size: 55px;
+	}
 }
 
 h2, .h2 {
 	font-size: $font__size-h2;
 	line-height: 52px;
+
+	@include mq( tablet ) {
+		font-size: 40px;
+	}
 }
 
 h3, .h3 {
@@ -358,3 +366,27 @@ hr {
 	/* Address differences between Firefox and other browsers. Source- normalize.css */
 	height: 1px;
 }
+
+.button {
+  color: #151e25;
+	font-weight: 700;
+	line-height: 1.1;
+	text-transform: uppercase;
+	border: 3px solid #53e4c0;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 16px;
+	padding: 14px 64px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+
+
+
+

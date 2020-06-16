@@ -15,8 +15,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
   const homePageTemplate = path.resolve('./src/templates/home.js');
-  const searchPageTemplate = path.resolve('./src/templates/searchPage.js');
 
+  const aboutTemplate = path.resolve('./src/templates/aboutTemplate.js');
   const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
   const archiveWorks = path.resolve('./src/templates/archive-works.js');
@@ -35,6 +35,9 @@ exports.createPages = async ({ graphql, actions }) => {
             link
             template {
               ... on WPGraphQL_CareersTemplate {
+                templateName
+              }
+              ... on WPGraphQL_AboutTemplate {
                 templateName
               }
             }
@@ -110,12 +113,15 @@ exports.createPages = async ({ graphql, actions }) => {
           headerContent: 'HeroCareers',
         }
       })
-    // } else if (node.template === 'WPGraphQL_SearchTemplate') {
-    //   createPage({
-    //     path: `/${node.slug}`,
-    //     component: slash(searchPageTemplate),
-    //     context: node
-    //   })
+    } else if (node.template.templateName === 'About') {
+      createPage({
+        path: node.uri,
+        component: slash(aboutTemplate),
+        context: {
+          node: node,
+          headerContent: 'HeroAbout',
+        }
+      })
     } else {
       createPage({
         path: node.uri,

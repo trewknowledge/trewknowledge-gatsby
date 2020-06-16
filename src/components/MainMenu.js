@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Navigation from './Navigation'
 
 const MobileMenu = ({menuOpen, handleMenu}) => {

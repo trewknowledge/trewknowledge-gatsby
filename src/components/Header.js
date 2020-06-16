@@ -5,6 +5,7 @@ import MainMenu from './MainMenu';
 import HeroCareers from './header-content/HeroCareers'
 import HeroPositionSingle from './header-content/HeroPositionSingle'
 import HeroPositions from './header-content/HeroPositions'
+import HeroAbout from './header-content/HeroAbout'
 
 const Header = ({ 
   menuOpen, 
@@ -67,6 +68,7 @@ const Header = ({
       </nav>
       <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
       <div className="grid-container-narrow">
+        {pageRef === "About" ? <HeroAbout/> : null}
         {pageRef === "Careers" ? <HeroCareers/> : null}
         {pageRef === "positionsArchive" ? <HeroPositions/> : null}
         {pageRef === "WPGraphQL_Tk_position" ? <HeroPositionSingle headerContent={headerContent} /> : null}

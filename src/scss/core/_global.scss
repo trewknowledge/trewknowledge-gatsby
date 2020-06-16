@@ -54,3 +54,33 @@ img {
 .no-scroll {
 	overflow: hidden;
 }
+
+.hero-title {
+	@include mq( tablet ) {
+		font-size: 55px;
+    line-height: 75px;
+	}
+}
+
+.headline {
+	margin-bottom: 16px;
+
+	@include mq( desktop ) {
+		max-width: 80%;
+	}
+}
+
+.lead {
+	font-style: italic;
+	font-size: 20px;
+  line-height: 32px;
+}
+
+.lead-narrow {
+	max-width: 721px;
+}
+
+.sub-headline {
+	font-size: 1.25rem;
+  font-style: italic;
+}
