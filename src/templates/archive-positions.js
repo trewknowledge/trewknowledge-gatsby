@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
-import NewsCard from '../components/NewsCard'
+
+import LatestNews from '../components/LatestNews'
 
 const ArchivePositions = ({pageContext, location}) => {
 
@@ -28,16 +29,8 @@ const ArchivePositions = ({pageContext, location}) => {
 
         <hr/>
 
-        <section>
-          <h1>Latest News</h1>
-            <div className="grid-x grid-margin-x">
-            {pageContext.allPosts.map((post, id) => (
-              <div className="cell medium-6" key={id}>
-                <NewsCard postContext={post} />
-              </div>
-            ))}
-          </div>
-        </section>
+        {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null }
+        
       </div>
   </Layout>
   )

@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
-  const homePageTemplate = path.resolve('./src/templates/home.js');
+  const homeTemplate = path.resolve('./src/templates/home.js');
 
   const aboutTemplate = path.resolve('./src/templates/aboutTemplate.js');
   const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
@@ -103,7 +103,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // WP default pages
   pages.nodes.forEach(node => {
-    if (node.template.templateName === 'Careers') {
+    if (node.uri === '/') {
+      createPage({
+        path: node.uri,
+        component: slash(homeTemplate),
+        context: {
+          node: node,
+          allPosts: posts.nodes.slice(0, 2),
+        }
+      })
+    } else if (node.template.templateName === 'Careers') {
       createPage({
         path: node.uri,
         component: slash(careersTemplate),
@@ -120,6 +129,7 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           node: node,
           headerContent: 'HeroAbout',
+          allPosts: posts.nodes.slice(0, 2),
         }
       })
     } else {

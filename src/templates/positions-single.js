@@ -28,7 +28,7 @@ export default ({ pageContext, location }) => {
       <section className="grid-container-narrow">
         <h1 className="headline">How to apply</h1>
         <p className="sub-headline">Email your CV, along with a cover letter to <a className="email-link" href="mailto:careers@trewknowledge.com">careers@trewknowledge.com</a></p>
-        <a className="button">apply</a>
+        <a href="mailto:careers@trewknowledge.com" className="button">apply</a>
       </section>
     </Layout> 
   )

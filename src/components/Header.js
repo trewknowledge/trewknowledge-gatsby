@@ -6,6 +6,7 @@ import HeroCareers from './header-content/HeroCareers'
 import HeroPositionSingle from './header-content/HeroPositionSingle'
 import HeroPositions from './header-content/HeroPositions'
 import HeroAbout from './header-content/HeroAbout'
+import HeroHome from './header-content/HeroHome'
 
 const Header = ({ 
   menuOpen, 
@@ -68,6 +69,7 @@ const Header = ({
       </nav>
       <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
       <div className="grid-container-narrow">
+        {pageRef === "Home" ? <HeroHome/> : null}
         {pageRef === "About" ? <HeroAbout/> : null}
         {pageRef === "Careers" ? <HeroCareers/> : null}
         {pageRef === "positionsArchive" ? <HeroPositions/> : null}
