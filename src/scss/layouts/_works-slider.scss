@@ -5,61 +5,16 @@
     margin-bottom: 16px;
   }
 
-  figure {
-    position: relative;
-
-    &::before {
-      transition: opacity .25s ease-out;
-      background-color: rgba(83,228,192,.8);
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      opacity: 0;
-      width: 100%;
-    }
-
-    &:hover::before,
-    &:hover figcaption,
-    &:focus::before,
-    &:focus figcaption {
-      opacity: 1;
-    }
-
-    &::after {
-      transition: transform .25s ease-out;
-      transition: transform .25s ease-out;
-      bottom: 16px;
-      content: url(../images/plus-icon.svg);
-      height: 33px;
-      position: absolute;
-      right: 16px;
-      transform: scale(0);
-      width: 33px;
-    }
-
-    &:hover::after,
-    &:focus::after {
-      transform: scale(1);
-    }
-
+  .image-hover-wrapper {
     img {
       height: 247px;
     }
 
     figcaption {
-      font-size: 20px;
-      font-weight: 700;
-      color: black;
-
-      @include mq( desktop ) {
-        opacity: 0;
-        transition: opacity .25s ease-out;
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        font-weight: 400;
+      @media(max-width: 1024px) {
+        margin-bottom: 1rem;
+        opacity: 1;
+        position: static;
       }
     }
   }
@@ -79,3 +34,56 @@
     right: 5px;
   }
 }
+
+.image-hover-wrapper {
+  position: relative;
+
+  &::before {
+    transition: opacity .25s ease-out;
+    background-color: rgba(83,228,192,.8);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+  }
+
+  &:hover::before,
+  &:hover figcaption,
+  &:focus::before,
+  &:focus figcaption {
+    opacity: 1;
+  }
+
+  &::after {
+    transition: transform .25s ease-out;
+    transition: transform .25s ease-out;
+    bottom: 16px;
+    content: url(../images/plus-icon.svg);
+    height: 33px;
+    position: absolute;
+    right: 16px;
+    transform: scale(0);
+    width: 33px;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    transform: scale(1);
+  }
+
+  figcaption {
+    font-size: 20px;
+    font-weight: 700;
+    color: $black;
+    opacity: 0;
+    transition: opacity .25s ease-out;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-weight: 400;
+  }
+}
+

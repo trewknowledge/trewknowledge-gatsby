@@ -1,30 +1,13 @@
-.news-card,
-.works-card {
-  background-color: #fff;
+.news-card {
+  background-color: $white;
+  margin-bottom: 72px;
+
+  @include mq( tablet ) {
+    margin-bottom: 60px;
+  }
   
   &:hover h3 {
     color: $teal;
-  }
-
-  &:hover figure::before {
-    opacity: 1;
-  }
-  
-  figure {
-    position: relative;
-
-    &::before {
-      transition: opacity .25s ease-out;
-      background-color: rgba(83,228,192,.8);
-      content: '';
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: 0;
-    }
   }
 
   h3 {
@@ -32,20 +15,20 @@
     line-height: 38px;
     font-size: 30px;
     font-weight: 700;
-    color: #151e25;
-  }
-
-  p {
-    color: #8b8b8b;
+    color: $text-black;
   }
 }
 
-.news-card {
-  margin-bottom: 72px;
+.card-title {
+  font-size: 25px;
 
-  @include mq( tablet ) {
-    margin-bottom: 60px;
+  @include mq( desktop ) {
+    font-size: 30px;
   }
+}
+
+.card-metadata {
+  color: $grey;
 }
 
 .works-card {

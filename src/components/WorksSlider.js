@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import { Link } from 'gatsby'
-import plusIcon from '../images/plus-icon.svg'
 
 export default class WorksSlider extends Component {
   constructor(props) {
@@ -31,7 +30,7 @@ export default class WorksSlider extends Component {
         <Slider {...settings}>
           {this.props.pageContext.allWorks.nodes.map((node, id) => (
             <Link to={node.uri} key={id}>
-              <figure>
+              <figure className="image-hover-wrapper">
                 {node.featuredImage ? <img src={node.featuredImage.sourceUrl} alt={node.title} /> : null}
                 <figcaption>
                   {node.title}

@@ -10,11 +10,11 @@ const NewsCard = ({ postContext }) => {
   return (
     <Link to={postContext.uri}>
       <div className="news-card">
-        <figure>
+        <figure className="image-hover-wrapper">
           <img src={postContext.featuredImage ? postContext.featuredImage.sourceUrl : null} alt=""/>
         </figure>
-        <h3 dangerouslySetInnerHTML={{ __html: postContext.title }} />
-        <p>{formatDate()}</p>
+        <h3 className="card-title" dangerouslySetInnerHTML={{ __html: postContext.title }} />
+        <p className="card-metadata">{formatDate()}</p>
       </div>
     </Link>
   )
