@@ -15,7 +15,7 @@ export default ({pageContext, location}) => (
       <div className="callout">
         <h1 className="headline">Headline</h1>
         <p className="sub-headline">Sub headline</p>
-        <Link class="button" to={"/positions"}>CTA Button</Link>
+        <Link className="button" to={"/positions"}>CTA Button</Link>
       </div>
     </div>
   </Layout>

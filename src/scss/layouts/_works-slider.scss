@@ -35,6 +35,18 @@
   }
 }
 
+.news-card {
+  &:hover .image-hover-wrapper::before,
+  &:focus .image-hover-wrapper::before {
+    opacity: 1;
+  }
+
+  &:hover .image-hover-wrapper + .card-title,
+  &:focus .image-hover-wrapper + .card-title {
+    color: $teal;
+  }
+}
+
 .image-hover-wrapper {
   position: relative;
 
@@ -86,4 +98,3 @@
     font-weight: 400;
   }
 }
-

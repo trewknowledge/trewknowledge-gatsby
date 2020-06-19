@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 // import SEO from "../components/seo"
 import LatestNews from '../components/LatestNews'
+import FeaturedWork from "../components/FeaturedWork"
 
 const IndexPage = ({ pageContext, location }) => (
   <Layout 
@@ -115,6 +116,7 @@ const IndexPage = ({ pageContext, location }) => (
         </div>
       </section>
 
+      {pageContext.allWorks ? <FeaturedWork allWorks={pageContext.allWorks} /> : null}
       {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
     </main>
   </Layout>

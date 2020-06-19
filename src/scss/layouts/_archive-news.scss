@@ -5,10 +5,6 @@
   @include mq( tablet ) {
     margin-bottom: 60px;
   }
-  
-  &:hover h3 {
-    color: $teal;
-  }
 
   h3 {
     transition: all .25s ease-out;

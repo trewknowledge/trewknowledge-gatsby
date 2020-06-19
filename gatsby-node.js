@@ -110,6 +110,7 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           node: node,
           allPosts: posts.nodes.slice(0, 2),
+          allWorks: tk_works.nodes.slice(0, 4),
         }
       })
     } else if (node.template.templateName === 'Careers') {
