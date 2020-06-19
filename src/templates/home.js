@@ -1,8 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Link } from 'gatsby';
 // import SEO from "../components/seo"
 import LatestNews from '../components/LatestNews'
 import FeaturedWork from "../components/FeaturedWork"
+import wpVipCertLogo from "../images/wp-vip-cert-logo.svg"
 
 const IndexPage = ({ pageContext, location }) => (
   <Layout 
@@ -17,6 +19,12 @@ const IndexPage = ({ pageContext, location }) => (
         <p className="lead">
           As the only Canadian based WordPress VIP Gold Agency Partner, we deliver enterprise digital solutions using the world’s most trusted platform. From Toronto to Singapore our global reach helps clients scale their digital footprint.
         </p>
+        <div className="wp-intro-section">
+          <Link to={"/wordpress-vip"} className="wp-intro-section-button button">
+            learn more
+          </Link>
+          <img className="wp-intro-section-img" src={wpVipCertLogo} alt="wordpress vip logo"/>
+        </div>
       </div>
 
       <section className="hero-bg-dark">

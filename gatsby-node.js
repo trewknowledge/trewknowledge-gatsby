@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
   const homeTemplate = path.resolve('./src/templates/home.js');
-
+  const contactTemplate = path.resolve('./src/templates/contactTemplate.js');
   const aboutTemplate = path.resolve('./src/templates/aboutTemplate.js');
   const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
@@ -38,6 +38,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 templateName
               }
               ... on WPGraphQL_AboutTemplate {
+                templateName
+              }
+              ... on WPGraphQL_ContactTemplate {
                 templateName
               }
             }
@@ -131,6 +134,15 @@ exports.createPages = async ({ graphql, actions }) => {
           node: node,
           headerContent: 'HeroAbout',
           allPosts: posts.nodes.slice(0, 2),
+        }
+      })
+    } else if (node.template.templateName === 'Contact') {
+      createPage({
+        path: node.uri,
+        component: slash(contactTemplate),
+        context: {
+          node: node,
+          headerStyle: 'contact',
         }
       })
     } else {

@@ -9,6 +9,7 @@ import React, { useState } from "react"
 
 import Header from "./Header"
 import Footer from "./Footer"
+import ContactSection from "./ContactSection"
 
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
@@ -44,6 +45,8 @@ const Layout = ( props ) => {
     }
   }, [props.location])
 
+  console.log('layout props', props)
+
   return (
     <div className="site">
       <Header 
@@ -58,6 +61,7 @@ const Layout = ( props ) => {
       <div className="site-content">
         {props.children}
       </div>
+      <ContactSection pageRef={props.pageRef} />
       <Footer />
     </div>
   )
