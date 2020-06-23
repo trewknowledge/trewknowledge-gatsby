@@ -2,8 +2,10 @@ import React from 'react';
 import tkLogo from '../images/logo-main.svg'
 import wpVipLogo from '../images/wpvip-logo.svg'
 import { Link, useStaticQuery } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+
+import twitterLogo from '../assets/img/logos/twitter-logo.svg'
+import facebookLogo from '../assets/img/logos/facebook-logo.svg'
+import linkedinLogo from '../assets/img/logos/linkedin-logo.svg'
 
 const Footer = () => {
 
@@ -42,9 +44,9 @@ const Footer = () => {
           <img src={tkLogo} alt="Trew Knowledge Logo"/>
           <span>Trew Knowledge</span>
         </Link>
-        <a className="footer-branding-social" href="/" target="_blank"><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
-        <a className="footer-branding-social" href="/" target="_blank"><FontAwesomeIcon icon={faFacebook} size="2x" /></a>
-        <a className="footer-branding-social" href="/" target="_blank"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
+        <a className="footer-branding-social" href="/" target="_blank"><img src={twitterLogo} alt="twitter logo"/></a>
+        <a className="footer-branding-social" href="/" target="_blank"><img src={facebookLogo} alt="facebook logo"/></a>
+        <a className="footer-branding-social" href="/" target="_blank"><img src={linkedinLogo} alt="linkedin logo"/></a>
       </div>
       <a href="" className="hide-for-large">
         <img src={wpVipLogo} alt="WordPress VIP Logo"/>
