@@ -10,6 +10,17 @@
   flex-grow: 1;
 }
 
+.section {
+  @extend .grid-container;
+  padding-top: $section-spacing/2;
+  padding-bottom: $section-spacing/2;
+
+  @include breakpoint(medium) {
+    padding-bottom: $section-spacing;
+    padding-top: $section-spacing;
+  }
+}
+
 .section-overlap-hero {
   padding-top: 0;
   transform: translateY(-48px);
@@ -19,9 +30,93 @@
   }
 }
 
+.grid-container-narrow {
+  @extend .section;
+  max-width: $global-width-narrow;
+
+  @media screen and (min-width: 1025px) and (max-width: 1140px) {
+    max-width: 790px;
+  }
+}
+
+main {
+  > .grid-container-narrow:first-child {
+    padding-top: $section-spacing;
+  }
+
+  @include mq( tablet ) {
+    > .grid-container-narrow:first-child {
+      padding-top: $section-spacing * 2;
+    }
+  }
+}
+
+.section-overlap {
+  padding-bottom: $section-spacing/2 + map-get($section-overlap, small);
+
+  &.section-background {
+    padding-bottom: 0;
+  }
+
+  &.section-background > .section,
+  &.section-background > .grid-container-narrow {
+    padding-bottom: $section-spacing/2 + map-get($section-overlap, small);
+  }
+
+  & + .grid-container-narrow,
+  & + .section {
+    margin-top: -(map-get($section-overlap, small));
+  }
+
+  @include breakpoint(large) {
+    padding-bottom: $section-spacing + map-get($section-overlap, large);
+
+    &.section-background > .section {
+      padding-bottom: $section-spacing + map-get($section-overlap, large);
+    }
+
+    & + .grid-container-narrow,
+    & + .section {
+      margin-top: -(map-get($section-overlap, large));
+    }
+  }
+}
+
+.section-background {
+  background-color: $black;
+  color: $white;
+}
+
+.section-background-tertiary {
+  background-color: $blue;
+  color: $white;
+}
+
+.section-background-blue-gradient {
+	background-color: $sap-dark-blue;
+	background: linear-gradient(0deg, $sap-dark-blue 25%, $sap-light-blue 100%);
+	color: $white;
+	margin-top: -160px;
+}
+
+.section-background-light {
+  background-color: $light-gray;
+}
+
+.section-background-white {
+  background-color: $white;
+}
+
+.section-background-black {
+  background-color: $true-black;
+  color: $white;
+}
+
 .grid-gallery {
   .gallery-item {
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
+
+

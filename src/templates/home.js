@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import LatestNews from '../components/LatestNews'
 import FeaturedWork from "../components/FeaturedWork"
 import wpVipCertLogo from "../images/wp-vip-cert-logo.svg"
+import SocialProofHome from "../components/SocialProofHome"
 
 const IndexPage = ({ pageContext, location }) => (
   <Layout 
@@ -27,7 +28,7 @@ const IndexPage = ({ pageContext, location }) => (
         </div>
       </div>
 
-      <section className="hero-bg-dark">
+      <section className="hero-bg-dark section-overlap">
         <div className="grid-container-narrow">
           <h1>Services</h1>
             <ul className="feature-list">
@@ -123,6 +124,8 @@ const IndexPage = ({ pageContext, location }) => (
             </ul>
         </div>
       </section>
+
+      <SocialProofHome />
 
       {pageContext.allWorks ? <FeaturedWork allWorks={pageContext.allWorks} /> : null}
       {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}

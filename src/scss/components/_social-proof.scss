@@ -1,0 +1,82 @@
+.social-proof {
+  @extend .section;
+  margin-bottom: $section-spacing/2;
+  margin-left: 28px;
+  margin-right: 28px;
+  max-width: $global-width-narrow;
+  padding: rem-calc(40 20);
+  text-align: center;
+
+  .social-proof-logo {
+    @include flex-centerer;
+
+    img,
+    svg {
+      max-height: rem-calc(22);
+    }
+
+    &.social-proof-logo-tall {
+      img,
+      svg {
+        max-height: 80px;
+      }
+    }
+
+    &.social-proof-logo-medium {
+      img,
+      svg {
+        max-height: rem-calc(55);
+      }
+    }
+  }
+
+  @media(max-width: 768px) {
+    .social-proof-logo:nth-child(n + 4) {
+      margin-top: rem-calc(42);
+    }
+  }
+
+  @include mq(tablet) {
+    padding: rem-calc(50 32);
+    margin-left: 75px;
+    margin-right: 75px;
+
+    .social-proof-logo:nth-child(n + 5) {
+      margin-top: rem-calc(80);
+    }
+  }
+
+  @include mq($global-width-narrow) {
+    @include push-center;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: $section-spacing;
+    padding: rem-calc(65 62);
+
+    .social-proof-logo:nth-child(n + 5) {
+      margin-top: rem-calc(80);
+    }
+
+    .social-proof-logo {
+      img,
+      svg {
+        max-height: rem-calc(36);
+      }
+
+      &.social-proof-logo-tall {
+        img,
+        svg {
+          max-height: 90px;
+        }
+      }
+
+      &.social-proof-logo-medium {
+        img,
+        svg {
+          max-height: rem-calc(65);
+        }
+      }
+    }
+  }
+}

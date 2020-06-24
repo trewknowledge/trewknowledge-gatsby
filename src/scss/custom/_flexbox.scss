@@ -69,3 +69,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+@mixin push-center {
+  margin: {
+    left: auto;
+    right: auto;
+}
+}
