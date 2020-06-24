@@ -40,6 +40,7 @@
   transition: opacity .2s ease-out;
   white-space: nowrap;
   margin-bottom: 28px;
+  font-family: 'nuue-hass-grotesk-bold';
 
   @include mq( tablet ) {
     margin-bottom: 0;
@@ -123,6 +124,5 @@
   color: $white;
   margin-left: 12px;
   padding-left: 12px;
+  font-family: 'nuue-hass-grotesk-bold';
 }
-
-

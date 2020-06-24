@@ -11,18 +11,29 @@
 @import "./core/wp-css";
 @import "./core/global";
 
+// Custom
+@import "./custom/custom-global-variables";
+@import "./custom/flexbox";
+
 // Layouts
 @import "./layouts/layout";
 @import "./layouts/archive-news";
-@import "./layouts/navigation";
-@import "./layouts/works-slider";
+
 @import "./layouts/article-single";
 @import "./layouts/archive-positions";
 @import "./layouts/careers";
-@import "./layouts/footer";
-@import "./layouts/contact-section";
 @import "./layouts/contact-template";
 @import "./layouts/home";
+@import "./layouts/article";
+
+// Components
+@import "./components/contact-form";
+@import "./components/contact-section";
+@import "./components/footer";
+@import "./components/hero";
+@import "./components/navigation";
+@import "./components/works-slider";
+@import "./components/social-proof";
 
 // Vendor
 @import "./vendor/slick";

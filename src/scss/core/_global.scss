@@ -15,9 +15,10 @@ li {
 }
 
 img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
 }
 
 figure {
@@ -25,32 +26,34 @@ figure {
 	height: 100%;
 }
 
-.grid-container-narrow {
-	max-width: 905px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 50px 14px;
-	align-self: center;
-  width: 100%;
+$global-width-narrow: 905px;
+
+// .grid-container-narrow {
+// 	max-width: 905px;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	padding: 50px 14px;
+// 	align-self: center;
+//   width: 100%;
 	
-	@media(min-width: 375px) {
-		padding-left: 28px;
-		padding-right: 28px;
-	}
+// 	@media(min-width: 375px) {
+// 		padding-left: 28px;
+// 		padding-right: 28px;
+// 	}
 
-	@include mq( tablet ) {
-		padding: 100px 118px;
-	}
+// 	@include mq( tablet ) {
+// 		padding: 100px 118px;
+// 	}
 
-	@media screen and (max-width: 1140px) and (min-width: 1024px) {
-		max-width: 790px;
-	}
+// 	@media screen and (max-width: 1140px) and (min-width: 1024px) {
+// 		max-width: 790px;
+// 	}
 
-	@include mq( desktop ) {
-		padding-left: 0;
-    padding-right: 0;
-	}
-}
+// 	@include mq( desktop ) {
+// 		padding-left: 0;
+//     padding-right: 0;
+// 	}
+// }
 
 .grid-container-narrow.article {
 	padding-top: 50px;
@@ -58,48 +61,4 @@ figure {
 
 .no-scroll {
 	overflow: hidden;
-}
-
-.hero-title {
-	@include mq( tablet ) {
-		font-size: 55px;
-    line-height: 75px;
-	}
-}
-
-.hero-title.large-title {
-	@include mq( tablet ) {
-		font-size: 75px;
-    line-height: 85px;
-	}
-}
-
-.headline {
-	margin-bottom: 16px;
-
-	@include mq( desktop ) {
-		max-width: 80%;
-	}
-}
-
-.lead {
-	font-style: italic;
-	font-size: 20px;
-  line-height: 32px;
-}
-
-.lead-narrow {
-	max-width: 721px;
-}
-
-.sub-headline {
-	font-size: 1.25rem;
-  font-style: italic;
-}
-
-.email-link {
-	line-height: inherit;
-	color: $green;
-	text-decoration: none;
-	cursor: pointer;
 }

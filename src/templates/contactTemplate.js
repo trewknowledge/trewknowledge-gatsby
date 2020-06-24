@@ -2,12 +2,14 @@ import React from 'react';
 import Layout from '../components/layout'
 
 export default ({ pageContext, location }) => {
+  console.log(pageContext)
 
   return (
     <Layout 
       pageTitle={pageContext.node.title} 
       location={location.pathname} 
       pageRef={pageContext.node.template.templateName}
+      headerStyle={pageContext.headerStyle}
     >
       <main>
         <div className="header-contact">
@@ -41,6 +43,11 @@ export default ({ pageContext, location }) => {
               <a href="https://www.instagram.com/trewknowledge/" target="_blank">Instagram</a>
             </li>
           </ul>
+        </div>
+
+        <div className="grid-container-narrow">
+          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} />
+          <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
       </main>
     </Layout>

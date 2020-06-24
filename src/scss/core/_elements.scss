@@ -211,35 +211,86 @@ p {
 
 h1, .h1 {
 	font-size: $font__size-h1;
+	line-height: 50px;
+	margin-top: 0;
+	margin-bottom: $header-margin-bottom;
 
 	@include mq( tablet ) {
 		font-size: 55px;
+    line-height: 75px;
+    margin-top: 0;
+    margin-bottom: $header-margin-bottom;
 	}
 }
 
 h2, .h2 {
 	font-size: $font__size-h2;
 	line-height: 52px;
+  margin-top: 0;
+  margin-bottom: $header-margin-bottom;
 
 	@include mq( tablet ) {
 		font-size: 40px;
+		line-height: 52px;
+    margin-top: 0;
+    margin-bottom: $header-margin-bottom;
 	}
 }
 
 h3, .h3 {
 	font-size: $font__size-h3;
+	line-height: 38px;
+  margin-top: 0;
+	margin-bottom: $header-margin-bottom;
+	
+	@include mq( tablet ) {
+		font-size: 30px;
+    line-height: 38px;
+    margin-top: 0;
+    margin-bottom: $header-margin-bottom;
+	}
 }
 
 h4, .h4 {
 	font-size: $font__size-h4;
+	line-height: 32px;
+  margin-top: 0;
+	margin-bottom: $header-margin-bottom;
+	
+	@include mq( tablet ) {
+		font-size: 24px;
+		line-height: 36px;
+		margin-top: 0;
+		margin-bottom: $header-margin-bottom;
+	}
 }
 
 h5, .h5 {
 	font-size: $font__size-h5;
+	line-height: 28px;
+  margin-top: 0;
+	margin-bottom: $header-margin-bottom;
+	
+	@include mq( tablet ) {
+		font-size: 20px;
+		line-height: 28px;
+  	margin-top: 0;
+		margin-bottom: $header-margin-bottom;
+	}
 }
 
 h6, .h6 {
 	font-size: $font__size-h6;
+	line-height: 20px;
+  margin-top: 0;
+	margin-bottom: $header-margin-bottom;
+	
+	@include mq( tablet ) {
+		font-size: 16px;
+    line-height: 25px;
+    margin-top: 0;
+    margin-bottom: $header-margin-bottom;
+	}
 }
 
 // Lists
@@ -385,11 +436,3 @@ hr {
 	cursor: pointer;
 	text-decoration: none;
 }
-
-// h1, h2, h3, h4, h5, h6, li, ol, ul, p {
-// 	margin: 0;
-//   padding: 0;
-// }
-
-
-

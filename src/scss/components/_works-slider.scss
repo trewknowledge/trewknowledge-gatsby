@@ -73,7 +73,7 @@
     transition: transform .25s ease-out;
     transition: transform .25s ease-out;
     bottom: 16px;
-    content: url(../images/plus-icon.svg);
+    content: url(../assets/img/icons/plus-icon.svg);
     height: 33px;
     position: absolute;
     right: 16px;
@@ -84,6 +84,12 @@
   &:hover::after,
   &:focus::after {
     transform: scale(1);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   figcaption {
