@@ -50,6 +50,9 @@ const Header = ({
     if (headerStyle === 'empty') {
       setHeaderColor('hero-empty')
     }
+    if (headerStyle === 'contact') {
+      setHeaderColor('hero-bg-contact')
+    }
   }, [])
 
   return(

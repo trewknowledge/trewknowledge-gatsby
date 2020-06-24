@@ -10,6 +10,8 @@
 @import "./core/common-classes";
 @import "./core/wp-css";
 @import "./core/global";
+@import "./core/custom-global-variables";
+@import "./core/flexbox";
 
 // Layouts
 @import "./layouts/layout";
@@ -23,6 +25,9 @@
 @import "./layouts/contact-section";
 @import "./layouts/contact-template";
 @import "./layouts/home";
+@import "./layouts/contact-form";
+@import "./layouts/article";
+@import "./layouts/hero";
 
 // Vendor
 @import "./vendor/slick";

@@ -1,0 +1,154 @@
+.article {
+  .article-title {
+    animation: fade-in 1s ease-out both;
+    font-size: rem-calc(40);
+    line-height: 52px;
+    margin-bottom: 0.25rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5rem;
+  }
+
+  li > ul,
+  li > ol {
+    margin-top: 1rem;
+  }
+
+  p {
+    line-height: 28px;
+    margin-bottom: rem-calc(30);
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-details {
+    list-style-type: none;
+    margin-bottom: rem-calc(40);
+    margin-left: 0;
+
+    li {
+      line-height: 20px;
+      margin-bottom: rem-calc(5);
+
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    margin-bottom: rem-calc(30);
+
+    li {
+      line-height: 20px;
+      margin-bottom: rem-calc(16);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // a {
+  //   @extend %word-wrap;
+  // }
+
+  main > &.grid-container-narrow:first-child {
+    padding-top: $section-spacing/2;
+  }
+
+  .article-section-subtitle {
+    margin-bottom: 0;
+  }
+
+  .article-section-description {
+    font-size: rem-calc(20);
+    margin-bottom: 0;
+
+    > a {
+      // @include hover-underline($color: $body-font-color);
+      // color: $body-font-color;
+      font-weight: 400;
+    }
+
+    & + .article-section-description {
+      margin-top: rem-calc(5);
+    }
+
+    & + .article-section-subtitle {
+      margin-top: rem-calc(32);
+    }
+
+    &:last-child {
+      margin-bottom: rem-calc(32);
+    }
+  }
+
+  hr {
+    margin: $section-spacing/2 auto;
+  }
+
+  @include mq( tablet ) {
+    hr {
+      margin: $section-spacing auto;
+    }
+  }
+
+  @include mq( desktop ) {
+    .article-section-description:last-child {
+      margin-bottom: 0;
+    }
+
+    .paragraph-offset {
+      // @include xy-grid();
+      // @include xy-cell-offset($n: 2, $gutter-type: none);
+    }
+
+    .paragraph-offset-both {
+      // @include xy-cell-offset($n: 2, $gutter-type: none);
+      margin-right: 8.33333%;
+    }
+  }
+}
+
+.article-date {
+  @include noticia;
+  color: $dark-gray;
+
+  > strong {
+    @include grotesk-bold;
+  }
+}
+
+main > .hero-banner + .article.grid-container-narrow {
+  padding-top: $section-spacing/3;
+
+  @include mq( tablet ) {
+    padding-top: $section-spacing/2;
+  }
+}
+
+.article-section-title {
+  @include noticia;
+  font-size: rem-calc(30);
+  font-weight: 400;
+  line-height: 35px;
+  margin-bottom: rem-calc(42);
+
+  @include mq( tablet ) {
+    margin-bottom: rem-calc(38);
+  }
+}

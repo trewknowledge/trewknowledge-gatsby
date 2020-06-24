@@ -8,7 +8,7 @@ import wpVipCertLogo from "../images/wp-vip-cert-logo.svg"
 
 const IndexPage = ({ pageContext, location }) => (
   <Layout 
-    pageTitle={"TrewKnowledge"} 
+    pageTitle={"Trew Knowledge"} 
     location={location.pathname} 
     pageRef={"Home"}
   >

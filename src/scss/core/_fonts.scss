@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'nuue-hass-grotesk';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskDSPro-95Blk.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'nuue-hass-grotesk-rg';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskTXPro-55Rg.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'nuue-hass-grotesk-bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskDSPro-75Bd.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'nuue-hass-grotesk-bold-italic';
+  font-style: italic;
+  font-weight: bold;
+  src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskDSPro-76BdIt.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'noticia-text';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/noticia-text/NoticiaText-Regular.ttf')
+    format('truetype');
+}
+
+@mixin noticia {
+  font-family: 'noticia-text', 'Helvetica Neue', Helvetica, Roboto, Arial,
+    sans-serif;
+}
+
+@mixin grotesk {
+  font-family: 'nuue-hass-grotesk', 'Helvetica Neue', Helvetica, Roboto, Arial,
+    sans-serif;
+}
+
+@mixin grotesk-reg {
+  font-family: 'nuue-hass-grotesk-rg', 'Helvetica Neue', Helvetica, Roboto,
+    Arial, sans-serif;
+}
+
+@mixin grotesk-bold {
+  font-family: 'nuue-hass-grotesk-bold', 'Helvetica Neue', Helvetica, Roboto,
+    Arial, sans-serif;
+}
+
+@mixin grotesk-bold-italic {
+  font-family: 'nuue-hass-grotesk-bold-italic', 'Helvetica Neue', Helvetica,
+    Roboto, Arial, sans-serif;
+  font-style: italic;
+}

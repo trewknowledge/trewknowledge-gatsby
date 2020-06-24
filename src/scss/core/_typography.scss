@@ -1,9 +1,9 @@
 
 // Fallback font.
-$font__fallback: sans-serif;
+$font__fallback: 'noticia-text', sans-serif;
 
 // Global theme font.
-$font__main: 'Open Sans', sans-serif;
+$font__main: 'noticia-text', sans-serif;
 
 // Global code font
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -30,13 +30,49 @@ $font__size-h1: 35px;
 $font__size-h2: 30px;
 
 // Heading 3 font size
-$font__size-h3: 18px;
+$font__size-h3: 32px;
 
 // Heading 4 font size
-$font__size-h4: 16px;
+$font__size-h4: 20px;
 
 // Heading 5 font size
-$font__size-h5: 12px;
+$font__size-h5: 20px;
 
 // Heading 6 font size
-$font__size-h6: 10px;
+$font__size-h6: 14px;
+
+$header-margin-bottom: 16px;
+
+h1, h2, h3, h4, h5 {
+  font-family: 'nuue-hass-grotesk-bold';
+}
+
+.lead {
+	font-style: italic;
+	font-size: 20px;
+  line-height: 32px;
+}
+
+.lead-narrow {
+	max-width: 721px;
+}
+
+.headline {
+	margin-bottom: 16px;
+
+	@include mq( desktop ) {
+		max-width: 80%;
+	}
+}
+
+.sub-headline {
+	font-size: 1.25rem;
+  font-style: italic;
+}
+
+.email-link {
+	line-height: inherit;
+	color: $green;
+	text-decoration: none;
+	cursor: pointer;
+}
