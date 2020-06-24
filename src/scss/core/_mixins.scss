@@ -17,3 +17,50 @@
 		font-family: $font;
 	}
 }
+
+@mixin hover-underline(
+  $color: $anchor-color-hover,
+  $max-width: 100%,
+  $line-thickness: 0.1em,
+  $distance: 1px,
+  $speed: 0.1s
+) {
+  position: relative;
+
+  &::after {
+    // @include transition(width $speed);
+    background: $color;
+    bottom: $distance;
+    content: '';
+    font-size: inherit;
+		// height: $line-thickness;
+		height: 4px;
+    left: 0;
+    position: absolute;
+    width: 0%;
+  }
+
+  &:hover,
+  &focus {
+    &::after {
+      width: $max-width;
+    }
+  }
+
+  &.linked-icon:hover {
+    // @include transition(opacity $speed);
+    // opacity: $link-hover-opacity;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@mixin push-center {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
