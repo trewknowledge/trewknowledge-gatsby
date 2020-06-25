@@ -16,7 +16,7 @@ const IndexPage = ({ pageContext, location }) => (
   {console.log('homepage', pageContext)}
     
     <main>
-      <div className="grid-container-narrow">
+      <section className="grid-container-narrow">
         <p className="lead">
           As the only Canadian based WordPress VIP Gold Agency Partner, we deliver enterprise digital solutions using the world’s most trusted platform. From Toronto to Singapore our global reach helps clients scale their digital footprint.
         </p>
@@ -26,11 +26,11 @@ const IndexPage = ({ pageContext, location }) => (
           </Link>
           <img className="wp-intro-section-img" src={wpVipCertLogo} alt="wordpress vip logo"/>
         </div>
-      </div>
+      </section>
 
       <section className="hero-bg-dark section-overlap">
         <div className="grid-container-narrow">
-          <h1>Services</h1>
+          <h1 className="section-title-feature-list">Services</h1>
             <ul className="feature-list">
 
               <li className="feature-list-item">
@@ -38,7 +38,7 @@ const IndexPage = ({ pageContext, location }) => (
                   <h2 className="feature-list-title">
                     Strategy & Consulting
                   </h2>
-                  <div className="feature-list-divider"></div>
+                  <div className="feature-list-divider" data-aos="grow-in"></div>
                 </div>
                 <ul className="feature-list-options">
                   <li>Digital Strategy</li>
@@ -55,7 +55,7 @@ const IndexPage = ({ pageContext, location }) => (
                   <h2 className="feature-list-title">
                     Design
                   </h2>
-                  <div className="feature-list-divider"></div>
+                  <div className="feature-list-divider" data-aos="grow-in"></div>
                 </div>
                 <ul className="feature-list-options">
                   <li>Interactive Web Design</li>
@@ -75,7 +75,7 @@ const IndexPage = ({ pageContext, location }) => (
                   <h2 className="feature-list-title">
                     Technology
                   </h2>
-                  <div className="feature-list-divider"></div>
+                  <div className="feature-list-divider" data-aos="grow-in"></div>
                 </div>
                 <ul className="feature-list-options">
                   <li>Web Development</li>
@@ -92,7 +92,7 @@ const IndexPage = ({ pageContext, location }) => (
                   <h2 className="feature-list-title">
                     Data
                   </h2>
-                  <div className="feature-list-divider"></div>
+                  <div className="feature-list-divider" data-aos="grow-in"></div>
                 </div>
                 <ul className="feature-list-options">
                   <li>Legacy CMS Data Migration</li>
@@ -109,7 +109,7 @@ const IndexPage = ({ pageContext, location }) => (
                   <h2 className="feature-list-title">
                     Identity Management
                   </h2>
-                  <div className="feature-list-divider"></div>
+                  <div className="feature-list-divider" data-aos="grow-in"></div>
                 </div>
                 <ul className="feature-list-options">
                   <li>Customer Identity & Access</li>

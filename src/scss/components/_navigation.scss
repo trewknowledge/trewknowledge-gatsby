@@ -190,16 +190,35 @@
     display: block;
   }
 
-  > a {
+  > li > a {
+    white-space: nowrap;
     font-family: 'nuue-hass-grotesk-bold';
     font-size: 45px;
     font-weight: 700;
     line-height: 1.4;
+    display: inline;
+    
+    @include hover-underline(
+      $color: $body-font-color,
+      $max-width: 100%,
+      $speed: 0.25s,
+      $distance: -5px,
+      $line-thickness: 3px
+    );
+    color: $body-font-color;
 
+    &.is-active {
+      &::after {
+        width: 100%;
+      }
+    }
+  
     @include mq( tablet ) {
       font-size: 55px;
     }
   }
+
+  
 }
 
 .nav-menu-secondary {

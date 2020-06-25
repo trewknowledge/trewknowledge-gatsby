@@ -11,9 +11,11 @@ const Navigation = ({ data, handleMenu }) => {
   return (
     <ul className="nav-menu">
       {menuItems.map(item => (
-        <Link className="nav-menu__item" to={item.url} key={item.id} onClick={handleMenu}>
-          {item.label}
-        </Link>
+        <li className="nav-menu__item">
+          <Link to={item.url} key={item.id} onClick={handleMenu}>
+            {item.label}
+          </Link>
+        </li>
       ))}
     </ul>
   ) 
