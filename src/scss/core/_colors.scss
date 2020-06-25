@@ -14,7 +14,12 @@ $highlight: #019875;
 
 $body-font-color: $text-black;
 $anchor-color-hover: $highlight;
+$border-color: rgba($black, 0.25);
 
+$button-color: $black;
+$button-background: $teal;
+$button-background-hover: $teal;
+$button-color-alt: $white;
 // Light Gray
 $light-gray: #d0d0d0;
 
@@ -56,19 +61,19 @@ $color__text-input-focus: #111;
 $color__link: $color__primary;
 
 // Link hover color - Used for all links on hover state
-$color__link-hover: $color__theme;
+$color__link-hover: $highlight;
 
 // Select tag text color - Used for all `<select>` tags
 $color__select-text: #404040;
 
 // Button Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button: rgba(27, 31, 35, 0.2);
+// $color__border-button: rgba(27, 31, 35, 0.2);
 
 // Button Hover State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-hover: rgba(27, 31, 35, 0.35);
+// $color__border-button-hover: rgba(27, 31, 35, 0.35);
 
 // Button Focus State Border Color - Used for `button, input[type="button"], input[type="reset"], input[type="submit"]`
-$color__border-button-focus: #aaa #bbb #bbb;
+// $color__border-button-focus: #aaa #bbb #bbb;
 
 // Input Field Border Color - Used for `input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="tel"], textarea`
 $color__border-input: $light-gray;

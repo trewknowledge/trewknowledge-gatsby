@@ -1,0 +1,118 @@
+.feature-list {
+  margin: 0;
+  list-style-type: none;
+
+  .feature-list-title {
+    margin-bottom: 0;
+    line-height: 42px;
+  }
+
+  .feature-list-divider {
+    $line-speed: 1.4s;
+    $line-easing: cubic-bezier(1, 0, 0, 1);
+
+    @include transition(max-width $line-speed $line-easing);
+    background-color: $teal;
+    flex: 1 0 0;
+    height: 2px;
+    margin-bottom: rem-calc(10);
+    margin-left: rem-calc(12);
+    max-width: 0;
+
+    &.aos-animate {
+      max-width: 100%;
+      transition-duration: $line-speed;
+    }
+
+    @include mq(tablet) {
+      margin-bottom: rem-calc(7);
+
+      .feature-list-title {
+        line-height: 75px;
+      }
+    }
+
+    @include mq(desktop) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .feature-list-options {
+    list-style-type: none;
+    margin: 0;
+    position: relative;
+    top: 4px;
+
+    > li {
+      color: $white;
+    }
+
+    > li > a {
+      @include hover-underline($max-width: 103%, $color: $white);
+      color: $white;
+    }
+  }
+
+  .feature-list-item + .feature-list-item {
+    margin-top: rem-calc(35);
+  }
+
+  .feature-list-item {
+    font-size: rem-calc(20);
+    line-height: 32px;
+  }
+
+  .feature-list-title {
+    flex: 0 1 auto;
+
+    &.wide {
+      flex: 0 1 125px;
+    }
+  }
+
+  .feature-list-title-wrapper {
+    align-items: flex-end;
+    display: flex;
+    flex: 1 0 0;
+  }
+
+  @include mq(tablet) {
+    .feature-list-title {
+      white-space: nowrap;
+    }
+  }
+
+  @include mq(desktop) {
+    .feature-list-item + .feature-list-item {
+      margin-top: rem-calc(45);
+    }
+
+    .feature-list-title-wrapper {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .feature-list-item {
+      @include flex-baseline-justify;
+    }
+
+    .feature-list-title {
+      flex: 0 1 auto;
+    }
+
+    .feature-list-options {
+      flex: 0 1 33%;
+    }
+  }
+}
+
+.section-title-feature-list {
+  @extend %section-title;
+  margin-bottom: rem-calc(65);
+
+  @include mq(tablet) {
+    margin-bottom: rem-calc(75);
+  }
+}

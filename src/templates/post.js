@@ -10,17 +10,21 @@ export default ({ pageContext, location }) => {
 
   return (
     <Layout pageTitle={pageContext.pageTitle} headerStyle={pageContext.headerStyle} location={location.pathname}>
-      <div className="grid-container-narrow article">
-        <article className="article-content">
-          <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }} className="article-section-title"/>
-          <p className="article-date">{formatDate()}</p>
-          
-          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
-        </article>
-        <hr/>
-
+      <main>
+        <div className="grid-container-narrow article pb0">
+          <article className="article-content">
+            <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }} className="article-section-title"/>
+            <p className="article-date">{formatDate()}</p>
+            
+            <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
+          </article>
+          <hr/>
+        </div>
+        
+        
         <WorksSlider pageContext={pageContext} />
-      </div>
+        
+      </main>
     </Layout> 
   )
 }

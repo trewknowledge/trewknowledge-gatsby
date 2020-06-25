@@ -14,13 +14,13 @@
 // Custom
 @import "./custom/custom-global-variables";
 @import "./custom/flexbox";
+@import "./custom/transitions";
 
 // Layouts
 @import "./layouts/layout";
 @import "./layouts/archive-news";
 
 @import "./layouts/article-single";
-@import "./layouts/archive-positions";
 @import "./layouts/careers";
 @import "./layouts/contact-template";
 @import "./layouts/home";
@@ -34,6 +34,9 @@
 @import "./components/navigation";
 @import "./components/works-slider";
 @import "./components/social-proof";
+@import "./components/hero-connector";
+@import "./components/feature-list";
+@import "./components/block-list";
 
 // Vendor
 @import "./vendor/slick";

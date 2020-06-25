@@ -10,6 +10,26 @@
   flex-grow: 1;
 }
 
+.grid-container {
+  padding-left: map-get($grid-container-padding, small);
+  padding-right: map-get($grid-container-padding, small);
+
+  @media(max-width: 370px) {
+    padding-left: map-get($grid-container-padding, small);
+    padding-right: map-get($grid-container-padding, small);
+  }
+
+  @include mq(tablet) {
+    padding-left: rem-calc(118);
+    padding-right: rem-calc(118);
+  }
+
+  @include mq(desktop) {
+    padding-left: map-get($grid-container-padding, large);
+    padding-right: map-get($grid-container-padding, large);
+  }
+}
+
 .section {
   @extend .grid-container;
   padding-top: $section-spacing/2;
@@ -34,7 +54,7 @@
   @extend .section;
   max-width: $global-width-narrow;
 
-  @media screen and (min-width: 1025px) and (max-width: 1140px) {
+  @media screen and (min-width: 1024px) and (max-width: 1140px) {
     max-width: 790px;
   }
 }
@@ -119,4 +139,12 @@ main {
   }
 }
 
+// utilities
+// ----------
+.pb0 {
+  padding-bottom: 0 !important;
+}
 
+.pt0 {
+  padding-top: 0 !important;
+}

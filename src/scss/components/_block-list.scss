@@ -1,0 +1,32 @@
+.block-list-item {
+  color: $body-font-color;
+  display: block;
+
+  .block-list-title {
+    @include transition(color);
+
+    img,
+    svg {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .block-list-description {
+    font-size: rem-calc(20);
+  }
+
+  &:hover,
+  &focus {
+    .block-list-title {
+      color: $teal;
+    }
+
+    .block-list-description {
+      color: $body-font-color;
+    }
+  }
+
+  & + .block-list-item {
+    margin-top: rem-calc(55);
+  }
+}

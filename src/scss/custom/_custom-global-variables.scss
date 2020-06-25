@@ -1,3 +1,7 @@
+$callout-border: 1px solid $border-color;
+$callout-radius: 0;
+$global-width-narrow: 905px;
+
 // layout
 // --------------------------------
 $section-spacing: rem-calc(
@@ -8,7 +12,7 @@ $section-overlap: (
   large: rem-calc(90),
 );
 $grid-container-padding: (
-  small: rem-calc(28),
+  small: 28px,
   medium: rem-calc(75),
   large: 0,
 );
@@ -29,15 +33,15 @@ $hamburger-width: 40px;
 
 // buttons
 // --------------------------------
-// $button-font-weight: $global-weight-normal;
+$button-font-weight: normal;
 $link-hover-opacity: 0.8;
 
 // generic containers
 // --------------------------------
 $container-box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.3);
 $container-box-shadow-inverse: 0 0 16px 1px rgba(255, 255, 255, 0.3); // for dark bg's
-// $container-border: $callout-border;
-// $container-radius: $callout-radius;
+$container-border: $callout-border;
+$container-radius: $callout-radius;
 $container-vertical-padding: rem-calc(45);
 
 // hero
@@ -54,10 +58,10 @@ $checkbox-label-offset: 1.75rem;
 $checkbox-size: rem-calc(20);
 $checkbox-check-size: rem-calc(15);
 $global-rounded: 5000px;
-// $checkbox-border-color: $border-color;
+$checkbox-border-color: $border-color;
 $checkbox-bg: $white;
 $checkbox-selected-bg: $white;
-// $checkbox-icon: url('../img/icons/checkmark-icon.svg');
+$checkbox-icon: url('../assets/img/icons/checkmark-icon.svg');
 
 $input-margin-bottom-mobile: rem-calc(12);
 $input-height: rem-calc(64);

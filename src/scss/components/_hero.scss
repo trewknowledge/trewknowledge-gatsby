@@ -54,7 +54,7 @@ header {
   background-position: center top -35px;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #fff;
+  color: $white;
 
   @include mq( tablet ) {
     background-image: url('../assets/img/backgrounds/contact-bg-medium.jpg');

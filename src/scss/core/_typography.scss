@@ -87,3 +87,31 @@ h6 > a {
   @include hover-underline($max-width: 103%);
   font-weight: bold;
 }
+
+%section-title {
+  font-size: rem-calc(45);
+  line-height: 75px;
+
+  @include mq(tablet) {
+    font-size: rem-calc(55);
+  }
+}
+
+.section-title {
+  @extend %section-title;
+  margin-bottom: rem-calc(35);
+
+  .grid-container-narrow & {
+    &:first-of-type {
+      padding-top: 1rem;
+    }
+  }
+
+  @include mq(tablet) {
+    margin-bottom: rem-calc(55);
+  }
+}
+
+.headline-cta {
+  margin-bottom: 0;
+}

@@ -124,32 +124,57 @@ dd {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	background: $color__background-button;
-	background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
-	border-radius: $border-radius;
-	border: 1px solid $color__border-button;
-	color: $color__primary;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 20px;
-	padding: 6px 12px;
-	white-space: nowrap;
-	vertical-align: middle;
+input[type="submit"],
+.button {
+  color: $button-color;
+  font-weight: bold;
+  line-height: 1.1;
+	text-transform: uppercase;
+	font-family: 'nuue-hass-grotesk-bold';
 
-	&:hover {
-		background: $color__background-button-hover;
-		background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
-		border-color: $color__border-button-hover;
-	}
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border-color: $button-background;
+    box-shadow: inset 0 0 0 2em $button-background-hover;
+    color: $button-color;
+  }
+}
 
-	&:active,
-	&:focus {
-		background: $color__background-button-hover;
-		background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
-		border-color: $color__border-button-hover;
-	}
+.section-background-black {
+  .button {
+    color: $button-color-alt;
+  }
+}
+
+.button-layout-wrapper {
+  padding-top: rem-calc(64);
+  text-align: center;
+
+  .button {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  @include mq(tablet) {
+    padding-top: rem-calc(68);
+
+    .button {
+      width: auto;
+    }
+  }
+
+  @include mq(desktop) {
+    padding-top: rem-calc(64);
+  }
+}
+
+#infinite-handle {
+  margin: 0 auto;
+  padding-top: rem-calc(64);
+  button {
+    @extend .button;
+  }
 }
 
 /*---------------------------

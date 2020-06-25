@@ -25,7 +25,7 @@ export default class WorksSlider extends Component {
       ]
     };
     return (
-      <div className="other-work">
+      <div className="grid-container-narrow other-work">
         <h2>Other Work</h2>
         <Slider {...settings}>
           {this.props.pageContext.allWorks.nodes.map((node, id) => (

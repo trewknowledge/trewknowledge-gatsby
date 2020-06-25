@@ -16,20 +16,21 @@ export default ({ pageContext, location }) => {
       headerContent={pageContext.node.title}
       pageRef={pageContext.node.__typename}
     >
-      <div className="grid-container-narrow article">
-        <article className="article-content">
+    <main>
+      <article className="grid-container-narrow article">
           <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
           <p className="article-date">{formatDate()}</p>
           
           <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
-        </article>
-      </div>
+      </article>
 
-      <section className="grid-container-narrow">
-        <h1 className="headline">How to apply</h1>
-        <p className="sub-headline">Email your CV, along with a cover letter to <a className="email-link" href="mailto:careers@trewknowledge.com">careers@trewknowledge.com</a></p>
-        <a href="mailto:careers@trewknowledge.com" className="button">apply</a>
+      <section class="grid-container-narrow pt0">
+        <h1 class="headline">How to apply</h1>
+        <p class="sub-headline">Email your CV, along with a cover letter to <a href="mailto:careers@trewknowledge.com?subject=<?php echo esc_attr( get_the_title() ); ?>">careers@trewknowledge.com</a></p>
+        <a class="button headline-cta" href="mailto:careers@trewknowledge.com?subject=<?php echo esc_attr( get_the_title() ); ?>">apply</a>
       </section>
+
+    </main>
     </Layout> 
   )
 }

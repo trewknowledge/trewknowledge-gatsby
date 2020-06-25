@@ -6,7 +6,7 @@ $border-radius: 3px !default;
 
 // Project specific breakpoints.
 $g-breakpoint-mobile        : 568px;
-$g-breakpoint-small-tablet  : 667px;
+$g-breakpoint-small-tablet  : 640px;
 $g-breakpoint-tablet        : 768px;
 $g-breakpoint-desktop       : 1024px;
 $g-breakpoint-large-desktop : 1280px;
@@ -22,13 +22,14 @@ $breakpoints: (
 // Media query breakpoints (sass-mq)
 $mq-breakpoints: (
 	mobile: $g-breakpoint-mobile,
+	small-tablet: $g-breakpoint-small-tablet,
 	tablet: $g-breakpoint-tablet,
 	desktop: $g-breakpoint-desktop,
 	wide: $g-breakpoint-large-desktop
 );
 
 $grid-margin-gutters: (
-	small  : 56px,
+	small  : 16px,
 	medium : 20px,
 	large  : 20px,
 	xlarge : 20px

@@ -76,6 +76,7 @@
   position: relative;
   top: 7px;
   pointer-events: auto;
+  box-shadow: none;
 
   &:hover,
   &:active,
@@ -83,6 +84,7 @@
     background: none;
     background-image: none;
     border-color: transparent;
+    box-shadow: none;
   }
 
   .line {

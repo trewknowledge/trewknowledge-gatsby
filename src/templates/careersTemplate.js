@@ -15,13 +15,13 @@ export default ({pageContext, location}) => (
       <div className="callout">
         <h1 className="headline">We are always looking for awesome people.</h1>
         <p className="sub-headline">We’re hiring people who share our values across all disciplines and experience levels.</p>
-        <Link className="button" to={"/positions"}>see open positions</Link>
+        <Link className="button headline-cta" to={"/positions"}>see open positions</Link>
       </div>
     </div>
 
     <section className="hero-bg-light">
       <div className="grid-container-narrow">
-        <h1>Benefits & Perks</h1>
+        <h1 className="section-title-feature-list">Benefits & Perks</h1>
           <ul className="feature-list">
 
             <li className="feature-list-item">
@@ -29,7 +29,7 @@ export default ({pageContext, location}) => (
                 <h2 className="feature-list-title">
                   Compensation
                 </h2>
-                <div className="feature-list-divider"></div>
+                <div className="feature-list-divider" data-aos="grow-in"></div>
               </div>
               <ul className="feature-list-options">
                 <li>Competitive Wages</li>
@@ -44,7 +44,7 @@ export default ({pageContext, location}) => (
                 <h2 className="feature-list-title">
                   Continuous Growth
                 </h2>
-                <div className="feature-list-divider"></div>
+                <div className="feature-list-divider" data-aos="grow-in"></div>
               </div>
               <ul className="feature-list-options">
                 <li>Conference and training budget</li>
