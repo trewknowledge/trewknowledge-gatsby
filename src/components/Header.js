@@ -7,6 +7,7 @@ import HeroPositionSingle from './header-content/HeroPositionSingle'
 import HeroPositions from './header-content/HeroPositions'
 import HeroAbout from './header-content/HeroAbout'
 import HeroHome from './header-content/HeroHome'
+import HeroWpVip from './header-content/HeroWpVip'
 
 const Header = ({ 
   menuOpen, 
@@ -53,6 +54,9 @@ const Header = ({
     if (headerStyle === 'contact') {
       setHeaderColor('hero-bg-contact')
     }
+    if (headerStyle === 'black') {
+      setHeaderColor('hero-bg-black')
+    }
   }, [])
 
   return(
@@ -77,6 +81,7 @@ const Header = ({
         {pageRef === "Careers" ? <HeroCareers/> : null}
         {pageRef === "positionsArchive" ? <HeroPositions/> : null}
         {pageRef === "WPGraphQL_Tk_position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
+        {pageRef === "WordPress VIP" ? <HeroWpVip/> : null}
       </div>
     </header>
   )

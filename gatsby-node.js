@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const contactTemplate = path.resolve('./src/templates/contactTemplate.js');
   const aboutTemplate = path.resolve('./src/templates/aboutTemplate.js');
   const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
+  const wpVipTemplate = path.resolve('./src/templates/wpVipTemplate.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
   const archiveWorks = path.resolve('./src/templates/archive-works.js');
   const archivePositions = path.resolve('./src/templates/archive-positions.js');
@@ -41,6 +42,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 templateName
               }
               ... on WPGraphQL_ContactTemplate {
+                templateName
+              }
+              ... on WPGraphQL_WordPressVIPTemplate {
                 templateName
               }
             }
@@ -145,6 +149,15 @@ exports.createPages = async ({ graphql, actions }) => {
           headerStyle: 'contact',
         }
       })
+    } else if (node.template.templateName === 'WordPress VIP') {
+      createPage({
+        path: node.uri,
+        component: slash(wpVipTemplate),
+        context: {
+          node: node,
+          headerStyle: 'black',
+        }
+      })
     } else {
       createPage({
         path: node.uri,
@@ -154,6 +167,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
+  
 // ------------- Posts Archive Constructor ------------- 
 const createArchive = (archiveConfigObject) => {
   const archivePosts = archiveConfigObject.postsArray;

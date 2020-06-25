@@ -18,6 +18,9 @@ import walgreensLogo from '../assets/img/logos/walgreens.png'
 import torontoFilmSchoolLogo from '../assets/img/logos/toronto-film-school.png'
 import ontarioMedAssocLogo from '../assets/img/logos/ontario-medical-association.png'
 import turkeyFarmersCanadaLogo from '../assets/img/logos/turkey-farmers-of-canada.png'
+import santaBarbaraLogo from '../assets/img/logos/santabarbara.png'
+import hip2SaveLogo from '../assets/img/logos/hip2save.png'
+import d4cDentalLogo from '../assets/img/logos/d4c-dental-brands.png'
 
 export const homeLogosArray = [
   {
@@ -101,3 +104,38 @@ export const homeLogosArray = [
     altTag: 'logo of Turkey Farmers of Canada'
   },
 ];
+
+export const wpVipLogosArray = [
+  {
+    img: cocLogo,
+    altTag: 'logo of Canadian Olympic Committee'
+  },
+  {
+    img: metroLogo,
+    altTag: 'logo of Metro Media'
+  },
+  {
+    img: housingwireLogo,
+    altTag: 'logo of HousingWire'
+  },
+  {
+    img: santaBarbaraLogo,
+    altTag: 'logo of Santa Barbara Independent'
+  },
+  {
+    img: hip2SaveLogo,
+    altTag: 'logo of Hip2Save'
+  },
+  {
+    img: gicLogo,
+    altTag: 'logo of GIC'
+  },
+  {
+    img: d4cDentalLogo,
+    altTag: 'logo of D4C Dental Brands'
+  },
+  {
+    img: sunLifeLogo,
+    altTag: 'logo of Sun Life Financial'
+  },
+]
