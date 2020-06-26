@@ -62,9 +62,9 @@
     }
   }
 
-  // a {
-  //   @extend %word-wrap;
-  // }
+  a {
+    @extend %word-wrap;
+  }
 
   main > &.grid-container-narrow:first-child {
     padding-top: $section-spacing/2;
@@ -113,14 +113,18 @@
     }
 
     .paragraph-offset {
-      // @include xy-grid();
-      // @include xy-cell-offset($n: 2, $gutter-type: none);
+      @include xy-grid();
+      @include xy-cell-offset($n: 2, $gutter-type: none);
     }
 
     .paragraph-offset-both {
-      // @include xy-cell-offset($n: 2, $gutter-type: none);
+      @include xy-cell-offset($n: 2, $gutter-type: none);
       margin-right: 8.33333%;
     }
+  }
+
+  .lead::before {
+    display: none;
   }
 }
 

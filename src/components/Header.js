@@ -39,23 +39,23 @@ const Header = ({
     }
   `)
 
-  const [headerColor, setHeaderColor] = useState('hero-bg-dark');
+  const [headerColor, setHeaderColor] = useState('hero hero-bg-dark');
 
   useEffect(() => {
     if (headerStyle === 'blue') {
-      setHeaderColor('hero-bg-light')
+      setHeaderColor('hero hero-bg-light')
     } 
     if (headerStyle === 'white') {
-      setHeaderColor('hero-bg-white')
+      setHeaderColor('hero hero-bg-white')
     } 
     if (headerStyle === 'empty') {
-      setHeaderColor('hero-empty')
+      setHeaderColor('hero hero-empty')
     }
     if (headerStyle === 'contact') {
-      setHeaderColor('hero-bg-contact')
+      setHeaderColor('hero hero-bg-contact')
     }
     if (headerStyle === 'black') {
-      setHeaderColor('hero-bg-black')
+      setHeaderColor('hero hero-bg-black')
     }
   }, [])
 

@@ -42,39 +42,15 @@ $font__size-h5: 20px;
 $font__size-h6: 14px;
 
 $header-margin-bottom: 16px;
+$lead-font-size: rem-calc(20);
+
+blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
+  margin: 0; 
+  padding: 0;
+}
 
 h1, h2, h3, h4, h5 {
   font-family: 'nuue-hass-grotesk-bold';
-}
-
-.lead {
-	font-style: italic;
-	font-size: 20px;
-  line-height: 32px;
-}
-
-.lead-narrow {
-	max-width: 721px;
-}
-
-.headline {
-	margin-bottom: 16px;
-
-	@include mq( desktop ) {
-		max-width: 80%;
-	}
-}
-
-.sub-headline {
-	font-size: 1.25rem;
-  font-style: italic;
-}
-
-.email-link {
-	line-height: inherit;
-	color: $green;
-	text-decoration: none;
-	cursor: pointer;
 }
 
 p > a,
@@ -86,6 +62,86 @@ h5 > a,
 h6 > a {
   @include hover-underline($max-width: 103%);
   font-weight: bold;
+}
+
+address {
+  color: $body-font-color;
+  font-style: normal;
+  line-height: 28px;
+
+  a {
+    // override ios phone # default styles
+    color: $body-font-color;
+
+    &:hover {
+      color: $body-font-color;
+    }
+  }
+}
+
+.headline {
+	margin-bottom: 16px;
+
+	@include mq( desktop ) {
+		max-width: 80%;
+	}
+}
+
+.sub-headline {
+  font-size: $lead-font-size;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+.email-link {
+	line-height: inherit;
+	color: $green;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.lead {
+  font-style: italic;
+  position: relative;
+
+  .grid-container-narrow & {
+    &:first-of-type {
+      padding-top: 1.25rem;
+    }
+  }
+
+  &:first-of-type::before {
+    animation: grow-down-in 0.4s ease both;
+    animation-delay: 1s;
+    background-color: $teal;
+    bottom: 100%;
+    content: '';
+    height: 100px * 1.5;
+    left: 0;
+    position: absolute;
+    width: 3px;
+  }
+
+  & + .lead {
+    margin-top: rem-calc(30);
+  }
+
+  &.lead-narrow {
+    max-width: rem-calc(721);
+  }
+
+  @include mq(tablet) {
+    &:first-of-type::before {
+      height: 100px * 3;
+    }
+  }
+}
+
+%word-wrap {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
 %section-title {

@@ -58,9 +58,9 @@ const Layout = ( props ) => {
         pageRef={props.pageRef}
         navStuck={navStuck}
       />
-      <div className="site-content">
+      <main>
         {props.children}
-      </div>
+      </main>
       <ContactSection pageRef={props.pageRef} />
       <Footer />
     </div>

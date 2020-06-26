@@ -11,7 +11,6 @@ export default ({ pageContext, location }) => {
       pageRef={pageContext.node.template.templateName}
       headerStyle={pageContext.headerStyle}
     >
-      <main>
         <div className="header-contact">
           <address>
             <h2 className="header-contact-title">
@@ -49,7 +48,6 @@ export default ({ pageContext, location }) => {
           <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} />
           <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
-      </main>
     </Layout>
   )
 }

@@ -1,48 +1,52 @@
 .header-contact {
-  padding: 45px 14px 0;
+  padding: $container-vertical-padding map-get($grid-container-padding, small) /
+    2 0;
   text-align: center;
-  
-  @include mq( tablet ) {
-    padding-right: 75px;
-    padding-left: 75px;
-  }
-
-  @include mq( desktop ) {
-    padding-right: 0;
-    padding-left: 0;
-  }
 
   address {
-    margin-bottom: 25px;
-    color: $text-black;
-    font-style: normal;
-    line-height: 28px;
+    margin-bottom: rem-calc(25);
+  }
 
-    @include mq( tablet ) {
-      margin-bottom: 22px;
+  .header-contact-title {
+    margin-bottom: 0;
+
+    a {
+      @include hover-underline(
+        $color: $body-font-color,
+        $max-width: 100%,
+        $speed: 0.25s,
+        $distance: -5px,
+        $line-thickness: 5px
+      );
     }
 
-    .header-contact-title {
-      margin: 0;
-      font-size: 24px;
-      line-height: 30px;
-      font-weight: 700;
+    &:last-of-type {
+      margin-top: rem-calc(45);
+    }
+  }
 
-      @include mq( tablet ) {
-        font-size: 40px;
-        line-height: 55px;
+  @media(max-width: 768px) {
+    .header-contact-title {
+      font-size: rem-calc(24);
+      line-height: rem-calc(30);
+
+      &:last-of-type {
+        margin-top: rem-calc(20);
       }
     }
   }
 
-  .menu {
-    margin: 0;
-    > li {
-      display: inline-block;
-    }
+  @include mq(tablet) {
+    padding-left: map-get($grid-container-padding, medium);
+    padding-right: map-get($grid-container-padding, medium);
 
-    > li + li {
-      margin-left: 25px;
+    address {
+      margin-bottom: rem-calc(22);
     }
+  }
+
+  @include mq(desktop) {
+    padding-left: map-get($grid-container-padding, large);
+    padding-right: map-get($grid-container-padding, large);
   }
 }

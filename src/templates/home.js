@@ -15,7 +15,7 @@ const IndexPage = ({ pageContext, location }) => (
   >
   {console.log('homepage', pageContext)}
     
-    <main>
+    
       <section className="grid-container-narrow">
         <p className="lead">
           As the only Canadian based WordPress VIP Gold Agency Partner, we deliver enterprise digital solutions using the world’s most trusted platform. From Toronto to Singapore our global reach helps clients scale their digital footprint.
@@ -28,7 +28,7 @@ const IndexPage = ({ pageContext, location }) => (
         </div>
       </section>
 
-      <section className="hero-bg-dark section-overlap">
+      <section className="section-background section-overlap">
         <div className="grid-container-narrow">
           <h1 className="section-title-feature-list">Services</h1>
             <ul className="feature-list">
@@ -129,7 +129,7 @@ const IndexPage = ({ pageContext, location }) => (
 
       {pageContext.allWorks ? <FeaturedWork allWorks={pageContext.allWorks} /> : null}
       {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
-    </main>
+    
   </Layout>
 )
 

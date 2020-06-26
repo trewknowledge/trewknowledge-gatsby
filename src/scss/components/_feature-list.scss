@@ -15,8 +15,8 @@
     background-color: $teal;
     flex: 1 0 0;
     height: 2px;
-    margin-bottom: rem-calc(10);
-    margin-left: rem-calc(12);
+    margin-bottom: 10px;
+    margin-left: 12px;
     max-width: 0;
 
     &.aos-animate {
@@ -25,7 +25,7 @@
     }
 
     @include mq(tablet) {
-      margin-bottom: rem-calc(7);
+      margin-bottom: 7px;
 
       .feature-list-title {
         line-height: 75px;
@@ -56,11 +56,11 @@
   }
 
   .feature-list-item + .feature-list-item {
-    margin-top: rem-calc(35);
+    margin-top: 35px;
   }
 
   .feature-list-item {
-    font-size: rem-calc(20);
+    font-size: 20px;
     line-height: 32px;
   }
 
@@ -86,7 +86,7 @@
 
   @include mq(desktop) {
     .feature-list-item + .feature-list-item {
-      margin-top: rem-calc(45);
+      margin-top: 45px;
     }
 
     .feature-list-title-wrapper {
@@ -110,9 +110,9 @@
 
 .section-title-feature-list {
   @extend %section-title;
-  margin-bottom: rem-calc(65);
+  margin-bottom: 65px;
 
   @include mq(tablet) {
-    margin-bottom: rem-calc(75);
+    margin-bottom: 75px;
   }
 }

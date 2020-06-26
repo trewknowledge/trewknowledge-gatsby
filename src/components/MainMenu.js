@@ -31,8 +31,8 @@ const MobileMenu = ({menuOpen, handleMenu}) => {
           <div className="cell xlarge-4 xlarge-order-2">
             <Navigation data={data} handleMenu={handleMenu} />
           </div>
-          <div className="cell xlarge-auto xlarge-order-1 nav-menu-secondary">
-            <ul className="nav-menu-social">
+          <div className="cell xlarge-auto xlarge-order-1 nav-menu-secondary-section">
+            <ul className="menu">
               <li><a href="https://twitter.com/trewknowledge" target="_blank">Twitter</a></li>
               <li><a href="https://www.facebook.com/trewknowledge" target="_blank">Facebook</a></li>
               <li><a href="https://www.linkedin.com/company/1022792" target="_blank">Linkedin</a></li>

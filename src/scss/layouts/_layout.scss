@@ -42,11 +42,14 @@
 }
 
 .section-overlap-hero {
-  padding-top: 0;
-  transform: translateY(-48px);
-  
-  @include mq( tablet ) {
-    transform: translateY(-100px);
+  margin-top: -$section-spacing/2;
+
+  main > &.grid-container-narrow:first-child {
+    padding-top: 0;
+  }
+
+  @include breakpoint(medium) {
+    margin-top: -$section-spacing;
   }
 }
 
@@ -137,6 +140,10 @@ main {
     margin-top: 10px;
     margin-bottom: 10px;
   }
+}
+
+.callout {
+  padding-top: $section-spacing;
 }
 
 // utilities

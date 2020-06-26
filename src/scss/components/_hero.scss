@@ -1,97 +1,129 @@
-header {
-  display: flex;
-  flex-direction: column;
-  
-  @include mq( tablet ) {
-    padding-top: 132px;
-  }
-  
-}
-
 .hero {
-  padding-top: 100px;
+  color: $body-font-color;
 
-  @include mq( tablet ) {
-    padding-top: 332px;
+  &.hero-bg-dark {
+    background-color: $black;
+    color: $white;
   }
 
-  @include mq( desktop ) {
-    padding-top: 355px;
+  &.hero-bg-light {
+    background-color: $blue;
+    color: $white;
   }
-}
 
-.hero-bg-dark {
-  background-color: $black;
-  color: $white;
-}
+  &.hero-bg-black {
+    background-color: $true-black;
+    color: $white;
+  }
 
-.hero-bg-light {
-  background-color: $blue;
-  color: $white;
-}
+  &.hero-bg-contact {
+    background-image: url('../assets/img/backgrounds/contact-bg-small.jpg');
+    background-position: center top -35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
 
-.hero-bg-white {
-  background-color: $white;
-  color: $black;
-}
+    .grid-container-narrow {
+      padding-top: $section-spacing;
+      padding-bottom: $section-spacing;
+    }
+  }
 
-.hero-bg-black {
-  background-color: $true-black;
-  color: $white;
-}
+  .hero-date {
+    @include grotesk-bold;
+    color: $light-gray;
+    margin-bottom: 0;
 
-.hero-empty {
-  background-color: none;
-  color: $black;
+    &:empty {
+      display: none;
+    }
+  }
 
-  > .grid-container-narrow {
+  .lead:empty {
     display: none;
   }
-}
 
-.hero-bg-contact {
-  background-image: url('../assets/img/backgrounds/contact-bg-small.jpg');
-  background-position: center top -35px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: $white;
-
-  @include mq( tablet ) {
-    background-image: url('../assets/img/backgrounds/contact-bg-medium.jpg');
-    background-position: center top;
+  .lead::before {
+    top: 100%;
   }
 
-  @include mq( desktop ) {
-    background-image: url('../assets/img/backgrounds/contact-bg.jpg');
-    background-position: center center;
-  }
+  .hero-title {
+    animation: fade-in 1s ease-out both;
+    margin-bottom: 3px;
+    position: relative;
 
-  > .grid-container-narrow {
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-    @include mq( tablet ) {
-      padding-top: 200px;
-      padding-bottom: 200px;
-    }
-
-    @include mq( desktop ) {
-      padding-top: 100px;
-      padding-bottom: 200px;
+    & + .lead {
+      margin-bottom: 0;
     }
   }
-}
 
-.hero-title {
-	@include mq( tablet ) {
-		font-size: 55px;
-    line-height: 75px;
-	}
-}
+  &.hero-large-title {
+    .grid-container-narrow {
+      padding-top: $section-spacing/2;
+      padding-bottom: $section-spacing/1.5;
+    }
 
-.hero-title.large-title {
-	@include mq( tablet ) {
-		font-size: 75px;
-    line-height: 85px;
-	}
+    .hero-title {
+      font-size: rem-calc(45);
+      line-height: 55px;
+    }
+  }
+
+  &.hero-empty {
+    .grid-container-narrow {
+      display: none;
+    }
+  }
+
+  @include mq(tablet) {
+    padding-top: map-get($nav-height, medium);
+
+    .hero-title {
+      font-size: 55px;
+      line-height: 75px;
+    }
+
+    &.hero-large-title {
+      .hero-title {
+        font-size: rem-calc(75);
+        line-height: 85px;
+      }
+    }
+
+    &.hero-bg-contact {
+      background-image: url('../assets/img/backgrounds/contact-bg-medium.jpg');
+      background-position: center top;
+
+      .grid-container-narrow {
+        padding-top: $section-spacing * 2;
+        padding-bottom: $section-spacing * 2;
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    padding-top: map-get($nav-height, large);
+
+    .lead::before {
+      top: 108%;
+    }
+
+    &.hero-large-title {
+      .hero-title {
+        font-size: rem-calc(100);
+        line-height: 115px;
+      }
+    }
+
+    &.hero-bg-contact {
+      background-image: url('../assets/img/backgrounds/contact-bg.jpg');
+
+      background-position: center center;
+
+      .grid-container-narrow {
+        padding-top: $section-spacing;
+        padding-bottom: $section-spacing * 2;
+      }
+    }
+  }
 }

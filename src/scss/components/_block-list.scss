@@ -12,7 +12,7 @@
   }
 
   .block-list-description {
-    font-size: rem-calc(20);
+    font-size: 20px;
   }
 
   &:hover,
@@ -27,6 +27,6 @@
   }
 
   & + .block-list-item {
-    margin-top: rem-calc(55);
+    margin-top: 55px;
   }
 }

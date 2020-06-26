@@ -12,7 +12,7 @@
 
     img,
     svg {
-      max-height: rem-calc(22);
+      max-height: 22px;
     }
 
     &.social-proof-logo-tall {
@@ -25,14 +25,14 @@
     &.social-proof-logo-medium {
       img,
       svg {
-        max-height: rem-calc(55);
+        max-height: 55px;
       }
     }
   }
 
   @media(max-width: 768px) {
     .social-proof-logo:nth-child(n + 4) {
-      margin-top: rem-calc(42);
+      margin-top: 42px;
     }
   }
 
@@ -42,7 +42,7 @@
     margin-right: 75px;
 
     .social-proof-logo:nth-child(n + 5) {
-      margin-top: rem-calc(80);
+      margin-top: 80px;
     }
   }
 
@@ -55,13 +55,13 @@
     padding: rem-calc(65 62);
 
     .social-proof-logo:nth-child(n + 5) {
-      margin-top: rem-calc(80);
+      margin-top: 80px;
     }
 
     .social-proof-logo {
       img,
       svg {
-        max-height: rem-calc(36);
+        max-height: 36px;
       }
 
       &.social-proof-logo-tall {
@@ -74,7 +74,7 @@
       &.social-proof-logo-medium {
         img,
         svg {
-          max-height: rem-calc(65);
+          max-height: 65px;
         }
       }
     }

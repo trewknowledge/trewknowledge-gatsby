@@ -217,14 +217,88 @@
       font-size: 55px;
     }
   }
-
-  
 }
 
-.nav-menu-secondary {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+.menu {
+  margin: $menu-margin;
+
+  > li {
+    display: inline-block;
+  }
+
+  > li + li {
+    margin-left: $menu-simple-margin;
+  }
+
+  &.vertical {
+    > li {
+      display: block;
+    }
+
+    li + li {
+      margin-left: 0;
+    }
+  }
+
+  > li > a {
+    @include hover-underline(
+      $color: $body-font-color,
+      $max-width: 100%,
+      $speed: 0.25s,
+      $distance: -5px,
+      $line-thickness: 3px
+    );
+    color: $body-font-color;
+
+    &.is-active {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  @include mq(tablet) {
+    &.medium-horizontal {
+      > li {
+        display: inline-block;
+      }
+
+      > li + li {
+        margin-left: $menu-simple-margin;
+      }
+    }
+  }
+}
+
+// .nav-menu-secondary {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+// }
+
+.nav-menu-secondary-section {
+  > .menu {
+    margin-bottom: rem-calc(32);
+
+    > li > a {
+      font-size: rem-calc(15);
+    }
+  }
+
+  @include mq(desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > .menu {
+      margin-bottom: 0;
+
+      > li > a {
+        font-size: rem-calc(16);
+      }
+    }
+  }
 }
 
 .nav-menu-details {
@@ -244,17 +318,44 @@
   }
 }
 
-.nav-menu-contact {
-  margin-top: 48px;
-  margin-bottom: 96px;
-  font-family: 'nuue-hass-grotesk-bold';
+// .nav-menu-contact {
+//   margin-top: 48px;
+//   margin-bottom: 96px;
+//   font-family: 'nuue-hass-grotesk-bold';
   
-  a {
-    font-weight: 700;
-    font-size: 20px;
+//   a {
+//     font-weight: 700;
+//     font-size: 20px;
 
-    @include mq( tablet ) {
-      font-size: 40px;
+//     @include mq( tablet ) {
+//       font-size: 40px;
+//     }
+//   }
+// }
+
+.nav-menu-contact {
+  @include grotesk-bold;
+  font-size: rem-calc(20);
+  margin-bottom: 6rem;
+  margin-top: 3rem;
+
+  > a {
+    @include hover-underline(
+      $color: $body-font-color,
+      $max-width: 100%,
+      $speed: 0.25s,
+      $distance: -5px,
+      $line-thickness: 5px
+    );
+    color: $body-font-color;
+
+    &::after {
+      background: $body-font-color;
     }
   }
+
+  @include mq(tablet) {
+    font-size: rem-calc(40);
+  }
 }
+

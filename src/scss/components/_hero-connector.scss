@@ -129,7 +129,7 @@
 
   p {
     line-height: 28px;
-    margin-bottom: rem-calc(36);
+    margin-bottom: 36px;
   }
 
   .button {
@@ -163,8 +163,8 @@
 }
 
 .hero-cert-img {
-  margin-bottom: rem-calc(20);
-  max-width: rem-calc(150);
+  margin-bottom: 20px;
+  max-width: 150px;
 
   rect {
     fill: transparent;
@@ -179,6 +179,6 @@
   }
 
   @include mq(tablet) {
-    max-width: rem-calc(197);
+    max-width: 197px;
   }
 }

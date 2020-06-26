@@ -1,3 +1,5 @@
+@import "./custom/transitions";
+
 // Essentials.
 @import "./core/essentials";
 @import "./core/fonts";
@@ -15,13 +17,12 @@
 @import "./custom/custom-global-variables";
 @import "./custom/flexbox";
 @import "./custom/transitions";
+@import "./custom/animations";
 
 // Layouts
 @import "./layouts/layout";
 @import "./layouts/archive-news";
-
 @import "./layouts/article-single";
-@import "./layouts/careers";
 @import "./layouts/contact-template";
 @import "./layouts/home";
 @import "./layouts/article";

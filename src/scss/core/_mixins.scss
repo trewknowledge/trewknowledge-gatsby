@@ -28,13 +28,13 @@
   position: relative;
 
   &::after {
-    // @include transition(width $speed);
+    @include transition(width $speed);
     background: $color;
     bottom: $distance;
     content: '';
     font-size: inherit;
 		// height: $line-thickness;
-		height: 4px;
+		height: 3px;
     left: 0;
     position: absolute;
     width: 0%;

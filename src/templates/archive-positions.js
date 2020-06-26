@@ -17,27 +17,27 @@ const ArchivePositions = ({pageContext, location}) => {
     headerStyle={pageContext.headerStyle}
     pageRef={pageContext.pageRef}
   >
-    <main>
-      <div className="grid-container-narrow pt0">
-        <div className="block-list">      
-          {pageContext.posts.map((post, id) => (
-            <Link to={post.uri} key={id} className="block-list-item">
-              <h2 className="block-list-title">
-                {post.title}
-                <img class="hide-for-small-only hide-for-large" src={carouselNext} alt="arrow right"></img>
-                <img class="hide-for-medium" src={carouselSmall} alt="arrow right"></img>
-              </h2>
-              <p dangerouslySetInnerHTML={{ __html: post.excerpt}} />
-            </Link>
-            
-          ))}
-        </div>
-
-        <hr/>
+    
+    <div className="grid-container-narrow pt0">
+      <div className="block-list">      
+        {pageContext.posts.map((post, id) => (
+          <Link to={post.uri} key={id} className="block-list-item">
+            <h2 className="block-list-title">
+              {post.title}
+              <img class="hide-for-small-only hide-for-large" src={carouselNext} alt="arrow right"></img>
+              <img class="hide-for-medium" src={carouselSmall} alt="arrow right"></img>
+            </h2>
+            <p dangerouslySetInnerHTML={{ __html: post.excerpt}} />
+          </Link>
+          
+        ))}
       </div>
-      
-      {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null }
-    </main>
+
+      <hr/>
+    </div>
+    
+    {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null }
+    
   </Layout>
   )
 }
