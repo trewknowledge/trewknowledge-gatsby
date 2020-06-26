@@ -1,0 +1,62 @@
+@mixin logo-main-text($color: $body-font-color, $size: normal) {
+  @include grotesk-bold;
+  @include transition(opacity 0.2s);
+  align-items: center;
+  color: $color;
+  display: flex;
+  font-weight: bold;
+  white-space: nowrap;
+
+  a {
+    @include flex-centerer;
+    @include transition(opacity $nav-transition-speed);
+  }
+
+  &:hover {
+    color: $color;
+
+    a {
+      opacity: $link-hover-opacity / 1.25;
+    }
+  }
+
+  span {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+
+  img,
+  svg {
+    height: 45px;
+    width: 45px;
+  }
+
+  @include mq(tablet) {
+    span {
+      @include transition(opacity $nav-transition-speed/2);
+      margin-left: 12px;
+      font-size: 55px;
+    }
+
+    img,
+    svg {
+      height: 75px;
+      width: 75px;
+    }
+  }
+
+  @include mq(tablet) {
+    @if $size == small {
+      img,
+      svg {
+        height: 45px;
+        width: 45px;
+      }
+
+      span {
+        margin-left: 10px;
+        font-size: 28px;
+      }
+    }
+  }
+}

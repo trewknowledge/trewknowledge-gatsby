@@ -20,8 +20,8 @@
   }
 
   @include mq(tablet) {
-    padding-left: rem-calc(118);
-    padding-right: rem-calc(118);
+    padding-left: 118px;
+    padding-right: 118px;
   }
 
   @include mq(desktop) {

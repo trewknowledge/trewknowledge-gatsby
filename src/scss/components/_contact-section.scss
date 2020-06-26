@@ -83,7 +83,7 @@
 
   address {
     @include xy-cell(12);
-    font-size: rem-calc(20);
+    font-size: 20px;
 
     @include mq(desktop) {
       @include xy-cell(5 of 10);
@@ -91,8 +91,8 @@
   }
 
   @include mq(tablet) {
-    padding-left: rem-calc(118);
-    padding-right: rem-calc(118);
+    padding-left: 118px;
+    padding-right: 118px;
   }
 
   @include mq(desktop) {
@@ -106,11 +106,11 @@
   @include xy-cell(10 of 10);
   color: $black;
   line-height: 60px;
-  margin: 0 0 rem-calc(36);
+  margin: 0 0 36px;
 
   @include mq(tablet) {
     @include xy-cell(10 of 10);
-    margin: 0 0 rem-calc(28);
+    margin: 0 0 28px;
   }
 
   @include mq(desktop) {

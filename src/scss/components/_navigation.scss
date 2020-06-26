@@ -279,10 +279,10 @@
 
 .nav-menu-secondary-section {
   > .menu {
-    margin-bottom: rem-calc(32);
+    margin-bottom: 32px;
 
     > li > a {
-      font-size: rem-calc(15);
+      font-size: 15px;
     }
   }
 
@@ -295,7 +295,7 @@
       margin-bottom: 0;
 
       > li > a {
-        font-size: rem-calc(16);
+        font-size: 16px;
       }
     }
   }
@@ -318,24 +318,9 @@
   }
 }
 
-// .nav-menu-contact {
-//   margin-top: 48px;
-//   margin-bottom: 96px;
-//   font-family: 'nuue-hass-grotesk-bold';
-  
-//   a {
-//     font-weight: 700;
-//     font-size: 20px;
-
-//     @include mq( tablet ) {
-//       font-size: 40px;
-//     }
-//   }
-// }
-
 .nav-menu-contact {
   @include grotesk-bold;
-  font-size: rem-calc(20);
+  font-size: 20px;
   margin-bottom: 6rem;
   margin-top: 3rem;
 
@@ -355,7 +340,7 @@
   }
 
   @include mq(tablet) {
-    font-size: rem-calc(40);
+    font-size: 40px;
   }
 }
 

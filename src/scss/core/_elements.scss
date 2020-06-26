@@ -148,7 +148,7 @@ input[type="submit"],
 }
 
 .button-layout-wrapper {
-  padding-top: rem-calc(64);
+  padding-top: 64px;
   text-align: center;
 
   .button {
@@ -157,7 +157,7 @@ input[type="submit"],
   }
 
   @include mq(tablet) {
-    padding-top: rem-calc(68);
+    padding-top: 68px;
 
     .button {
       width: auto;
@@ -165,13 +165,13 @@ input[type="submit"],
   }
 
   @include mq(desktop) {
-    padding-top: rem-calc(64);
+    padding-top: 64px;
   }
 }
 
 #infinite-handle {
   margin: 0 auto;
-  padding-top: rem-calc(64);
+  padding-top: 64px;
   button {
     @extend .button;
   }

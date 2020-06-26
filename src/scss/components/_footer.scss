@@ -1,128 +1,123 @@
 .footer {
   background-color: $black;
-  padding: 52px 26px 38px;
+  padding: rem-calc(52 26 38);
+  margin-top: $section-spacing;
 
-  @include mq( desktop ) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 45px 60px 28px;
+  @include mq(tablet) {
+  }
+
+  @include mq(desktop) {
+    @include flex-middle-justify;
+    padding: rem-calc(45 60 28);
   }
 }
 
 .footer-branding {
+  align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 28px;
+  margin-bottom: rem-calc(28);
 
-  @include mq( tablet ) {
-    align-items: center;
+  .footer-branding-social + .footer-branding-social {
+    margin-left: rem-calc(14);
   }
 
-  @include mq( desktop ) {
-    margin-bottom: 0;
-  }
-
-  > div {
-    @include mq( tablet ) {
-      display: flex;
-      align-items: center;
+  .footer-branding-social {
+    svg,
+    img {
+      vertical-align: -6px;
     }
+  }
+
+  @include mq(tablet) {
+    align-items: center;
+
+    > div {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  @include mq(desktop) {
+    display: block;
+    margin-bottom: 0;
   }
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  color: $white;
-  transition: opacity .2s ease-out;
-  white-space: nowrap;
+  @include logo-main-text($color: $white, $size: small);
   margin-bottom: 28px;
-  font-family: 'nuue-hass-grotesk-bold';
 
-  @include mq( tablet ) {
+  @include mq(tablet) {
     margin-bottom: 0;
   }
 
-  img {
-    height: 45px;
-    width: 45px;
-  }
-
-  span {
-    transition: opacity .25s ease-out;
-    font-size: 22px;
-    margin-left: 10px;
-  }
-}
-
-.footer-branding-social {
-  @include mq( tablet ) {
-    margin-left: 25px;
-  }
-
-  svg {
-    vertical-align: -6px;
-    height: 24px;
-    width: 24px;
-    path {
-      fill: $white;
-    } 
-  }
-}
-
-.footer-branding-social + .footer-branding-social {
-  margin-left: 14px;
-}
-
-.footer-links-menu {
-  @include mq( tablet ) {
-    display: flex;
-  }
-
-  > li {
-    line-height: 25px;
-  }
-
-  > li a {
-    font-size: 18px;
-    color: $white;
-    font-weight: 600;
-  }
-
-  > li + li{
-    @include mq( tablet ) {
-      margin-left: 25px
+  @include mq(tablet) {
+    & + .footer-branding-social {
+      margin-left: 25px;
     }
+  }
+
+  @include mq(desktop) {
+    & + .footer-branding-social {
+      margin-left: 45px;
+    }
+  }
+}
+
+.footer-links {
+  .footer-links-menu > li > a {
+    @include grotesk-bold;
+    color: $white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+
+    &::after {
+      background: $white;
+    }
+  }
+
+  @media(min-width: 768px) and (max-width: 1024px) {
+    @include flex-middle-justify;
+  }
+
+  @include mq(desktop) {
+    text-align: right;
   }
 }
 
 .footer-links-menu-secondary {
   margin-top: 36px;
 
-  @include mq( tablet ) {
-    margin-top: 0;
-    text-align: right;
+  > span {
+    color: $white;
   }
 
-  @include mq( desktop ) {
+  > .footer-links-menu-secondary-link {
+    @include transition(opacity);
+    border-left: 1px solid $white;
+    color: $white;
+    margin-left: 12px;
+    padding-left: 12px;
+
+    &:hover {
+      opacity: $link-hover-opacity;
+    }
+  }
+
+  @include mq(tablet) {
+    text-align: right;
+    margin-top: 0;
+  }
+
+  @include mq(desktop) {
     margin-left: 18px;
     margin-top: 16px;
     padding-left: 18px;
   }
-
-  > span {
-    color: $white;
-  }
 }
 
-.footer-links-menu-secondary-link {
-  transition: opacity .2s ease-out;
-  border-left: 1px solid $white;
-  color: $white;
-  margin-left: 12px;
-  padding-left: 12px;
-  font-family: 'nuue-hass-grotesk-bold';
+.contact-section + .footer {
+  margin-top: 0;
 }

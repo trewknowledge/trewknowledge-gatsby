@@ -4,7 +4,7 @@
   text-align: center;
 
   address {
-    margin-bottom: rem-calc(25);
+    margin-bottom: 25px;
   }
 
   .header-contact-title {
@@ -21,17 +21,17 @@
     }
 
     &:last-of-type {
-      margin-top: rem-calc(45);
+      margin-top: 45px;
     }
   }
 
   @media(max-width: 768px) {
     .header-contact-title {
-      font-size: rem-calc(24);
-      line-height: rem-calc(30);
+      font-size: 24px;
+      line-height: 30px;
 
       &:last-of-type {
-        margin-top: rem-calc(20);
+        margin-top: 20px;
       }
     }
   }
@@ -41,7 +41,7 @@
     padding-right: map-get($grid-container-padding, medium);
 
     address {
-      margin-bottom: rem-calc(22);
+      margin-bottom: 22px;
     }
   }
 

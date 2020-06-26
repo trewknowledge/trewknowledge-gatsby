@@ -53,7 +53,7 @@ const Footer = () => {
       </a>
     </div>
     <div className="footer-links">
-      <ul className="footer-links-menu">
+      <ul className="footer-links-menu vertical medium-horizontal menu">
         {menuItems.map(item => (
           <li key={item.id}>
             <Link to={item.url}>

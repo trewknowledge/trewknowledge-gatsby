@@ -1,7 +1,7 @@
 .article {
   .article-title {
     animation: fade-in 1s ease-out both;
-    font-size: rem-calc(40);
+    font-size: 40px;
     line-height: 52px;
     margin-bottom: 0.25rem;
   }
@@ -22,7 +22,7 @@
 
   p {
     line-height: 28px;
-    margin-bottom: rem-calc(30);
+    margin-bottom: 30px;
   }
 
   > p:last-child {
@@ -31,12 +31,12 @@
 
   .article-details {
     list-style-type: none;
-    margin-bottom: rem-calc(40);
+    margin-bottom: 40px;
     margin-left: 0;
 
     li {
       line-height: 20px;
-      margin-bottom: rem-calc(5);
+      margin-bottom: 5px;
 
       strong {
         text-transform: uppercase;
@@ -46,11 +46,11 @@
 
   ul,
   ol {
-    margin-bottom: rem-calc(30);
+    margin-bottom: 30px;
 
     li {
       line-height: 20px;
-      margin-bottom: rem-calc(16);
+      margin-bottom: 16px;
     }
 
     &:last-child {
@@ -75,25 +75,25 @@
   }
 
   .article-section-description {
-    font-size: rem-calc(20);
+    font-size: 20px;
     margin-bottom: 0;
 
     > a {
       @include hover-underline($color: $body-font-color);
-      // color: $body-font-color;
+      color: $body-font-color;
       font-weight: 400;
     }
 
     & + .article-section-description {
-      margin-top: rem-calc(5);
+      margin-top: 5px;
     }
 
     & + .article-section-subtitle {
-      margin-top: rem-calc(32);
+      margin-top: 32px;
     }
 
     &:last-child {
-      margin-bottom: rem-calc(32);
+      margin-bottom: 32px;
     }
   }
 
@@ -147,12 +147,12 @@ main > .hero-banner + .article.grid-container-narrow {
 
 .article-section-title {
   @include noticia;
-  font-size: rem-calc(30);
+  font-size: 30px;
   font-weight: 400;
   line-height: 35px;
-  margin-bottom: rem-calc(42);
+  margin-bottom: 42px;
 
   @include mq( tablet ) {
-    margin-bottom: rem-calc(38);
+    margin-bottom: 38px;
   }
 }
