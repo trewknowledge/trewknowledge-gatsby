@@ -36,5 +36,9 @@ hr {
   border-right: 0;
   border-left: 0;
   background-color: transparent;
-  margin: 48px auto 100px;
+	margin: 32px auto 0;
+
+	@include mq( tablet ) {
+		margin: 65px auto 0;
+	}
 }

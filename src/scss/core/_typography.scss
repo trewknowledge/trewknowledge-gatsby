@@ -42,7 +42,7 @@ $font__size-h5: 20px;
 $font__size-h6: 14px;
 
 $header-margin-bottom: 16px;
-$lead-font-size: rem-calc(20);
+$lead-font-size: 20px;
 
 blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
   margin: 0; 
@@ -101,6 +101,8 @@ address {
 }
 
 .lead {
+  font-size: 20px;
+  line-height: 32px;
   font-style: italic;
   position: relative;
 
@@ -123,11 +125,11 @@ address {
   }
 
   & + .lead {
-    margin-top: rem-calc(30);
+    margin-top: 30px;
   }
 
   &.lead-narrow {
-    max-width: rem-calc(721);
+    max-width: 721px;
   }
 
   @include mq(tablet) {
@@ -145,17 +147,17 @@ address {
 }
 
 %section-title {
-  font-size: rem-calc(45);
+  font-size: 45px;
   line-height: 75px;
 
   @include mq(tablet) {
-    font-size: rem-calc(55);
+    font-size: 55px;
   }
 }
 
 .section-title {
   @extend %section-title;
-  margin-bottom: rem-calc(35);
+  margin-bottom: 35px;
 
   .grid-container-narrow & {
     &:first-of-type {
@@ -164,7 +166,7 @@ address {
   }
 
   @include mq(tablet) {
-    margin-bottom: rem-calc(55);
+    margin-bottom: 55px;
   }
 }
 

@@ -64,7 +64,7 @@
     }
 
     .hero-title {
-      font-size: rem-calc(45);
+      font-size: 45px;
       line-height: 55px;
     }
   }
@@ -83,11 +83,9 @@
       line-height: 75px;
     }
 
-    &.hero-large-title {
-      .hero-title {
-        font-size: rem-calc(75);
-        line-height: 85px;
-      }
+    .hero-title.large-title {
+      font-size: 75px;
+      line-height: 85px;
     }
 
     &.hero-bg-contact {
@@ -108,11 +106,9 @@
       top: 108%;
     }
 
-    &.hero-large-title {
-      .hero-title {
-        font-size: rem-calc(100);
-        line-height: 115px;
-      }
+    .hero-title.large-title {
+      font-size: 100px;
+      line-height: 115px;
     }
 
     &.hero-bg-contact {
