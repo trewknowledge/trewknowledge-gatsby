@@ -11,6 +11,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import ContactSection from "./ContactSection"
 
+// import AOS from 'aos'
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
 import { useEffect } from "react"
@@ -45,7 +46,28 @@ const Layout = ( props ) => {
     }
   }, [props.location])
 
-  console.log('layout props', props)
+
+  // AOS library
+  let AOS;
+  useEffect(() => {
+    /**
+     * Server-side rendering does not provide the 'document' object
+     * therefore this import is required either in useEffect or componentDidMount as they
+     * are exclusively executed on a client
+     */
+    const AOS = require("aos");
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (AOS) {
+      AOS.refresh();
+    }
+  });
+
+  // console.log('layout props', props)
 
   return (
     <div className="site">
