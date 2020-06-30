@@ -11,8 +11,8 @@ const Navigation = ({ data, handleMenu }) => {
   return (
     <ul className="nav-menu">
       {menuItems.map(item => (
-        <li className="nav-menu__item">
-          <Link to={item.url} key={item.id} onClick={handleMenu}>
+        <li className="nav-menu__item" key={item.id}>
+          <Link to={item.url} onClick={handleMenu}>
             {item.label}
           </Link>
         </li>

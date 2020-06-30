@@ -13,13 +13,13 @@ const ArchiveNews = ({pageContext, location}) => {
         {pageContext.posts.map((post, index) => {
           if (index === 0 && pageContext.currentPage === 1) {
             return (
-              <div className="cell fade-in-up" key={index}>
+              <div className="cell fade-in-up" key={post.id}>
                 <NewsCard postContext={post} />
               </div>
             )
           } else {
             return (
-              <div className="cell medium-6" key={index}>
+              <div className="cell medium-6" key={post.id}>
                 <NewsCard postContext={post} />
               </div>
             )

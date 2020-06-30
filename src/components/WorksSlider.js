@@ -29,7 +29,7 @@ export default class WorksSlider extends Component {
         <h2>Other Work</h2>
         <Slider {...settings}>
           {this.props.pageContext.allWorks.nodes.map((node, id) => (
-            <Link to={node.uri} key={id}>
+            <Link to={node.uri} key={node.id}>
               <figure className="image-hover-wrapper">
                 {node.featuredImage ? <img src={node.featuredImage.sourceUrl} alt={node.title} /> : null}
                 <figcaption>

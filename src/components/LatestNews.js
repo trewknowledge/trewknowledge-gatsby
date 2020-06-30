@@ -7,7 +7,7 @@ const LatestNews = ({ latestNews }) => (
     <h1 className="section-title">Latest News</h1>
       <div className="grid-x grid-margin-x">
       {latestNews.map((post, id) => (
-        <div className="cell medium-6" key={id}>
+        <div className="cell medium-6" key={post.id}>
           <NewsCard postContext={post} />
         </div>
       ))}

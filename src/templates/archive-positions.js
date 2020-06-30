@@ -20,12 +20,12 @@ const ArchivePositions = ({pageContext, location}) => {
     
     <div className="grid-container-narrow pt0">
       <div className="block-list">      
-        {pageContext.posts.map((post, id) => (
-          <Link to={post.uri} key={id} className="block-list-item">
+        {pageContext.posts.map((post) => (
+          <Link to={post.uri} key={post.id} className="block-list-item">
             <h2 className="block-list-title">
               {post.title}
-              <img class="hide-for-small-only hide-for-large" src={carouselNext} alt="arrow right"></img>
-              <img class="hide-for-medium" src={carouselSmall} alt="arrow right"></img>
+              <img className="hide-for-small-only hide-for-large" src={carouselNext} alt="arrow right"></img>
+              <img className="hide-for-medium" src={carouselSmall} alt="arrow right"></img>
             </h2>
             <p dangerouslySetInnerHTML={{ __html: post.excerpt}} />
           </Link>

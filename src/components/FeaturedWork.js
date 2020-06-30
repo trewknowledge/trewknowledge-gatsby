@@ -7,9 +7,9 @@ const FeaturedWork = ({allWorks}) => {
     <section className="grid-container-narrow featured-work">
       <h1>Featured Work</h1>
       <div className="grid-x grid-margin-x grid-gallery">
-        {allWorks.map((item, id) => (
+        {allWorks.map((item) => (
           
-          <div className="cell large-6 gallery-item" key={id}>
+          <div className="cell large-6 gallery-item" key={item.id}>
             <Link to={item.uri} >
               <figure className="image-hover-wrapper">
                 {item.featuredImage ? <img src={item.featuredImage.sourceUrl} alt={item.title} /> : null}
