@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import WorksSlider from '../components/WorksSlider'
 
 export default ({ pageContext, location }) => {
+  console.log('work', pageContext)
 
   const formatDate = () => {
     return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -18,13 +19,11 @@ export default ({ pageContext, location }) => {
           
           <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
         </article>
-        <hr/>
+        {pageContext.pageTitle !== "Privacy Policy" ? <hr/> : null} 
       </div>
       
-      
-      <WorksSlider pageContext={pageContext} />
+      {pageContext.allWorks ? <WorksSlider pageContext={pageContext} /> : null}
         
-      
     </Layout> 
   )
 }
