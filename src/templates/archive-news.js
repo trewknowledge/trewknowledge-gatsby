@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout'
-// import { Link } from 'gatsby'
-// import Pagination from '../components/Pagination';
 import NewsCard from '../components/NewsCard';
 
 const ArchiveNews = ({pageContext, location}) => {
-  console.log(pageContext)
+
+  const [postsToShow, setPostsToShow] = useState(9);
+  const [allPosts, setAllPosts] = useState(pageContext.posts);
+
+  const posts = allPosts.slice(0, postsToShow);
+
+  const handleClick = () => {
+    setPostsToShow( postsToShow + 9 );
+  }
+
   return (
   <Layout pageTitle={pageContext.archiveTitle} location={location.pathname}>
     <div className="grid-container-narrow section-overlap-hero">
       <div className="grid-x grid-margin-x">
-        {pageContext.posts.map((post, index) => {
+        {posts.map((post, index) => {
           if (index === 0 ) {
             return (
-              <div className="cell fade-in-up" key={post.id}>
+              <div className="cell aos-init aos-animate" key={post.id} data-aos="fade-up">
                 <NewsCard postContext={post} />
               </div>
             )
           } else {
             return (
-              <div className="cell medium-6" key={post.id}>
+              <div className="cell medium-6 aos-init aos-animate" key={post.id} data-aos="fade-up">
                 <NewsCard postContext={post} />
               </div>
             )
@@ -27,9 +34,8 @@ const ArchiveNews = ({pageContext, location}) => {
         })}
       </div>
 
-      {/* <Pagination 
-        pageContext={pageContext}
-      /> */}
+      {posts.length < allPosts.length ? <button className="button" onClick={() => handleClick()}>Load More</button> : null}
+      
     </div>
   </Layout>
   )

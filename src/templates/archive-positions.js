@@ -8,8 +8,6 @@ import LatestNews from '../components/LatestNews'
 
 const ArchivePositions = ({pageContext, location}) => {
 
-  console.log(pageContext)
-
   return (
   <Layout 
     pageTitle={pageContext.archiveTitle} 

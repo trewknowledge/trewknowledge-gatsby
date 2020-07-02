@@ -4,7 +4,6 @@ import { Link } from 'gatsby';
 
 const WorksCard = ({ postContext }) => {
 
-  console.log('WorksCard', postContext)
   return (
     <Link to={postContext.uri}>
       <div className="works-card">

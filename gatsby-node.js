@@ -249,23 +249,23 @@ exports.createPages = async ({ graphql, actions }) => {
 const archivesArray = [
   {
     postsArray: posts.nodes,
-    // postsPerPage: readingSettings.postsPerPage, 
+    
     pageTemplate: archiveNews,
     path: '/news',
     archiveTitle: 'News',
-    // allPosts: posts
+    
   },
   {
     postsArray: tk_works.nodes,
-    // postsPerPage: 9, 
+    
     pageTemplate: archiveWorks,
     path: '/work',
     archiveTitle: 'Work',
-    // allPosts: tk_works
+    
   },
   {
     postsArray: tk_positions.nodes,
-    // postsPerPage: 9, 
+    
     pageTemplate: archivePositions,
     path: '/positions',
     archiveTitle: 'Careers',
