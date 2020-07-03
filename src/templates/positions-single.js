@@ -23,10 +23,10 @@ export default ({ pageContext, location }) => {
           <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
       </article>
 
-      <section class="grid-container-narrow pt0">
-        <h1 class="headline">How to apply</h1>
-        <p class="sub-headline">Email your CV, along with a cover letter to <a href="mailto:careers@trewknowledge.com">careers@trewknowledge.com</a></p>
-        <a class="button headline-cta" href="mailto:careers@trewknowledge.com">apply</a>
+      <section className="grid-container-narrow pt0">
+        <h1 className="headline">How to apply</h1>
+        <p className="sub-headline">Email your CV, along with a cover letter to <a href="mailto:careers@trewknowledge.com">careers@trewknowledge.com</a></p>
+        <a className="button headline-cta" href="mailto:careers@trewknowledge.com">apply</a>
       </section>
 
     </Layout> 
