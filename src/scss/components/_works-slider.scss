@@ -22,16 +22,67 @@
     padding: 0 5px;
   }
 
-  .slick-prev {
-    top: -16px;
-    right: 31px;
-    left: auto;
+  // .slick-prev {
+  //   top: -16px;
+  //   right: 31px;
+  //   left: auto;
+  // }
+
+  // .slick-next {
+  //   top: -16px;
+  //   right: 5px;
+  // }
+}
+
+// Carousel
+$carousel-grid-gutter: map-get($grid-margin-gutters, medium) / 2;
+$carousel-arrow-width-small: 42px;
+$carousel-arrow-width: 72px;
+
+%carousel-arrow-base {
+  position: absolute;
+  top: -48px;
+  padding: 5px 0;
+  width: $carousel-arrow-width-small;
+  height: 3px;
+
+  path {
+    @include transition(stroke);
+    stroke: $light-gray;
   }
 
-  .slick-next {
-    top: -16px;
-    right: 5px;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+
+    path {
+      stroke: $teal;
+    }
   }
+
+  @include mq( tablet ) {
+    top: -46px;
+    width: $carousel-arrow-width;
+    height: 3px;
+  }
+}
+
+.carousel-previous {
+  @extend %carousel-arrow-base;
+  right: calc(#{$carousel-arrow-width-small} + #{$carousel-grid-gutter});
+
+  @include mq( tablet ) {
+    right: calc(#{$carousel-arrow-width} + #{$carousel-grid-gutter});
+  }
+
+  @include mq( desktop ) {
+    right: calc(#{$carousel-arrow-width} + #{$carousel-grid-gutter}* 2);
+  }
+}
+
+.carousel-next {
+  @extend %carousel-arrow-base;
+  right: 0;
 }
 
 .news-card {

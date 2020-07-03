@@ -1,6 +1,34 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import { Link } from 'gatsby'
+import carouselNext from "../assets/img/icons/carousel-next.svg"
+import carouselPrevious from "../assets/img/icons/carousel-previous.svg"
+
+const NextArrow = (props) => {
+  const { onClick, customClass } = props;
+  
+  return (
+    <div
+      className={customClass}
+      onClick={onClick}
+    >
+      <img src={carouselNext} alt=""/>
+    </div>
+  );
+}
+
+const PrevArrow = (props) => {
+  const { onClick, customClass} = props;
+
+  return (
+    <div
+      className={customClass}
+      onClick={onClick}
+    >
+      <img src={carouselPrevious} alt=""/>
+    </div>
+  );
+}
 
 export default class WorksSlider extends Component {
   constructor(props) {
@@ -14,6 +42,8 @@ export default class WorksSlider extends Component {
       speed: 500,
       slidesToShow: 2,
       slidesToScroll: 2,
+      nextArrow: <NextArrow customClass="slick-arrow carousel-next" />,
+      prevArrow: <PrevArrow customClass="slick-arrow carousel-previous" />,
       responsive: [
         {
           breakpoint: 768,
