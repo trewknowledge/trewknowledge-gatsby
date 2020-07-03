@@ -10,8 +10,6 @@ const slash = require('slash');
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
-  // createRedirect({ fromPath: '/', toPath: '/home', redirectInBrowser: true, isPermanent: true })
-
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
   const homeTemplate = path.resolve('./src/templates/home.js');
@@ -177,75 +175,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  
-// // ------------- Posts Archive Constructor for Pagination------------- 
-// const createArchive = (archiveConfigObject) => {
-//   const archivePosts = archiveConfigObject.postsArray;
-//   const postsPerPage = archiveConfigObject.postsPerPage;
-//   const numberOfPages = Math.ceil(archivePosts.length / postsPerPage);
-//   const allPosts = archiveConfigObject.allPosts;
-//   const headerStyle = archiveConfigObject.headerStyle;
-//   const pageRef = archiveConfigObject.pageRef;
-
-//   Array.from({ length: numberOfPages }).forEach((page, index) => {
-//     createPage({
-//       component: slash(archiveConfigObject.pageTemplate),
-//       path: index === 0 ? `${archiveConfigObject.path}` : `${archiveConfigObject.path}/${index + 1}`,
-//       context: {
-//         posts: archivePosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
-//         numberOfPages,
-//         currentPage: index + 1,
-//         archivePath: archiveConfigObject.path,
-//         archiveTitle: archiveConfigObject.archiveTitle,
-//         allPosts: allPosts,
-//         headerStyle: headerStyle,
-//         pageRef: pageRef,
-//       }
-//     })
-//   })
-// }
-
-// // ------------- Archive Config Objects -------------
-
-// const newsArchiveConfig = {
-//   postsArray: posts.nodes,
-//   postsPerPage: readingSettings.postsPerPage, 
-//   pageTemplate: archiveNews,
-//   path: '/news',
-//   archiveTitle: 'News',
-//   allPosts: posts
-// }
-
-// const worksArchiveConfig = {
-//   postsArray: tk_works.nodes,
-//   postsPerPage: 9, 
-//   pageTemplate: archiveWorks,
-//   path: '/work',
-//   archiveTitle: 'Work',
-//   allPosts: tk_works
-// }
-
-// const positionsArchiveConfig = {
-//   postsArray: tk_positions.nodes,
-//   postsPerPage: 9, 
-//   pageTemplate: archivePositions,
-//   path: '/positions',
-//   archiveTitle: 'Careers',
-//   allPosts: posts.nodes.slice(0, 2),
-//   headerStyle: "white",
-//   pageRef: "positionsArchive" 
-// }
-
-// // ------------- Create archive pages -------------
-// createArchive(newsArchiveConfig);
-// createArchive(worksArchiveConfig);
-// createArchive(positionsArchiveConfig);
-
-// ------------- ------------- -------------
-// ------------- ------------- -------------
 // ------------- Create non-paginated archive pages -------------
-
-
 const archivesArray = [
   {
     postsArray: posts.nodes,
@@ -293,10 +223,6 @@ const createArchivePage = (archiveObject) => {
 archivesArray.forEach(archivePage => (
   createArchivePage(archivePage)
 ))
-
-// ------------- ------------- -------------
-// ------------- ------------- -------------
-// ------------- ------------- -------------
 
 // ------------- Create posts pages -------------
   posts.nodes.forEach(node => {

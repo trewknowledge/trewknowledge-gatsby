@@ -1,9 +1,13 @@
 .news-card {
-  margin-bottom: 72px;
+  text-align: left;
 
   @include mq( tablet ) {
     margin-bottom: 60px;
   }
+
+  figure {
+    margin-bottom: 22px;
+  } 
 
   h3 {
     transition: all .25s ease-out;
@@ -24,8 +28,20 @@
 
 .card-metadata {
   color: $grey;
+  font-weight: 700;
+}
+
+.gallery-item {
+  margin-bottom: 16px;
 }
 
 .works-card {
-  margin-bottom: 16px;
+  height: 100%;
+}
+
+.gallery {
+  .gallery-item:not(:first-child) {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
 }

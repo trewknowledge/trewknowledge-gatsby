@@ -16,17 +16,17 @@ const ArchiveNews = ({pageContext, location}) => {
   return (
   <Layout pageTitle={pageContext.archiveTitle} location={location.pathname}>
     <div className="grid-container-narrow section-overlap-hero">
-      <div className="grid-x grid-margin-x">
+      <div className="grid-x grid-margin-x gallery">
         {posts.map((post, index) => {
           if (index === 0 ) {
             return (
-              <div className="cell aos-init aos-animate" key={post.id} data-aos="fade-up">
+              <div className="cell gallery-item aos-init aos-animate" key={post.id} data-aos="fade-up">
                 <NewsCard postContext={post} />
               </div>
             )
           } else {
             return (
-              <div className="cell medium-6 aos-init aos-animate" key={post.id} data-aos="fade-up">
+              <div className="cell gallery-item medium-6 aos-init aos-animate" key={post.id} data-aos="fade-up">
                 <NewsCard postContext={post} />
               </div>
             )

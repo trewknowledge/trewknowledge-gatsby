@@ -11,13 +11,13 @@ return (
           {pageContext.posts.map((post, index) => {
             if (index === 0 ) {
               return (
-                <div className="cell fade-in-up" key={post.id}>
+                <div className="cell gallery-item fade-in-up" key={post.id}>
                   <WorksCard postContext={post} />
                 </div>
               )
             } else {
               return (
-                <div className="cell medium-6" key={post.id}>
+                <div className="cell gallery-item medium-6" key={post.id}>
                   <WorksCard postContext={post} />
                 </div>
               )
