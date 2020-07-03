@@ -15,7 +15,6 @@ export default ({pageContext, location}) => (
     location={location.pathname} 
     pageRef={pageContext.node.template.templateName}
   >
-  {console.log(pageContext)}
     
       <section class="grid-container-narrow pb0">
 

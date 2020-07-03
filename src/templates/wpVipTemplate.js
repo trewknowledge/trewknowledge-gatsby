@@ -10,7 +10,6 @@ export default({pageContext, location}) => (
     pageRef={pageContext.node.template.templateName}
     headerStyle={pageContext.headerStyle}
   >
-  {console.log( 'vip page', pageContext )}
     <section className="section-background-black section-overlap">
       <div className="grid-container-narrow">
 

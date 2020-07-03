@@ -33,10 +33,10 @@ const MobileMenu = ({menuOpen, handleMenu}) => {
           </div>
           <div className="cell xlarge-auto xlarge-order-1 nav-menu-secondary-section">
             <ul className="menu">
-              <li><a href="https://twitter.com/trewknowledge" target="_blank">Twitter</a></li>
-              <li><a href="https://www.facebook.com/trewknowledge" target="_blank">Facebook</a></li>
-              <li><a href="https://www.linkedin.com/company/1022792" target="_blank">Linkedin</a></li>
-              <li><a href="https://www.instagram.com/trewknowledge/" target="_blank">Instagram</a></li>
+              <li><a href="https://twitter.com/trewknowledge" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="https://www.facebook.com/trewknowledge" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+              <li><a href="https://www.linkedin.com/company/1022792" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+              <li><a href="https://www.instagram.com/trewknowledge/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>
             <div className="nav-menu-details">
               <address>372 Richmond Street West, Suite 210

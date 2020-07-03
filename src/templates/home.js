@@ -12,9 +12,7 @@ const IndexPage = ({ pageContext, location }) => (
     pageTitle={"Trew Knowledge"} 
     location={location.pathname} 
     pageRef={"Home"}
-  >
-  {console.log('homepage', pageContext)}
-    
+  > 
     
       <section className="grid-container-narrow">
         <p className="lead">

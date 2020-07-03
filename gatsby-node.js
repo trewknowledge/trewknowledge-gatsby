@@ -158,6 +158,16 @@ exports.createPages = async ({ graphql, actions }) => {
           headerStyle: 'black',
         }
       })
+    } else if (node.title === 'Privacy Policy') {
+      createPage({
+        path: node.uri,
+        component: slash(postTemplate),
+        context: {
+          node: node,
+          pageTitle: "Privacy Policy",
+          headerStyle: "empty"
+        }
+      })
     } else {
       createPage({
         path: node.uri,
@@ -168,68 +178,125 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   
-// ------------- Posts Archive Constructor ------------- 
-const createArchive = (archiveConfigObject) => {
-  const archivePosts = archiveConfigObject.postsArray;
-  const postsPerPage = archiveConfigObject.postsPerPage;
-  const numberOfPages = Math.ceil(archivePosts.length / postsPerPage);
-  const allPosts = archiveConfigObject.allPosts;
-  const headerStyle = archiveConfigObject.headerStyle;
-  const pageRef = archiveConfigObject.pageRef;
+// // ------------- Posts Archive Constructor for Pagination------------- 
+// const createArchive = (archiveConfigObject) => {
+//   const archivePosts = archiveConfigObject.postsArray;
+//   const postsPerPage = archiveConfigObject.postsPerPage;
+//   const numberOfPages = Math.ceil(archivePosts.length / postsPerPage);
+//   const allPosts = archiveConfigObject.allPosts;
+//   const headerStyle = archiveConfigObject.headerStyle;
+//   const pageRef = archiveConfigObject.pageRef;
 
-  Array.from({ length: numberOfPages }).forEach((page, index) => {
-    createPage({
-      component: slash(archiveConfigObject.pageTemplate),
-      path: index === 0 ? `${archiveConfigObject.path}` : `${archiveConfigObject.path}/${index + 1}`,
-      context: {
-        posts: archivePosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
-        numberOfPages,
-        currentPage: index + 1,
-        archivePath: archiveConfigObject.path,
-        archiveTitle: archiveConfigObject.archiveTitle,
-        allPosts: allPosts,
-        headerStyle: headerStyle,
-        pageRef: pageRef,
-      }
-    })
+//   Array.from({ length: numberOfPages }).forEach((page, index) => {
+//     createPage({
+//       component: slash(archiveConfigObject.pageTemplate),
+//       path: index === 0 ? `${archiveConfigObject.path}` : `${archiveConfigObject.path}/${index + 1}`,
+//       context: {
+//         posts: archivePosts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
+//         numberOfPages,
+//         currentPage: index + 1,
+//         archivePath: archiveConfigObject.path,
+//         archiveTitle: archiveConfigObject.archiveTitle,
+//         allPosts: allPosts,
+//         headerStyle: headerStyle,
+//         pageRef: pageRef,
+//       }
+//     })
+//   })
+// }
+
+// // ------------- Archive Config Objects -------------
+
+// const newsArchiveConfig = {
+//   postsArray: posts.nodes,
+//   postsPerPage: readingSettings.postsPerPage, 
+//   pageTemplate: archiveNews,
+//   path: '/news',
+//   archiveTitle: 'News',
+//   allPosts: posts
+// }
+
+// const worksArchiveConfig = {
+//   postsArray: tk_works.nodes,
+//   postsPerPage: 9, 
+//   pageTemplate: archiveWorks,
+//   path: '/work',
+//   archiveTitle: 'Work',
+//   allPosts: tk_works
+// }
+
+// const positionsArchiveConfig = {
+//   postsArray: tk_positions.nodes,
+//   postsPerPage: 9, 
+//   pageTemplate: archivePositions,
+//   path: '/positions',
+//   archiveTitle: 'Careers',
+//   allPosts: posts.nodes.slice(0, 2),
+//   headerStyle: "white",
+//   pageRef: "positionsArchive" 
+// }
+
+// // ------------- Create archive pages -------------
+// createArchive(newsArchiveConfig);
+// createArchive(worksArchiveConfig);
+// createArchive(positionsArchiveConfig);
+
+// ------------- ------------- -------------
+// ------------- ------------- -------------
+// ------------- Create non-paginated archive pages -------------
+
+
+const archivesArray = [
+  {
+    postsArray: posts.nodes,
+    
+    pageTemplate: archiveNews,
+    path: '/news',
+    archiveTitle: 'News',
+    
+  },
+  {
+    postsArray: tk_works.nodes,
+    
+    pageTemplate: archiveWorks,
+    path: '/work',
+    archiveTitle: 'Work',
+    
+  },
+  {
+    postsArray: tk_positions.nodes,
+    
+    pageTemplate: archivePositions,
+    path: '/positions',
+    archiveTitle: 'Careers',
+    newsPosts: posts.nodes.slice(0, 2),
+    headerStyle: "white",
+    pageRef: "positionsArchive" 
+  }
+]
+
+const createArchivePage = (archiveObject) => {
+  createPage({
+    component: slash(archiveObject.pageTemplate),
+    path: archiveObject.path,
+    context: {
+      posts: archiveObject.postsArray,
+      archivePath: archiveObject.path,
+      archiveTitle: archiveObject.archiveTitle,
+      newsPosts: archiveObject.newsPosts,
+      headerStyle: archiveObject.headerStyle,
+      pageRef: archiveObject.pageRef,
+    }
   })
 }
 
-// ------------- Archive Config Objects -------------
+archivesArray.forEach(archivePage => (
+  createArchivePage(archivePage)
+))
 
-const newsArchiveConfig = {
-  postsArray: posts.nodes,
-  postsPerPage: readingSettings.postsPerPage, 
-  pageTemplate: archiveNews,
-  path: '/news',
-  archiveTitle: 'News',
-  allPosts: posts
-}
-
-const worksArchiveConfig = {
-  postsArray: tk_works.nodes,
-  postsPerPage: 9, 
-  pageTemplate: archiveWorks,
-  path: '/work',
-  archiveTitle: 'Work',
-  allPosts: tk_works
-}
-
-const positionsArchiveConfig = {
-  postsArray: tk_positions.nodes,
-  postsPerPage: 9, 
-  pageTemplate: archivePositions,
-  path: '/positions',
-  archiveTitle: 'Careers',
-  allPosts: posts.nodes.slice(0, 2),
-  headerStyle: "white",
-  pageRef: "positionsArchive" 
-}
-
-// ------------- Create archive pages -------------
-createArchive(newsArchiveConfig);
-createArchive(worksArchiveConfig);
-createArchive(positionsArchiveConfig);
+// ------------- ------------- -------------
+// ------------- ------------- -------------
+// ------------- ------------- -------------
 
 // ------------- Create posts pages -------------
   posts.nodes.forEach(node => {

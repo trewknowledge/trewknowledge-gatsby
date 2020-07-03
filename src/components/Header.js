@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import tkLogo from '../images/logo-main.svg'
 import MainMenu from './MainMenu';
 import HeroCareers from './header-content/HeroCareers'
@@ -18,26 +18,6 @@ const Header = ({
   pageRef,
   navStuck 
 }) => {
-  const data = useStaticQuery(graphql`
-    query MenuQuery {
-      wpgraphql {
-        generalSettings {
-          url
-        }
-        menus(where: {slug: "Main Menu"}) {
-          nodes {
-            menuItems {
-              nodes {
-                url
-                label
-                id
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
 
   const [headerColor, setHeaderColor] = useState('hero hero-bg-dark');
 

@@ -10,7 +10,6 @@ export default ({pageContext, location}) => (
     // headerStyle={pageContext.headerStyle}
     // pageRef={pageContext.node.template.templateName}
   >
-  {console.log(pageContext)}
     <div className="grid-container-narrow">
       <div className="callout">
         <h1 className="headline">Headline</h1>

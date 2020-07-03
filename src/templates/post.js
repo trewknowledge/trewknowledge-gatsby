@@ -18,13 +18,11 @@ export default ({ pageContext, location }) => {
           
           <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
         </article>
-        <hr/>
+        {pageContext.pageTitle !== "Privacy Policy" ? <hr/> : null} 
       </div>
       
-      
-      <WorksSlider pageContext={pageContext} />
+      {pageContext.allWorks ? <WorksSlider pageContext={pageContext} /> : null}
         
-      
     </Layout> 
   )
 }

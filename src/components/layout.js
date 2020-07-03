@@ -15,6 +15,7 @@ import ContactSection from "./ContactSection"
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
 import { useEffect } from "react"
+import { refresh } from "aos"
 
 const Layout = ( props ) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -66,8 +67,6 @@ const Layout = ( props ) => {
       AOS.refresh();
     }
   });
-
-  // console.log('layout props', props)
 
   return (
     <div className="site">
