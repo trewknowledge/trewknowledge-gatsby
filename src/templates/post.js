@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import WorksSlider from '../components/WorksSlider'
 
 export default ({ pageContext, location }) => {
+  console.log(pageContext)
 
   const formatDate = () => {
     return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -13,8 +14,9 @@ export default ({ pageContext, location }) => {
       
       <div className="grid-container-narrow article pb0">
         <article className="article-content">
-          <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }} className="article-section-title"/>
-          <p className="article-date">{formatDate()}</p>
+          <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }} className="article-title"/>
+          
+          {pageContext.pageTitle === "News" ? <p className="article-date">{formatDate()}</p> : null} 
           
           <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
         </article>
