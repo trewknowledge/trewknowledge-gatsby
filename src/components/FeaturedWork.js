@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 const FeaturedWork = ({allWorks}) => {
   
@@ -10,9 +11,11 @@ const FeaturedWork = ({allWorks}) => {
         {allWorks.map((item) => (
           
           <div className="cell large-6 gallery-item" key={item.id}>
+          {console.log(item)}
             <Link to={item.uri} >
               <figure className="image-hover-wrapper">
-                {item.featuredImage ? <img src={item.featuredImage.sourceUrl} alt={item.title} /> : null}
+                <Img fluid={item.featuredImage.imageFile.childImageSharp.fluid} alt={item.title} /> 
+                {/* {item.featuredImage ? <img src={item.featuredImage.sourceUrl} alt={item.title} /> : null} */}
                 <figcaption>
                   {item.title}
                 </figcaption>

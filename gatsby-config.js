@@ -29,6 +29,18 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-wpgraphql-inline-images',
+      options: {
+        wordPressUrl: 'https://trewknowledge-com-develop.go-vip.net',
+        uploadsUrl: 'https://trewknowledge-com-develop.go-vip.net/wp-content/uploads/',
+        processPostTypes: ['Post', 'Tk_work'],
+        graphqlTypeName: 'WPGraphQL',
+        // httpHeaders: {
+        //   Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        // }
+      },
+    },
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
