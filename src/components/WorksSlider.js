@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import carouselNext from "../assets/img/icons/carousel-next.svg"
 import carouselPrevious from "../assets/img/icons/carousel-previous.svg"
 
@@ -58,10 +59,10 @@ export default class WorksSlider extends Component {
       <div className="grid-container-narrow other-work">
         <h2>Other Work</h2>
         <Slider {...settings}>
-          {this.props.pageContext.allWorks.nodes.map((node, id) => (
+          {this.props.pageContext.allWorks.nodes.map((node, id) => ( 
             <Link to={node.uri} key={node.id}>
               <figure className="image-hover-wrapper">
-                {node.featuredImage ? <img src={node.featuredImage.sourceUrl} alt={node.title} /> : null}
+                <Img fluid={node.featuredImage.imageFile.childImageSharp.fluid} alt={node.title} /> 
                 <figcaption>
                   {node.title}
                 </figcaption>

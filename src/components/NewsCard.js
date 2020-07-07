@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image'
 
 const NewsCard = ({ postContext }) => {
-  console.log(postContext)
 
   const formatDate = () => {
     return new Date(postContext.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });

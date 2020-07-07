@@ -5,9 +5,7 @@
   }
 
   .image-hover-wrapper {
-    img {
-      height: 247px;
-    }
+    height: 247px !important;  // force slider image height
 
     figcaption {
       @media(max-width: 1024px) {
@@ -21,17 +19,6 @@
   .slick-slide {
     padding: 0 5px;
   }
-
-  // .slick-prev {
-  //   top: -16px;
-  //   right: 31px;
-  //   left: auto;
-  // }
-
-  // .slick-next {
-  //   top: -16px;
-  //   right: 5px;
-  // }
 }
 
 // Carousel
@@ -86,9 +73,16 @@ $carousel-arrow-width: 72px;
 }
 
 .news-card {
+  
   &:hover .image-hover-wrapper::before,
   &:focus .image-hover-wrapper::before {
     opacity: 1;
+  }
+
+  &:hover .image-hover-wrapper::after,
+  &:focus .image-hover-wrapper::after {
+    transform: scale(1);
+    z-index: 2;
   }
 
   &:hover .image-hover-wrapper + .card-title,
@@ -110,6 +104,7 @@ $carousel-arrow-width: 72px;
     top: 0;
     opacity: 0;
     width: 100%;
+    z-index: 2;
   }
 
   &:hover::before,
@@ -117,6 +112,7 @@ $carousel-arrow-width: 72px;
   &:focus::before,
   &:focus figcaption {
     opacity: 1;
+    z-index: 2;
   }
 
   &::after {
@@ -134,9 +130,11 @@ $carousel-arrow-width: 72px;
   &:hover::after,
   &:focus::after {
     transform: scale(1);
+    z-index: 2;
   }
-
-  img {
+  
+  img,
+  .gatsby-image-wrapper {
     width: 100%;
     height: 100%;
     object-fit: cover;

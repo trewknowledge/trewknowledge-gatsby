@@ -3,7 +3,7 @@ import NewsCard from '../components/NewsCard'
 
 const LatestNews = ({ latestNews }) => (
 
-  <section className="grid-container-narrow">
+  <section className="grid-container-narrow latest-news">
     <h1 className="section-title">Latest News</h1>
       <div className="grid-x grid-margin-x">
       {latestNews.map((post, id) => (

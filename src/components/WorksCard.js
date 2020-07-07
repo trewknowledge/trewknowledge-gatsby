@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
+import Img from 'gatsby-image'
 
 const WorksCard = ({ postContext }) => {
 
@@ -8,7 +8,7 @@ const WorksCard = ({ postContext }) => {
     <Link to={postContext.uri}>
       <div className="works-card">
         <figure className="image-hover-wrapper">
-          {postContext.featuredImage ? <img src={postContext.featuredImage.sourceUrl} alt=""/> : null} 
+          <Img fluid={postContext.featuredImage.imageFile.childImageSharp.fluid} alt={postContext.title} /> 
           <figcaption>{postContext.title}</figcaption>  
         </figure>
       </div>
