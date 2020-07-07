@@ -59,6 +59,17 @@ exports.createPages = async ({ graphql, actions }) => {
             date
             featuredImage {
               sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(maxWidth: 905) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
+              }
             }
           } 
         }
@@ -72,6 +83,17 @@ exports.createPages = async ({ graphql, actions }) => {
             date
             featuredImage {
               sourceUrl
+              imageFile {
+                childImageSharp {
+                  fluid(maxWidth: 905) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
+              }
             }
           }
         }
@@ -261,5 +283,44 @@ archivesArray.forEach(archivePage => (
         headerStyle: "blue"
       }
     })
+  })
+}
+
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+
+exports.createResolvers = async (
+  {
+    actions,
+    cache,
+    createNodeId,
+    createResolvers,
+    store,
+    reporter,
+  },
+) => {
+  const { createNode } = actions
+
+  await createResolvers({
+    WPGraphQL_MediaItem: {
+      imageFile: {
+        type: "File",
+        async resolve(source) {
+          let sourceUrl = source.sourceUrl
+
+          if (source.mediaItemUrl !== undefined) {
+            sourceUrl = source.mediaItemUrl
+          }
+
+          return await createRemoteFileNode({
+            url: encodeURI(sourceUrl),
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
+        },
+      },
+    },
   })
 }
