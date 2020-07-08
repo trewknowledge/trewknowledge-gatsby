@@ -2,11 +2,12 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
 import LatestNews from '../components/LatestNews'
-import discoveryIcon from '../assets/img/icons/discovery-icon.svg';
-import uiuxIcon from '../assets/img/icons/uiux-icon.svg';
-import engineeringIcon from '../assets/img/icons/engineering-icon.svg';
-import insightsIcon from '../assets/img/icons/insights-icon.svg';
-import adaptionIcon from '../assets/img/icons/adaptation-icon.svg';
+
+import DiscoveryIcon from '../assets/img/svgs/discovery-icon.svg';
+import UiuxIcon from '../assets/img/svgs/uiux-icon.svg';
+import EngineeringIcon from '../assets/img/svgs/engineering-icon.svg';
+import InsightsIcon from '../assets/img/svgs/insights-icon.svg';
+import AdaptionIcon from '../assets/img/svgs/adaptation-icon.svg';
 
 export default ({pageContext, location}) => (
 
@@ -35,7 +36,7 @@ export default ({pageContext, location}) => (
         <ul className="feature-blocks">
           <li className="feature-blocks-item" data-aos="animate-icon">
             <div className="feature-blocks-img-wrapper">
-              <img className="feature-blocks-img" src={discoveryIcon} alt="Discovery icon" inject-svg aria-describedby="Discovery icon" />
+              <DiscoveryIcon className="feature-blocks-img" alt="Discovery icon" aria-describedby="Discovery icon"/>
             </div>
             <div className="feature-blocks-content">
               <h5 className="feature-blocks-title">Discovery</h5>
@@ -44,7 +45,7 @@ export default ({pageContext, location}) => (
           </li>
           <li className="feature-blocks-item" data-aos="animate-icon">
             <div className="feature-blocks-img-wrapper">
-              <img className="feature-blocks-img" src={uiuxIcon} alt="UI/UX icon" inject-svg aria-describedby="UI/UX icon" />
+              <UiuxIcon className="feature-blocks-img" alt="UI/UX icon" aria-describedby="UI/UX icon"/>
             </div>
             <div className="feature-blocks-content">
               <h5 className="feature-blocks-title">UI/UX</h5>
@@ -53,7 +54,7 @@ export default ({pageContext, location}) => (
           </li>
           <li className="feature-blocks-item" data-aos="animate-icon">
             <div className="feature-blocks-img-wrapper">
-              <img className="feature-blocks-img" src={engineeringIcon} alt="Engineering icon" inject-svg aria-describedby="Engineering icon" />
+              <EngineeringIcon className="feature-blocks-img" alt="Engineering icon" aria-describedby="Engineering icon"/>
             </div>
             <div className="feature-blocks-content">
               <h5 className="feature-blocks-title">Engineering</h5>
@@ -62,7 +63,7 @@ export default ({pageContext, location}) => (
           </li>
           <li className="feature-blocks-item" data-aos="animate-icon">
             <div className="feature-blocks-img-wrapper">
-              <img className="feature-blocks-img" src={insightsIcon} alt="Insights icon" inject-svg aria-describedby="Insights icon" />
+              <InsightsIcon className="feature-blocks-img" alt="Insights icon" aria-describedby="Insights icon"/>
             </div>
             <div className="feature-blocks-content">
               <h5 className="feature-blocks-title">Insights</h5>
@@ -71,7 +72,7 @@ export default ({pageContext, location}) => (
           </li>
           <li className="feature-blocks-item" data-aos="animate-icon">
             <div className="feature-blocks-img-wrapper">
-              <img className="feature-blocks-img" src={adaptionIcon} alt="Adaptation icon" inject-svg aria-describedby="Adaptation icon" />
+              <AdaptionIcon className="feature-blocks-img" alt="Adaptation icon" aria-describedby="Adaptation icon"/>
             </div>
             <div className="feature-blocks-content">
               <h5 className="feature-blocks-title">Adaptation</h5>

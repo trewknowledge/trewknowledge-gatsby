@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import tkLogo from '../images/logo-main.svg'
+
+import TkLogo from '../assets/img/svgs/logo-main.svg'
+
 import MainMenu from './MainMenu';
 import HeroCareers from './header-content/HeroCareers'
 import HeroPositionSingle from './header-content/HeroPositionSingle'
@@ -44,7 +46,7 @@ const Header = ({
       <nav className={menuOpen ? "grid-container nav is-open" : "grid-container nav"}>
         <div className={navStuck ? "nav-logo is-stuck" : "nav-logo"}>
           <Link to={"/"}>
-            <img src={tkLogo} alt="Trew Knowledge Logo"/>
+            <TkLogo alt="Trew Knowledge Logo" />
           </Link>
           <span>{pageTitle}</span>
         </div>
