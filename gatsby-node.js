@@ -253,7 +253,6 @@ archivesArray.forEach(archivePage => (
       component: slash(postTemplate),
       context: {
         node: node,
-        allWorks: tk_works,
         pageTitle: "News",
         headerStyle: "empty"
       }

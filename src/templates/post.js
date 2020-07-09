@@ -4,7 +4,6 @@ import WorksSlider from '../components/WorksSlider'
 import contentParser from 'gatsby-wpgraphql-inline-images';
 
 export default ({ pageContext, location }) => {
-
   const content = pageContext.node.content;
   const pluginOptions = {
     wordPressUrl: 'https://trewknowledge-com-develop.go-vip.net',

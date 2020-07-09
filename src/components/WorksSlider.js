@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component } from 'react'
 import Slider from 'react-slick'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
