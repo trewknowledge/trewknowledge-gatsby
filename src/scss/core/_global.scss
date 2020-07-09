@@ -48,3 +48,9 @@ hr {
 	justify-content: center;
 	padding-top: 64px;
 }
+
+.teal-arrow {
+	path {
+		stroke: $teal;
+	}
+}
