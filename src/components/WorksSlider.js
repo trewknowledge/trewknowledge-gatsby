@@ -3,8 +3,11 @@ import Slider from 'react-slick'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import CarouselNext from "../assets/img/svgs/carousel-next.svg"
-import CarouselPrevious from "../assets/img/svgs/carousel-previous.svg"
+// import CarouselNext from "../assets/img/svgs/carousel-next.svg"
+// import CarouselPrevious from "../assets/img/svgs/carousel-previous.svg"
+
+import carouselNext from "../assets/img/icons/carousel-next.svg"
+import carouselPrevious from "../assets/img/icons/carousel-previous.svg"
 
 const NextArrow = (props) => {
   const { onClick, customClass } = props;
@@ -14,8 +17,8 @@ const NextArrow = (props) => {
       className={customClass}
       onClick={onClick}
     >
-      <CarouselNext alt="Next arrow"/>
-      {/* <img src={carouselNext} alt="Next arrow"/> */}
+      {/* <CarouselNext alt="Next arrow"/> */}
+      <img src={carouselNext} alt="Next arrow"/>
     </div>
   );
 }
@@ -28,8 +31,8 @@ const PrevArrow = (props) => {
       className={customClass}
       onClick={onClick}
     >
-      <CarouselPrevious alt="Previous arrow"/>
-      {/* <img src={carouselPrevious} alt="Previous arrow"/> */}
+      {/* <CarouselPrevious alt="Previous arrow"/> */}
+      <img src={carouselPrevious} alt="Previous arrow"/>
     </div>
   );
 }
