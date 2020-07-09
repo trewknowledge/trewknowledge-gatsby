@@ -10,22 +10,22 @@ import CarouselPreviousSmall from "../assets/img/svgs/carousel-previous-small.sv
 
 const NextArrow = (props) => {
   const { onClick, customClass } = props;
-  let width = window.innerWidth;
   
   return (
     <div className={customClass} onClick={onClick}>
-      {width < 768 ? <CarouselNextSmall alt="Next arrow"/> : <CarouselNext alt="Next arrow"/>} 
+      <CarouselNextSmall className="hide-for-medium" alt="Next arrow"/>
+      <CarouselNext className="show-for-medium" alt="Next arrow"/>
     </div>
   );
 }
 
 const PrevArrow = (props) => {
   const { onClick, customClass } = props;
-  let width = window.innerWidth;
 
   return (
     <div className={customClass} onClick={onClick}>
-      {width < 768 ? <CarouselPreviousSmall alt="Previous arrow"/> : <CarouselPrevious alt="Previous arrow"/>} 
+      <CarouselPreviousSmall className="hide-for-medium" alt="Previous arrow"/>
+      <CarouselPrevious className="show-for-medium" alt="Previous arrow"/>
     </div>
   );
 }
