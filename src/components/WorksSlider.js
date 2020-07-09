@@ -3,36 +3,29 @@ import Slider from 'react-slick'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-// import CarouselNext from "../assets/img/svgs/carousel-next.svg"
-// import CarouselPrevious from "../assets/img/svgs/carousel-previous.svg"
-
-import carouselNext from "../assets/img/icons/carousel-next.svg"
-import carouselPrevious from "../assets/img/icons/carousel-previous.svg"
+import CarouselNext from "../assets/img/svgs/carousel-next.svg"
+import CarouselPrevious from "../assets/img/svgs/carousel-previous.svg"
+import CarouselNextSmall from "../assets/img/svgs/carousel-next-small.svg"
+import CarouselPreviousSmall from "../assets/img/svgs/carousel-previous-small.svg"
 
 const NextArrow = (props) => {
   const { onClick, customClass } = props;
+  let width = window.innerWidth;
   
   return (
-    <div
-      className={customClass}
-      onClick={onClick}
-    >
-      {/* <CarouselNext alt="Next arrow"/> */}
-      <img src={carouselNext} alt="Next arrow"/>
+    <div className={customClass} onClick={onClick}>
+      {width < 768 ? <CarouselNextSmall alt="Next arrow"/> : <CarouselNext alt="Next arrow"/>} 
     </div>
   );
 }
 
 const PrevArrow = (props) => {
   const { onClick, customClass } = props;
+  let width = window.innerWidth;
 
   return (
-    <div
-      className={customClass}
-      onClick={onClick}
-    >
-      {/* <CarouselPrevious alt="Previous arrow"/> */}
-      <img src={carouselPrevious} alt="Previous arrow"/>
+    <div className={customClass} onClick={onClick}>
+      {width < 768 ? <CarouselPreviousSmall alt="Previous arrow"/> : <CarouselPrevious alt="Previous arrow"/>} 
     </div>
   );
 }
