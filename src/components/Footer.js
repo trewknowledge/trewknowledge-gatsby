@@ -1,11 +1,11 @@
 import React from 'react';
-import tkLogo from '../images/logo-main.svg'
-import wpVipLogo from '../images/wpvip-logo.svg'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-import twitterLogo from '../assets/img/logos/twitter-logo.svg'
-import facebookLogo from '../assets/img/logos/facebook-logo.svg'
-import linkedinLogo from '../assets/img/logos/linkedin-logo.svg'
+import TkLogo from '../assets/img/svgs/logo-main.svg'
+import WpVipLogo from '../assets/img/svgs/wpvip-logo.svg'
+import TwitterLogo from '../assets/img/svgs/twitter-logo.svg'
+import FacebookLogo from '../assets/img/svgs/facebook-logo.svg'
+import LinkedinLogo from '../assets/img/svgs/linkedin-logo.svg'
 
 const Footer = () => {
 
@@ -41,22 +41,22 @@ const Footer = () => {
     <div className="footer-branding">
       <div>
         <Link to={"/"} className="footer-logo">
-          <img src={tkLogo} alt="Trew Knowledge Logo"/>
+          <TkLogo alt="Trew Knowledge Logo" />
           <span>Trew Knowledge</span>
         </Link>
         <a className="footer-branding-social" href="https://twitter.com/trewknowledge" target="_blank" rel="noopener noreferrer">
-          <img src={twitterLogo} alt="twitter logo"/>
+          <TwitterLogo alt="twitter logo"/>
         </a>
         <a className="footer-branding-social" href="https://www.facebook.com/trewknowledge" target="_blank" rel="noopener noreferrer">
-          <img src={facebookLogo} alt="facebook logo"/>
+          <FacebookLogo alt="facebook logo"/>
         </a>
         <a className="footer-branding-social" href="https://www.linkedin.com/company/1022792/" target="_blank" rel="noopener noreferrer">
-          <img src={linkedinLogo} alt="linkedin logo"/>
+          <LinkedinLogo alt="facebook logo"/>
         </a>
       </div>
-      <a href="" className="hide-for-large">
-        <img src={wpVipLogo} alt="WordPress VIP Logo"/>
-      </a>
+      <Link to="/wordpress-vip" className="hide-for-large">
+        <WpVipLogo alt="WordPress VIP Logo"/>
+      </Link>
     </div>
     <div className="footer-links">
       <ul className="footer-links-menu vertical medium-horizontal menu">
@@ -68,8 +68,8 @@ const Footer = () => {
           </li>
         ))}
         <li className="show-for-large">
-          <Link to={"/wordpress-vip"}>
-            <img src={wpVipLogo} alt="WordPress VIP Logo"/>
+          <Link to={"/wordpress-vip"} className="linked-icon">
+            <WpVipLogo alt="WordPress VIP Logo"/>
           </Link>
         </li>
       </ul>

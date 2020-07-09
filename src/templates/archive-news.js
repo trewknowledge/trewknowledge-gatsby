@@ -20,13 +20,13 @@ const ArchiveNews = ({pageContext, location}) => {
         {posts.map((post, index) => {
           if (index === 0 ) {
             return (
-              <div className="cell gallery-item aos-init aos-animate" key={post.id} data-aos="fade-up">
+              <div className="cell gallery-item" key={post.id} data-aos="fade-up">
                 <NewsCard postContext={post} />
               </div>
             )
           } else {
             return (
-              <div className="cell gallery-item medium-6 aos-init aos-animate" key={post.id} data-aos="fade-up">
+              <div className="cell gallery-item medium-6" key={post.id} data-aos="fade-up">
                 <NewsCard postContext={post} />
               </div>
             )

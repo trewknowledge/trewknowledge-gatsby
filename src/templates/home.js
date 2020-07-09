@@ -4,7 +4,8 @@ import { Link } from 'gatsby';
 // import SEO from "../components/seo"
 import LatestNews from '../components/LatestNews'
 import FeaturedWork from "../components/FeaturedWork"
-import wpVipCertLogo from "../images/wp-vip-cert-logo.svg"
+
+import WpLogo from '../assets/img/svgs/wp-vip-cert-logo.svg';
 import SocialProofHome from "../components/SocialProofHome"
 
 const IndexPage = ({ pageContext, location }) => (
@@ -22,7 +23,7 @@ const IndexPage = ({ pageContext, location }) => (
           <Link to={"/wordpress-vip"} className="wp-intro-section-button button">
             learn more
           </Link>
-          <img className="wp-intro-section-img" src={wpVipCertLogo} alt="wordpress vip logo"/>
+          <WpLogo className="wp-intro-section-img" alt="WordPress VIP logo" />
         </div>
       </section>
 

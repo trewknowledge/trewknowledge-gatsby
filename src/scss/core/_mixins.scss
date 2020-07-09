@@ -48,7 +48,7 @@
   }
 
   &.linked-icon:hover {
-    // @include transition(opacity $speed);
+    @include transition(opacity $speed);
     // opacity: $link-hover-opacity;
 
     &::after {

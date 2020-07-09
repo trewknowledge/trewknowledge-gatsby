@@ -85,6 +85,10 @@
   @include mq(desktop) {
     text-align: right;
   }
+
+  svg {
+    vertical-align: -6px;
+  }
 }
 
 .footer-links-menu-secondary {
