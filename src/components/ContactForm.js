@@ -44,4 +44,6 @@ export default ContactForm;
 3. The form’s name attribute is repeated in a hidden form-name field. This is absolutely necessary. If you omit this field or mistype the name, your entries will either throw an error or get lost somewhere in the internet abyss.
 
 4.Every field has a name attribute. A field must have a name for that data to be persisted within Netlify.
+
+https://cobwwweb.com/how-to-use-netlify-forms-with-gatsby
 */
