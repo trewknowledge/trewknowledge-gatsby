@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout'
+import ContactForm from '../components/ContactForm'
 
 export default ({ pageContext, location }) => {
 
@@ -44,7 +45,10 @@ export default ({ pageContext, location }) => {
         </div>
 
         <div className="grid-container-narrow">
-          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} /> */}
+
+          <ContactForm />
+
           <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
     </Layout>
