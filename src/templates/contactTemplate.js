@@ -45,10 +45,7 @@ export default ({ pageContext, location }) => {
         </div>
 
         <div className="grid-container-narrow">
-          {/* <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} /> */}
-
           <ContactForm />
-
           <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
     </Layout>
