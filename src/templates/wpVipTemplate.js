@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
+import ContactForm from '../components/ContactForm'
 import { wpVipLogosArray } from '../js/logos';
 
 export default({pageContext, location}) => (
@@ -113,7 +114,7 @@ export default({pageContext, location}) => (
 
     <div className="grid-container-narrow">
       <h2 className="contact-form-title" id="contactFormTitle">Contact us about WordPress VIP.</h2>
-      <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} />
+      <ContactForm />
       <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
     </div>
 
