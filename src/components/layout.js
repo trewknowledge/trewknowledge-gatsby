@@ -47,6 +47,26 @@ const Layout = ( props ) => {
     }
   }, [props.location])
 
+  // AOS library
+  let AOS;
+  useEffect(() => {
+    /**
+     * Server-side rendering does not provide the 'document' object
+     * therefore this import is required either in useEffect or componentDidMount as they
+     * are exclusively executed on a client
+     */
+    const AOS = require("aos");
+    AOS.init({
+      once: true,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (AOS) {
+      AOS.refresh();
+    }
+  });
+
   // useEffect(() => {
   //   OverlayScrollbars(document.querySelectorAll("body"), { 
   //     className: 'os-theme-dark',
@@ -69,28 +89,6 @@ const Layout = ( props ) => {
   //     },
   //   });
   // }, [])
-
-  // AOS library
-  let AOS;
-  useEffect(() => {
-    /**
-     * Server-side rendering does not provide the 'document' object
-     * therefore this import is required either in useEffect or componentDidMount as they
-     * are exclusively executed on a client
-     */
-    const AOS = require("aos");
-    AOS.init({
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    if (AOS) {
-      AOS.refresh();
-    }
-  });
-
-  
 
   return (
     <div className="site">
