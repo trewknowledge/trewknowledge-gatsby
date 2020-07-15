@@ -5,16 +5,17 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import Header from "./Header"
 import Footer from "./Footer"
 import ContactSection from "./ContactSection"
+import OverlayScrollbars from 'overlayscrollbars';
+// import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 
-// import AOS from 'aos'
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
-import { useEffect } from "react"
+import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 const Layout = ( props ) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -66,6 +67,29 @@ const Layout = ( props ) => {
       AOS.refresh();
     }
   });
+
+  useEffect(() => {
+    OverlayScrollbars(document.querySelectorAll("body"), { 
+      className: 'os-theme-dark',
+      // Defines how the overflow should be handled for each axis
+      overflowBehavior: {
+        // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
+        x: 'scroll',
+        // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
+        y: 'scroll',
+      },
+      // Defines the behavior of the custom scrollbars.
+      scrollbars: {
+        visibility: 'auto', //visible || hidden || auto || v || h || a
+        autoHide: 'scroll', //never || scroll || leave || n || s || l
+        autoHideDelay: 800, //number
+        dragScrolling: true, //true || false
+        clickScrolling: true, //true || false
+        touchSupport: true, //true || false
+        snapHandle: true, //true || false
+      },
+    });
+  }, [])
 
   return (
     <div className="site">

@@ -1,0 +1,11 @@
+$scrollbar-width: 10px;
+$scrollbar-color: $teal;
+$scrollbar-height: 155px;
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+  background: $scrollbar-color !important;
+  border-radius: 0 !important;
+  width: $scrollbar-width !important;
+  height: $scrollbar-height !important;
+  max-height: $scrollbar-height !important;
+}
