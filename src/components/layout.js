@@ -47,6 +47,28 @@ const Layout = ( props ) => {
     }
   }, [props.location])
 
+  // useEffect(() => {
+  //   OverlayScrollbars(document.querySelectorAll("body"), { 
+  //     className: 'os-theme-dark',
+  //     // Defines how the overflow should be handled for each axis
+  //     overflowBehavior: {
+  //       // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
+  //       x: 'scroll',
+  //       // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
+  //       y: 'scroll',
+  //     },
+  //     // Defines the behavior of the custom scrollbars.
+  //     scrollbars: {
+  //       visibility: 'auto', //visible || hidden || auto || v || h || a
+  //       autoHide: 'scroll', //never || scroll || leave || n || s || l
+  //       autoHideDelay: 800, //number
+  //       dragScrolling: true, //true || false
+  //       clickScrolling: true, //true || false
+  //       touchSupport: true, //true || false
+  //       snapHandle: true, //true || false
+  //     },
+  //   });
+  // }, [])
 
   // AOS library
   let AOS;
@@ -68,28 +90,7 @@ const Layout = ( props ) => {
     }
   });
 
-  useEffect(() => {
-    OverlayScrollbars(document.querySelectorAll("body"), { 
-      className: 'os-theme-dark',
-      // Defines how the overflow should be handled for each axis
-      overflowBehavior: {
-        // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
-        x: 'scroll',
-        // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
-        y: 'scroll',
-      },
-      // Defines the behavior of the custom scrollbars.
-      scrollbars: {
-        visibility: 'auto', //visible || hidden || auto || v || h || a
-        autoHide: 'scroll', //never || scroll || leave || n || s || l
-        autoHideDelay: 800, //number
-        dragScrolling: true, //true || false
-        clickScrolling: true, //true || false
-        touchSupport: true, //true || false
-        snapHandle: true, //true || false
-      },
-    });
-  }, [])
+  
 
   return (
     <div className="site">
