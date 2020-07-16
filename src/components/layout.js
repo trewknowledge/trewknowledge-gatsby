@@ -10,8 +10,9 @@ import React, { useState, useEffect } from "react"
 import Header from "./Header"
 import Footer from "./Footer"
 import ContactSection from "./ContactSection"
-import OverlayScrollbars from 'overlayscrollbars';
-// import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+
+import AOS from 'aos';
+import OverlayScrollbars from 'overlayscrollbars'
 
 import '@wordpress/block-library/build-style/style.css'
 import '../scss/main.scss'
@@ -31,24 +32,52 @@ const Layout = ( props ) => {
   }
 
   const [navStuck, setNavStuck] = useState(false);
+
+  useEffect(() => {
+    OverlayScrollbars(document.body, { 
+      className: 'os-theme-dark',
+      // Defines how the overflow should be handled for each axis
+      overflowBehavior: {
+        // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
+        x: 'scroll',
+        // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
+        y: 'scroll',
+      },
+      // Defines the behavior of the custom scrollbars.
+      scrollbars: {
+        visibility: 'auto', //visible || hidden || auto || v || h || a
+        autoHide: 'scroll', //never || scroll || leave || n || s || l
+        autoHideDelay: 800, //number
+        dragScrolling: true, //true || false
+        clickScrolling: true, //true || false
+        touchSupport: true, //true || false
+        snapHandle: true, //true || false
+        initialize: false,
+      },
+    });
+  }, [])
   
   useEffect(() => {
     function handleScrollEvent() {
       if(window.scrollY > 50) {
         setNavStuck(true)
+        // console.log('nav stuck')
       } else {
         setNavStuck(false)
+        // console.log('NAV IS STATIC')
       }
     }
     
     window.addEventListener("scroll", handleScrollEvent, true);
+
+    // this cleanup is performed when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScrollEvent, true);
     }
   }, [props.location])
 
   // AOS library
-  let AOS;
+  // let AOS;
   useEffect(() => {
     /**
      * Server-side rendering does not provide the 'document' object
@@ -59,36 +88,27 @@ const Layout = ( props ) => {
     AOS.init({
       once: true,
     });
-  }, []);
 
-  useEffect(() => {
-    if (AOS) {
+
+    // can this be moved into it's own use effect?
+    function refreshAOS() {
       AOS.refresh();
+      console.log('aos refreshed');
     }
+
+    let pageWrapper = document.querySelector('.os-viewport');
+    if (pageWrapper) {
+      pageWrapper.addEventListener('scroll', refreshAOS);
+    }
+
+    return () => {
+      pageWrapper.removeEventListener("scroll", refreshAOS);
+    }
+
   });
 
-  // useEffect(() => {
-  //   OverlayScrollbars(document.querySelectorAll("body"), { 
-  //     className: 'os-theme-dark',
-  //     // Defines how the overflow should be handled for each axis
-  //     overflowBehavior: {
-  //       // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
-  //       x: 'scroll',
-  //       // visible-hidden  || visible-scroll || hidden || scroll || v-h || v-s || h || s
-  //       y: 'scroll',
-  //     },
-  //     // Defines the behavior of the custom scrollbars.
-  //     scrollbars: {
-  //       visibility: 'auto', //visible || hidden || auto || v || h || a
-  //       autoHide: 'scroll', //never || scroll || leave || n || s || l
-  //       autoHideDelay: 800, //number
-  //       dragScrolling: true, //true || false
-  //       clickScrolling: true, //true || false
-  //       touchSupport: true, //true || false
-  //       snapHandle: true, //true || false
-  //     },
-  //   });
-  // }, [])
+  // can we remove the AOS event listener?
+  // need to fix the 'nav-stuck' listener 
 
   return (
     <div className="site">
