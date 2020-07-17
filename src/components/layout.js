@@ -11,7 +11,6 @@ import Header from "./Header"
 import Footer from "./Footer"
 import ContactSection from "./ContactSection"
 
-import AOS from 'aos';
 import OverlayScrollbars from 'overlayscrollbars'
 
 import '@wordpress/block-library/build-style/style.css'
@@ -56,28 +55,8 @@ const Layout = ( props ) => {
       },
     });
   }, [])
-  
-  useEffect(() => {
-    function handleScrollEvent() {
-      if(window.scrollY > 50) {
-        setNavStuck(true)
-        // console.log('nav stuck')
-      } else {
-        setNavStuck(false)
-        // console.log('NAV IS STATIC')
-      }
-    }
-    
-    window.addEventListener("scroll", handleScrollEvent, true);
-
-    // this cleanup is performed when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScrollEvent, true);
-    }
-  }, [props.location])
 
   // AOS library
-  // let AOS;
   useEffect(() => {
     /**
      * Server-side rendering does not provide the 'document' object
@@ -89,11 +68,9 @@ const Layout = ( props ) => {
       once: true,
     });
 
-
-    // can this be moved into it's own use effect?
+    // Add scroll event listener to '.os-viewport' so AOS doesn't conflict with OverlayScrollBars
     function refreshAOS() {
       AOS.refresh();
-      console.log('aos refreshed');
     }
 
     let pageWrapper = document.querySelector('.os-viewport');
@@ -104,11 +81,31 @@ const Layout = ( props ) => {
     return () => {
       pageWrapper.removeEventListener("scroll", refreshAOS);
     }
-
   });
 
-  // can we remove the AOS event listener?
-  // need to fix the 'nav-stuck' listener 
+  // Add scroll event listener to '.os-viewport' to handle nav logo hiding event
+  useEffect(() => {
+    let pageWrapper = document.querySelector('.os-viewport');
+    
+    function handleScrollEvent() {
+      let scrollPosY = pageWrapper.scrollTop;
+      if(scrollPosY > 50) {
+        setNavStuck(true)      
+      } else {
+        setNavStuck(false)
+      }
+    }
+    
+    pageWrapper.addEventListener("scroll", handleScrollEvent, true);
+
+    // this cleanup is performed when the component unmounts
+    return () => {
+      pageWrapper.removeEventListener("scroll", handleScrollEvent, true);
+    }
+  }, [props.location])
+
+  // can we clean up the AOS event listener?
+  
 
   return (
     <div className="site">
