@@ -18,6 +18,8 @@ import '../scss/main.scss'
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 const Layout = ( props ) => {
+
+  // ----------------- Handle Nav Menu -----------------
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = () => {
@@ -30,8 +32,8 @@ const Layout = ( props ) => {
     }
   }
 
-  const [navStuck, setNavStuck] = useState(false);
-
+  // ----------------- OverlayScrollbars Library -----------------
+  // Must load first since it generates elements
   useEffect(() => {
     OverlayScrollbars(document.body, { 
       className: 'os-theme-dark',
@@ -56,7 +58,32 @@ const Layout = ( props ) => {
     });
   }, [])
 
-  // AOS library
+  // ----------------- Nav Logo Show/Hide -----------------
+  const [navStuck, setNavStuck] = useState(false);
+
+  // Add scroll event listener to '.os-viewport' to handle nav logo hiding event
+  useEffect(() => {
+    let pageWrapper = document.querySelector('.os-viewport');
+    
+    function handleScrollEvent() {
+      let scrollPosY = pageWrapper.scrollTop;
+      if(scrollPosY > 50) {
+        setNavStuck(true)      
+      } else {
+        setNavStuck(false)
+      }
+    }
+    
+    if (pageWrapper) {
+      pageWrapper.addEventListener("scroll", handleScrollEvent, true);
+    }
+    // this cleanup is performed when the component unmounts
+    return () => {
+      pageWrapper.removeEventListener("scroll", handleScrollEvent, true);
+    }
+  }, [props.location])
+
+  // ----------------- AOS library -----------------
   useEffect(() => {
     /**
      * Server-side rendering does not provide the 'document' object
@@ -83,30 +110,8 @@ const Layout = ( props ) => {
     }
   });
 
-  // Add scroll event listener to '.os-viewport' to handle nav logo hiding event
-  useEffect(() => {
-    let pageWrapper = document.querySelector('.os-viewport');
-    
-    function handleScrollEvent() {
-      let scrollPosY = pageWrapper.scrollTop;
-      if(scrollPosY > 50) {
-        setNavStuck(true)      
-      } else {
-        setNavStuck(false)
-      }
-    }
-    
-    pageWrapper.addEventListener("scroll", handleScrollEvent, true);
-
-    // this cleanup is performed when the component unmounts
-    return () => {
-      pageWrapper.removeEventListener("scroll", handleScrollEvent, true);
-    }
-  }, [props.location])
-
   // can we clean up the AOS event listener?
   
-
   return (
     <div className="site">
       <Header 
