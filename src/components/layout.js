@@ -64,6 +64,7 @@ const Layout = ( props ) => {
   // Add scroll event listener to '.os-viewport' to handle nav logo hiding event
   useEffect(() => {
     let pageWrapper = document.querySelector('.os-viewport');
+    pageWrapper.scrollTo(0, 0);
     
     function handleScrollEvent() {
       let scrollPosY = pageWrapper.scrollTop;
