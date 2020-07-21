@@ -8,7 +8,7 @@ const WorksCard = ({ postContext }) => {
     <Link to={postContext.uri}>
       <div className="works-card">
         <figure className="image-hover-wrapper">
-          {postContext.featuredImage.imageFile ? <Img fluid={postContext.featuredImage.imageFile.childImageSharp.fluid} alt={postContext.title} />  : <img src={postContext.featuredImage.sourceUrl} />}
+          {postContext.featuredImage.imageFile ? <Img fluid={postContext.featuredImage.imageFile.childImageSharp.fluid} alt={postContext.title} />  : <img src={postContext.featuredImage.sourceUrl} alt={postContext.title} />}
           <figcaption>{postContext.title}</figcaption>  
         </figure>
       </div>

@@ -53,7 +53,6 @@ const Layout = ( props ) => {
         clickScrolling: true, //true || false
         touchSupport: true, //true || false
         snapHandle: true, //true || false
-        initialize: false,
       },
     });
   }, [])
@@ -110,8 +109,6 @@ const Layout = ( props ) => {
       pageWrapper.removeEventListener("scroll", refreshAOS);
     }
   });
-
-  // can we clean up the AOS event listener?
   
   return (
     <div className="site">
@@ -124,6 +121,7 @@ const Layout = ( props ) => {
         pageRef={props.pageRef}
         navStuck={navStuck}
       />
+      {console.log(props)}
       <main>
         {props.children}
       </main>

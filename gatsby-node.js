@@ -8,7 +8,7 @@ const path = require('path');
 const slash = require('slash');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions;
+  const { createPage } = actions;
 
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
@@ -129,7 +129,6 @@ exports.createPages = async ({ graphql, actions }) => {
     posts,
     tk_works,
     tk_positions,
-    readingSettings
   }  = result.data.wpgraphql;
 
   // WP default pages
@@ -205,7 +204,6 @@ exports.createPages = async ({ graphql, actions }) => {
 const archivesArray = [
   {
     postsArray: posts.nodes,
-    
     pageTemplate: archiveNews,
     path: '/news',
     archiveTitle: 'News',
@@ -213,7 +211,6 @@ const archivesArray = [
   },
   {
     postsArray: tk_works.nodes,
-    
     pageTemplate: archiveWorks,
     path: '/work',
     archiveTitle: 'Work',
@@ -221,7 +218,6 @@ const archivesArray = [
   },
   {
     postsArray: tk_positions.nodes,
-    
     pageTemplate: archivePositions,
     path: '/positions',
     archiveTitle: 'Careers',
@@ -269,7 +265,7 @@ archivesArray.forEach(archivePage => (
       component: slash(postTemplate),
       context: {
         node: node,
-        allWorks: tk_works,
+        allWorks: tk_works.nodes,
         pageTitle: "Work",
         headerStyle: "empty"
       }

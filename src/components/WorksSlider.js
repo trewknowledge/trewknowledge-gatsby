@@ -10,9 +10,15 @@ import CarouselPreviousSmall from "../assets/img/svgs/carousel-previous-small.sv
 
 const NextArrow = (props) => {
   const { onClick, customClass } = props;
+  // console.log(props)
+  const handleKeyDown = (ev) => {
+    if (ev.keyCode === 13) {
+      onClick()
+    }
+  }
   
   return (
-    <div className={customClass} onClick={onClick}>
+    <div className={customClass} onClick={onClick} onKeyDown={handleKeyDown} role="button" tabIndex='0'>
       <CarouselNextSmall className="hide-for-medium" alt="Next arrow"/>
       <CarouselNext className="show-for-medium" alt="Next arrow"/>
     </div>
@@ -22,8 +28,14 @@ const NextArrow = (props) => {
 const PrevArrow = (props) => {
   const { onClick, customClass } = props;
 
+  const handleKeyDown = (ev) => {
+    if (ev.keyCode === 13) {
+      onClick()
+    }
+  }
+
   return (
-    <div className={customClass} onClick={onClick}>
+    <div className={customClass} onClick={onClick} onKeyDown={handleKeyDown} role="button" tabIndex='0'>
       <CarouselPreviousSmall className="hide-for-medium" alt="Previous arrow"/>
       <CarouselPrevious className="show-for-medium" alt="Previous arrow"/>
     </div>
@@ -31,9 +43,6 @@ const PrevArrow = (props) => {
 }
 
 export default class WorksSlider extends Component {
-  constructor(props) {
-    super(props);
-  }
   
   render() {
     const settings = {
@@ -58,12 +67,12 @@ export default class WorksSlider extends Component {
       <div className="grid-container-narrow other-work">
         <h2>Other Work</h2>
         <Slider {...settings}>
-          {this.props.pageContext.allWorks.nodes.map((node, id) => ( 
-            <Link to={node.uri} key={node.id}>
+          {this.props.pageContext.allWorks.map((item, id) => ( 
+            <Link to={item.uri} key={item.id}>
               <figure className="image-hover-wrapper">
-                <Img fluid={node.featuredImage.imageFile.childImageSharp.fluid} alt={node.title} /> 
+                <Img fluid={item.featuredImage.imageFile.childImageSharp.fluid} alt={item.title} /> 
                 <figcaption>
-                  {node.title}
+                  {item.title}
                 </figcaption>
               </figure>
             </Link>
