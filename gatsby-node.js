@@ -110,6 +110,7 @@ exports.createPages = async ({ graphql, actions }) => {
             content
             excerpt
             date
+            __typename
           }
         }
         readingSettings {
@@ -203,7 +204,6 @@ exports.createPages = async ({ graphql, actions }) => {
 const archivesArray = [
   {
     postsArray: posts.nodes,
-    
     pageTemplate: archiveNews,
     path: '/news',
     archiveTitle: 'News',
@@ -211,7 +211,6 @@ const archivesArray = [
   },
   {
     postsArray: tk_works.nodes,
-    
     pageTemplate: archiveWorks,
     path: '/work',
     archiveTitle: 'Work',
@@ -219,7 +218,6 @@ const archivesArray = [
   },
   {
     postsArray: tk_positions.nodes,
-    
     pageTemplate: archivePositions,
     path: '/positions',
     archiveTitle: 'Careers',
