@@ -8,7 +8,7 @@ const path = require('path');
 const slash = require('slash');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions;
+  const { createPage } = actions;
 
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
@@ -110,7 +110,6 @@ exports.createPages = async ({ graphql, actions }) => {
             content
             excerpt
             date
-            __typename
           }
         }
         readingSettings {
@@ -129,7 +128,6 @@ exports.createPages = async ({ graphql, actions }) => {
     posts,
     tk_works,
     tk_positions,
-    readingSettings
   }  = result.data.wpgraphql;
 
   // WP default pages

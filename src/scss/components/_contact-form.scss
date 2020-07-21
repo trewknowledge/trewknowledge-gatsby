@@ -174,13 +174,3 @@ textarea {
     }
   }
 }
-
-.contact-form-title {
-  @include mq(tablet) {
-    // @include xy-cell(8, $gutter-output: false);
-  }
-
-  @include mq(desktop) {
-    // @include xy-cell(12, $gutter-output: false);
-  }
-}

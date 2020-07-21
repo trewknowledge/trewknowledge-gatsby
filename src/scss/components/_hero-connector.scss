@@ -141,7 +141,7 @@
   }
 
   .hero-connector-text-inner {
-    @include xy-cell(10, $gutter-output: false);
+    @include xy-cell(10, $gutter-type: none);
     margin-left: auto;
   }
 
@@ -151,13 +151,13 @@
     padding-top: $section-spacing/2;
 
     .hero-connector-text-inner {
-      @include xy-cell(10, $gutter-output: false);
+      @include xy-cell(10, $gutter-type: none);
     }
   }
 
   @include mq(desktop) {
     .hero-connector-text-inner {
-      @include xy-cell(7, $gutter-output: false);
+      @include xy-cell(7, $gutter-type: none);
     }
   }
 }
