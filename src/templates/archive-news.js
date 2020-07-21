@@ -3,9 +3,8 @@ import Layout from '../components/layout'
 import NewsCard from '../components/NewsCard';
 
 const ArchiveNews = ({pageContext, location}) => {
-
   const [postsToShow, setPostsToShow] = useState(9);
-  const [allPosts, setAllPosts] = useState(pageContext.posts);
+  const allPosts = pageContext.posts;
 
   const posts = allPosts.slice(0, postsToShow);
 
@@ -34,7 +33,6 @@ const ArchiveNews = ({pageContext, location}) => {
         })}
       </div>
 
-      
       {posts.length < allPosts.length ? 
         <div className="infinite-handle">
           <button className="button" onClick={() => handleClick()}>Load More</button> 

@@ -13,7 +13,7 @@ const FeaturedWork = ({allWorks}) => {
           <div className="cell large-6 gallery-item" key={item.id}>
             <Link to={item.uri} >
               <figure className="image-hover-wrapper">
-                {item.featuredImage.imageFile ? <Img fluid={item.featuredImage.imageFile.childImageSharp.fluid} alt={item.title} />  : <img src={item.featuredImage.sourceUrl} />}
+                {item.featuredImage.imageFile ? <Img fluid={item.featuredImage.imageFile.childImageSharp.fluid} alt={item.title} />  : <img src={item.featuredImage.sourceUrl} alt={item.title} />}
                 <figcaption>
                   {item.title}
                 </figcaption>

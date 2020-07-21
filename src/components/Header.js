@@ -39,7 +39,7 @@ const Header = ({
     if (headerStyle === 'black') {
       setHeaderColor('hero hero-bg-black')
     }
-  }, [])
+  }, [headerStyle])
 
   return(
     <header className={headerColor}>
