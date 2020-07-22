@@ -1,7 +1,6 @@
 import React from 'react';
 import WpLogo from '../../assets/img/svgs/wp-vip-cert-logo.svg';
 
-
 export default() => (
   <>
     <WpLogo className="hero-cert-img" alt="WordPress VIP logo" />

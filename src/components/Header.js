@@ -10,6 +10,7 @@ import HeroPositions from './header-content/HeroPositions'
 import HeroAbout from './header-content/HeroAbout'
 import HeroHome from './header-content/HeroHome'
 import HeroWpVip from './header-content/HeroWpVip'
+import HeroSAP from './header-content/HeroSAP'
 
 const Header = ({ 
   menuOpen, 
@@ -64,6 +65,7 @@ const Header = ({
         {pageRef === "positionsArchive" ? <HeroPositions/> : null}
         {pageRef === "WPGraphQL_Tk_position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
         {pageRef === "WordPress VIP" ? <HeroWpVip/> : null}
+        {pageRef === "SAP" ? <HeroSAP/> : null}
       </div>
     </header>
   )

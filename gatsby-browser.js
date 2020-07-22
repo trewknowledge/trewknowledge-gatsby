@@ -12,6 +12,19 @@ export const onRouteUpdate = () => {
   $(document).ready(function () {
     
     $( document ).foundation();
+
+    // Animate scroll to page anchor
+    $('#smoothScroll').click(function(e) {
+      e.preventDefault();
+      var location = $(this).attr('href');
+      $('.os-viewport').animate(
+        {
+          scrollTop: $(location).position().top,
+        },
+        'slow',
+        'swing'
+      );
+    });
   });
 }
 
