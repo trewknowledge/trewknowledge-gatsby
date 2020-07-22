@@ -17,6 +17,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const aboutTemplate = path.resolve('./src/templates/aboutTemplate.js');
   const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
   const wpVipTemplate = path.resolve('./src/templates/wpVipTemplate.js');
+  const sapTemplate = path.resolve('./src/templates/sapTemplate.js');
   const archiveNews = path.resolve('./src/templates/archive-news.js');
   const archiveWorks = path.resolve('./src/templates/archive-works.js');
   const archivePositions = path.resolve('./src/templates/archive-positions.js');
@@ -43,6 +44,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 templateName
               }
               ... on WPGraphQL_WordPressVIPTemplate {
+                templateName
+              }
+              ... on WPGraphQL_SAPTemplate {
                 templateName
               }
             }
@@ -113,9 +117,6 @@ exports.createPages = async ({ graphql, actions }) => {
             __typename
           }
         }
-        readingSettings {
-          postsPerPage
-        }
       }
     }
   `)
@@ -172,6 +173,15 @@ exports.createPages = async ({ graphql, actions }) => {
           headerStyle: 'contact',
         }
       })
+    } else if (node.template.templateName === 'SAP') {
+      createPage({
+        path: node.uri,
+        component: slash(sapTemplate),
+        context: {
+          node: node,
+          headerStyle: 'white',
+        }
+      })
     } else if (node.template.templateName === 'WordPress VIP') {
       createPage({
         path: node.uri,
@@ -205,7 +215,7 @@ const archivesArray = [
   {
     postsArray: posts.nodes,
     pageTemplate: archiveNews,
-    path: '/news',
+    path: '/news/',
     archiveTitle: 'News',
     
   },

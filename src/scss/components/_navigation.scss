@@ -27,6 +27,12 @@
   align-items: center;
   font-family: 'nuue-hass-grotesk-bold';
 
+  &:hover {
+    > a {
+      opacity: 0.64;
+    }
+  }
+
   > a {
     pointer-events: auto;
   }
