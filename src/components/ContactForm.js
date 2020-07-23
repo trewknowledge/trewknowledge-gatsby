@@ -6,27 +6,27 @@ const ContactForm = () => {
     <form className="contact-form" name="Contact Form" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="Contact Form" />
       <div>
-        <label htmlFor="input-name">Name</label>
+        <label htmlFor="input-name" className="visuallyhidden">Name</label>
         <input type="text" placeholder="Name*" name="name" id="input-name" required aria-required="true" />
       </div>
       <div>
-        <label htmlFor="input-company">Company</label>
+        <label htmlFor="input-company" className="visuallyhidden">Company</label>
         <input type="text" placeholder="Company*" name="company" id="input-company" required aria-required="true" />
       </div>
       <div>
-        <label htmlFor="input-email">Company</label>
+        <label htmlFor="input-email" className="visuallyhidden">Company</label>
         <input type="email" placeholder="Email*" name="email" id="input-email" required aria-required="true" />
       </div>
       <div>
-        <label htmlFor="input-website">Website</label>
+        <label htmlFor="input-website" className="visuallyhidden">Website</label>
         <input type="url" placeholder="Website" name="website" id="input-website" />
       </div>
       <div>
-        <label htmlFor="input-phone">phone</label>
+        <label htmlFor="input-phone" className="visuallyhidden">Phone</label>
         <input type="tel" placeholder="Phone" name="phone" id="input-phone" />
       </div>
       <div>
-        <label htmlFor="input-message">Message*</label>
+        <label htmlFor="input-message" className="visuallyhidden">Message*</label>
         <textarea name="message" rows="20" placeholder="Message*" id="input-message" required aria-required="true"></textarea>
       </div>
       <button type="submit" className="pushbutton-wide">SEND</button>
