@@ -40,21 +40,21 @@ const Footer = () => {
   <div className="footer">
     <div className="footer-branding">
       <div>
-        <Link to={"/"} className="footer-logo">
+        <Link to={"/"} className="footer-logo" aria-label="Trew Knowledge Logo">
           <TkLogo alt="Trew Knowledge Logo" />
           <span>Trew Knowledge</span>
         </Link>
-        <a className="footer-branding-social" href="https://twitter.com/trewknowledge" target="_blank" rel="noopener noreferrer">
+        <a className="footer-branding-social" href="https://twitter.com/trewknowledge" target="_blank" rel="noopener noreferrer" aria-label="twitter logo">
           <TwitterLogo alt="twitter logo"/>
         </a>
-        <a className="footer-branding-social" href="https://www.facebook.com/trewknowledge" target="_blank" rel="noopener noreferrer">
+        <a className="footer-branding-social" href="https://www.facebook.com/trewknowledge" target="_blank" rel="noopener noreferrer" aria-label="facebook logo">
           <FacebookLogo alt="facebook logo"/>
         </a>
-        <a className="footer-branding-social" href="https://www.linkedin.com/company/1022792/" target="_blank" rel="noopener noreferrer">
-          <LinkedinLogo alt="facebook logo"/>
+        <a className="footer-branding-social" href="https://www.linkedin.com/company/1022792/" target="_blank" rel="noopener noreferrer" aria-label="linkedin logo">
+          <LinkedinLogo alt="linkedin logo"/>
         </a>
       </div>
-      <Link to="/wordpress-vip" className="hide-for-large">
+      <Link to="/wordpress-vip" className="hide-for-large" aria-label="To Wordpress VIP page">
         <WpVipLogo alt="WordPress VIP Logo"/>
       </Link>
     </div>
@@ -68,7 +68,7 @@ const Footer = () => {
           </li>
         ))}
         <li className="show-for-large">
-          <Link to={"/wordpress-vip"} className="linked-icon">
+          <Link to={"/wordpress-vip"} className="linked-icon" aria-label="To Wordpress VIP page">
             <WpVipLogo alt="WordPress VIP Logo"/>
           </Link>
         </li>

@@ -46,12 +46,12 @@ const Header = ({
     <header className={headerColor}>
       <nav className={menuOpen ? "grid-container nav is-open" : "grid-container nav"}>
         <div className={navStuck ? "nav-logo is-stuck" : "nav-logo"}>
-          <Link to={"/"}>
+          <Link to={"/"} aria-label="Trew Knowledge Logo">
             <TkLogo alt="Trew Knowledge Logo" />
           </Link>
           <span>{pageTitle}</span>
         </div>
-        <button className="hamburger-button" onClick={handleMenu}>
+        <button className="hamburger-button" onClick={handleMenu} aria-label="open nav menu button">
           <span className="line"></span>
           <span className="line"></span>
           <span className="line"></span>

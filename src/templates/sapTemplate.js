@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout';
 import ContactForm from '../components/ContactForm'
+
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { wpVipLogosArray } from '../js/logos';
 
 export default({pageContext, location}) => (
@@ -17,12 +19,9 @@ export default({pageContext, location}) => (
         <div className="hero-connector-text">
           <div className="hero-connector-text-inner">
             <p>As Canada's first Solution Provider to Gigya, now SAP CDC, we can help your brand collect first-party customer data, build rich identity-based profiles, and turn unknown site visitors into known loyal customers with our Customer Identity Management solutions.</p>
-            <a
-              className="button"
-              href="#contactFormTitle"
-              id="smoothScroll">
+            <button className="button" onClick={() => scrollTo('#contactFormTitle')}>
               get in touch
-            </a>
+            </button>
           </div>
         </div>
       </div>
