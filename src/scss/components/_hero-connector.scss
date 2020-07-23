@@ -143,6 +143,10 @@
   .hero-connector-text-inner {
     @include xy-cell(10, $gutter-type: none);
     margin-left: auto;
+
+    .button {
+      outline: none;
+    }
   }
 
   @include mq(tablet) {

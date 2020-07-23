@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout';
 import ContactForm from '../components/ContactForm'
+
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { wpVipLogosArray } from '../js/logos';
 
 export default({pageContext, location}) => (
@@ -17,12 +19,9 @@ export default({pageContext, location}) => (
         <div className="hero-connector-text">
           <div className="hero-connector-text-inner">
             <p>As the only Canadian based WordPress VIP Gold Agency Partner, we deliver enterprise digital solution using the world’s most trusted platform. From Toronto to Singapore our global reach helps clients scale their digital footprint.</p>
-            <a
-              className="button"
-              href="#contactFormTitle"
-              id="smoothScroll">
+            <button className="button" onClick={() => scrollTo('#contactFormTitle')}>
               get in touch
-            </a>
+            </button>
           </div>
         </div>
 
