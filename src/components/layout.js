@@ -125,7 +125,6 @@ const Layout = ( props ) => {
         pageRef={props.pageRef}
         navStuck={navStuck}
       />
-      {console.log(props)}
       <main>
         {props.children}
       </main>

@@ -10,7 +10,6 @@ import CarouselPreviousSmall from "../assets/img/svgs/carousel-previous-small.sv
 
 const NextArrow = (props) => {
   const { onClick, customClass } = props;
-  // console.log(props)
   const handleKeyDown = (ev) => {
     if (ev.keyCode === 13) {
       onClick()

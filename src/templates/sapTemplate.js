@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import ContactForm from '../components/ContactForm'
 
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import { wpVipLogosArray } from '../js/logos';
+import SocialProofVIP from "../components/SocialProofVIP"
 
 export default({pageContext, location}) => (
 
@@ -94,16 +94,7 @@ export default({pageContext, location}) => (
       </div>
 		</section>
         
-
-    <section className="social-proof section-background-white">
-      <div className="grid-x small-up-2 medium-up-4 grid-margin-x">
-        {wpVipLogosArray.map((logo, id) => (
-          <span className="social-proof-logo cell img-hover-link social-proof-logo-tall" key={id}>
-            <img src={logo.img} alt={logo.altTag} />
-          </span>
-        ))}
-      </div>
-    </section>
+    <SocialProofVIP />
 
     <div className="grid-container-narrow">
       <h2 className="contact-form-title" id="contactFormTitle">Contact us about WordPress VIP.</h2>
