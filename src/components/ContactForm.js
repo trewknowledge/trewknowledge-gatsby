@@ -6,28 +6,28 @@ const ContactForm = () => {
     <form className="contact-form" name="Contact Form" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="Contact Form" />
       <div>
-        <label htmlFor="name">Name</label>
-        <input type="text" placeholder="Name*" name="name" required aria-required="true" />
+        <label htmlFor="input-name">Name</label>
+        <input type="text" placeholder="Name*" name="name" id="input-name" required aria-required="true" />
       </div>
       <div>
-        <label htmlFor="company">Company</label>
-        <input type="text" placeholder="Company*" name="company" required aria-required="true" />
+        <label htmlFor="input-company">Company</label>
+        <input type="text" placeholder="Company*" name="company" id="input-company" required aria-required="true" />
       </div>
       <div>
-        <label htmlFor="email">Company</label>
-        <input type="email" placeholder="Email*" name="email" required aria-required="true" />
+        <label htmlFor="input-email">Company</label>
+        <input type="email" placeholder="Email*" name="email" id="input-email" required aria-required="true" />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
-        <input type="url" placeholder="Website" name="website" />
+        <label htmlFor="input-website">Website</label>
+        <input type="url" placeholder="Website" name="website" id="input-website" />
       </div>
       <div>
-        <label htmlFor="phone">phone</label>
-        <input type="tel" placeholder="Phone" name="phone" />
+        <label htmlFor="input-phone">phone</label>
+        <input type="tel" placeholder="Phone" name="phone" id="input-phone" />
       </div>
       <div>
-        <label htmlFor="message">Message*</label>
-        <textarea name="message" rows="20" placeholder="Message*" required aria-required="true"></textarea>
+        <label htmlFor="input-message">Message*</label>
+        <textarea name="message" rows="20" placeholder="Message*" id="input-message" required aria-required="true"></textarea>
       </div>
       <button type="submit" className="pushbutton-wide">SEND</button>
     </form>

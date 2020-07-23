@@ -20,7 +20,7 @@ const IndexPage = ({ pageContext, location }) => (
           As the only Canadian based WordPress VIP Gold Agency Partner, we deliver enterprise digital solutions using the world’s most trusted platform. From Toronto to Singapore our global reach helps clients scale their digital footprint.
         </p>
         <div className="wp-intro-section">
-          <Link to={"/wordpress-vip"} className="wp-intro-section-button button">
+          <Link to={"/wordpress-vip"} className="wp-intro-section-button button" aria-label="To Wordpress VIP page">
             learn more
           </Link>
           <WpLogo className="wp-intro-section-img" alt="WordPress VIP logo" />

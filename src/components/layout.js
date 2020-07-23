@@ -6,6 +6,7 @@
  */
 
 import React, { useState, useEffect } from "react"
+import SEO from './seo'
 
 import Header from "./Header"
 import Footer from "./Footer"
@@ -112,6 +113,9 @@ const Layout = ( props ) => {
   
   return (
     <div className="site">
+      <SEO 
+        title={props.pageTitle}
+      />
       <Header 
         menuOpen={menuOpen} 
         handleMenu={handleMenu} 
