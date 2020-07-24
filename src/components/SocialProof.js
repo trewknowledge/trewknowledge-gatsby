@@ -2,7 +2,6 @@ import React from 'react';
 import Img from 'gatsby-image/withIEPolyfill';
 
 const SocialProof = ({data}) => {
-  console.log(data)
   return (
     <section className="social-proof section-background-white">
       <div className="grid-x small-up-2 medium-up-4 grid-margin-x">
