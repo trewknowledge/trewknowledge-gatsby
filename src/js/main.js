@@ -4,8 +4,8 @@
  * @package tkgatskystartertheme
  */
 
-import './foundation-explicit-pieces';
+// import './foundation-explicit-pieces';
 
-window.$ = window.$ || jQuery;
+// window.$ = window.$ || jQuery;
 
-$( document ).foundation();
+// $( document ).foundation();
