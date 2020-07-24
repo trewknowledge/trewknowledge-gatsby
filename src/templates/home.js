@@ -1,20 +1,42 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Link } from 'gatsby';
-// import SEO from "../components/seo"
+import { Link, useStaticQuery, graphql } from 'gatsby';
+
 import LatestNews from '../components/LatestNews'
 import FeaturedWork from "../components/FeaturedWork"
 
 import WpLogo from '../assets/img/svgs/wp-vip-cert-logo.svg';
-import SocialProofHome from "../components/SocialProofHome"
+import SocialProof from "../components/SocialProof"
 
-const IndexPage = ({ pageContext, location }) => (
-  <Layout 
-    pageTitle={"Trew Knowledge"} 
-    location={location.pathname} 
-    pageRef={"Home"}
-  > 
-    
+const IndexPage = ({ pageContext, location }) => {
+  const data = useStaticQuery(graphql`
+    query socialProofHomeQuery {
+      allFile(filter: {relativeDirectory: {eq: "img/social-proof-home"}}, sort: {order: ASC, fields: base}) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid(quality: 80) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Layout 
+      pageTitle={"Trew Knowledge"} 
+      location={location.pathname} 
+      pageRef={"Home"}
+    > 
+      
       <section className="grid-container-narrow">
         <p className="lead">
           As the only Canadian based WordPress VIP Gold Agency Partner, we deliver enterprise digital solutions using the world’s most trusted platform. From Toronto to Singapore our global reach helps clients scale their digital footprint.
@@ -124,12 +146,13 @@ const IndexPage = ({ pageContext, location }) => (
         </div>
       </section>
 
-      <SocialProofHome />
+      <SocialProof data={data} />
 
       {pageContext.allWorks ? <FeaturedWork allWorks={pageContext.allWorks} /> : null}
       {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
-    
-  </Layout>
-)
+      
+    </Layout>
+  )
+}
 
 export default IndexPage

@@ -8,8 +8,6 @@
   text-align: center;
 
   .social-proof-logo {
-    @include flex-centerer;
-
     img,
     svg {
       max-height: 22px;
@@ -26,6 +24,16 @@
       img,
       svg {
         max-height: 55px;
+      }
+    }
+  }
+
+  .social-proof-logo:nth-child(3) {
+    .gatsby-image-wrapper {
+      top: 35%;
+
+      @media(max-width: 768px) {
+        top: 35%;
       }
     }
   }

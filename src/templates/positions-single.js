@@ -15,7 +15,6 @@ export default ({ pageContext, location }) => {
       headerContent={pageContext.node.title}
       pageRef={pageContext.node.__typename}
     >
-    {console.log(pageContext)}
       <article className="grid-container-narrow article">
           <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
           <p className="article-date">{formatDate()}</p>
