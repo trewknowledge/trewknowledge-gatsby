@@ -3,7 +3,7 @@ import React from 'react';
 const ContactForm = ({formTitle}) => {
   // See form notes at the bottom of this page
   return (
-    <form className="contact-form" name="Contact Form" method="POST" data-netlify="true">
+    <form className="contact-form" name="Contact Form" method="POST" data-netlify="true" action="/thank-you">
       <input type="hidden" name="form-name" value="Contact Form" />
       <input type="hidden" name="Referring Page" value={formTitle} />
       <div>
