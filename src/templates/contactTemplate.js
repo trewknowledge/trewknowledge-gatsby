@@ -45,7 +45,7 @@ export default ({ pageContext, location }) => {
         </div>
 
         <div className="grid-container-narrow">
-          <ContactForm />
+          <ContactForm formTitle={pageContext.node.title} />
           <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
     </Layout>
