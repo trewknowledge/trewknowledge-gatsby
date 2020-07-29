@@ -121,7 +121,7 @@ export default({pageContext, location}) => {
 
         <div className="grid-container-narrow">
           <h2 className="contact-form-title" id="contactFormTitle">Contact us about WordPress VIP.</h2>
-          <ContactForm />
+          <ContactForm formTitle={pageContext.node.title} />
           <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
 
