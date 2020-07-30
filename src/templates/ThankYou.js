@@ -1,18 +1,17 @@
 import React from "react"
-
 import Layout from "../components/layout"
 
-const NotFoundPage = ({location}) => (
+const ThankYou = ({pageContext, location}) => (
   <Layout 
     pageTitle={"Trew Knowledge"} 
     location={location.pathname} 
-    headerStyle={'white'}
+    headerStyle={"white"}
   >
     <div className="grid-container-narrow pt0 pb0 text-center">
-      <h1>Oops! That page can’t be found.</h1>
-      <p>It looks like nothing was found at this location.</p>
+      <h1>Thank You!</h1>
+      <p>Your form submission has been received.</p>
     </div>
   </Layout>
 )
 
-export default NotFoundPage
+export default ThankYou

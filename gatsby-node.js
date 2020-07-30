@@ -22,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const archiveWorks = path.resolve('./src/templates/archive-works.js');
   const archivePositions = path.resolve('./src/templates/archive-positions.js');
   const positionsSingle = path.resolve('./src/templates/positions-single.js');
+  const thankYou = path.resolve('./src/templates/ThankYou.js');
 
   const result = await graphql(`
     {
@@ -198,6 +199,16 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           node: node,
           pageTitle: "Privacy Policy",
+          headerStyle: "empty"
+        }
+      })
+    } else if (node.title === 'Thank You') {
+      createPage({
+        path: node.uri,
+        component: slash(thankYou),
+        context: {
+          node: node,
+          pageTitle: "Thank You",
           headerStyle: "empty"
         }
       })
