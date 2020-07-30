@@ -209,7 +209,7 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           node: node,
           pageTitle: "Thank You",
-          headerStyle: "empty"
+          headerStyle: "white"
         }
       })
     } else {
