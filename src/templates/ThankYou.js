@@ -5,10 +5,11 @@ const ThankYou = ({pageContext, location}) => (
   <Layout 
     pageTitle={"Trew Knowledge"} 
     location={location.pathname} 
+    headerStyle={"white"}
   >
-    <div className="grid-container-narrow">
-      <h1>Form Submitted</h1>
-      <p>Thank you for your submission!</p>
+    <div className="grid-container-narrow pt0 pb0 text-center">
+      <h1>Thank You!</h1>
+      <p>Your form submission has been received.</p>
     </div>
   </Layout>
 )

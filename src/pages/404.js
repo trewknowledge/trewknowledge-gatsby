@@ -4,12 +4,13 @@ import Layout from "../components/layout"
 
 const NotFoundPage = ({location}) => (
   <Layout 
-    pageTitle={"404"} 
+    pageTitle={"Trew Knowledge"} 
     location={location.pathname} 
+    headerStyle={'white'}
   >
-    <div className="grid-container-narrow">
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="grid-container-narrow pt0 pb0 text-center">
+      <h1>Oops! That page can’t be found.</h1>
+      <p>It looks like nothing was found at this location.</p>
     </div>
   </Layout>
 )
