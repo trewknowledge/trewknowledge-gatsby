@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: 'gatsby-wpgraphql-inline-images',
       options: {
-        wordPressUrl: 'https://trewknowledge-com-develop.go-vip.net',
-        uploadsUrl: 'https://trewknowledge-com-develop.go-vip.net/wp-content/uploads/',
+        wordPressUrl: 'https://trewknowledge.com/',
+        uploadsUrl: 'https://trewknowledge.com/wp-content/uploads/',
         processPostTypes: ['Post', 'Tk_work'],
         graphqlTypeName: 'WPGraphQL',
         // httpHeaders: {
@@ -77,7 +77,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraphql",
         // Url to query from
-        url: "https://trewknowledge-com-develop.go-vip.net/graphql",
+        url: "https://trewknowledge.com/graphql",
       },
     },
     {
