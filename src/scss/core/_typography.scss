@@ -139,6 +139,41 @@ address {
   }
 }
 
+blockquote {
+  @include grotesk-bold-italic;
+  border-left: 0;
+  font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 100px;
+  padding-left: 38px;
+  position: relative;
+
+  $line-speed: 1.2s;
+  $line-easing: cubic-bezier(1, 0, 0, 1);
+
+  &::before {
+    @include transition(height $line-speed $line-easing);
+    background-color: $teal;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+
+  &.aos-animate {
+    &::before {
+      height: 100%;
+    }
+  }
+}
+
+cite {
+  @include noticia;
+  line-height: 28px;
+}
+
 %word-wrap {
   hyphens: auto;
   overflow-wrap: break-word;
