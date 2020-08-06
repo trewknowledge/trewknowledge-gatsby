@@ -6,8 +6,8 @@ import contentParser from 'gatsby-wpgraphql-inline-images';
 export default ({ pageContext, location }) => {
   const content = pageContext.node.content;
   const pluginOptions = {
-    wordPressUrl: 'https://trewknowledge.com/',
-    uploadsUrl: 'https://trewknowledge.com/wp-content/uploads/',
+    wordPressUrl: 'https://trewknowledge-com-develop.go-vip.net/',
+    uploadsUrl: 'https://trewknowledge-com-develop.go-vip.net/wp-content/uploads/',
   };
 
   const formatDate = () => {
@@ -16,7 +16,7 @@ export default ({ pageContext, location }) => {
 
   return (
     <Layout pageTitle={pageContext.pageTitle} headerStyle={pageContext.headerStyle} location={location.pathname}>
-    {console.log(content)}
+    {console.log(pageContext.node.content)}
       <div className="grid-container-narrow article pb0">
         <article className="article-content">
           <h2 
@@ -25,7 +25,7 @@ export default ({ pageContext, location }) => {
           />
 
           {pageContext.pageTitle === "News" ? <p className="article-date">{formatDate()}</p> : null} 
-        
+          
           <Fragment>
             {contentParser({ content }, pluginOptions)}
           </Fragment>
