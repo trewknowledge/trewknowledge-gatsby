@@ -23,6 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const archivePositions = path.resolve('./src/templates/archive-positions.js');
   const positionsSingle = path.resolve('./src/templates/positions-single.js');
   const thankYou = path.resolve('./src/templates/ThankYou.js');
+  const articleSingle = path.resolve('./src/templates/article-single.js');
 
   const result = await graphql(`
     {
@@ -271,6 +272,7 @@ archivesArray.forEach(archivePage => (
       component: slash(postTemplate),
       context: {
         node: node,
+        allWorks: tk_works.nodes,
         pageTitle: "News",
         headerStyle: "empty"
       }
