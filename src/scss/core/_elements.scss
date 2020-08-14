@@ -426,14 +426,14 @@ samp {
 	font-family: $font__code;
 }
 
-q,
-blockquote {
-	border-left: 4px solid $light-gray;
-	color: $color__blockquote;
-	font-style: italic;
-	margin: 0 0 $font__base-line-height $font__base-line-height;
-	padding-left: 16px;
-}
+// q,
+// blockquote {
+// 	border-left: 4px solid $light-gray;
+// 	color: $color__blockquote;
+// 	font-style: italic;
+// 	margin: 0 0 $font__base-line-height $font__base-line-height;
+// 	padding-left: 16px;
+// }
 
 hr {
 	background-color: $color__background-hr;

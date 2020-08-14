@@ -63,7 +63,7 @@ export default class WorksSlider extends Component {
       ]
     };
     return (
-      <div className="grid-container-narrow other-work">
+      <div className={this.props.pageContext.pageTitle === 'News' ? 'grid-container-narrow other-work pt0' : 'grid-container-narrow other-work'}>
         <h2>Other Work</h2>
         <Slider {...settings}>
           {this.props.pageContext.allWorks.map((item, id) => ( 

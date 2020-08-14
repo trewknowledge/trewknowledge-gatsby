@@ -57,7 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             id
             uri
-            slug
             title
             content
             excerpt
@@ -84,7 +83,6 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             id
             uri
-            slug
             title
             content
             date
@@ -110,7 +108,6 @@ exports.createPages = async ({ graphql, actions }) => {
           nodes {
             id
             uri
-            slug
             title
             content
             excerpt
@@ -274,6 +271,7 @@ archivesArray.forEach(archivePage => (
       component: slash(postTemplate),
       context: {
         node: node,
+        allWorks: tk_works.nodes,
         pageTitle: "News",
         headerStyle: "empty"
       }
