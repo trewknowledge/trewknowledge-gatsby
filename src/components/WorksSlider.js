@@ -69,7 +69,7 @@ export default class WorksSlider extends Component {
           {this.props.pageContext.allWorks.map((item, id) => ( 
             <Link to={item.uri} key={item.id}>
               <figure className="image-hover-wrapper">
-                <Img fluid={item.featuredImage.imageFile.childImageSharp.fluid} alt={item.title} /> 
+                {item.featuredImage === null ? <h3>{item.title}</h3> : <Img fluid={item.featuredImage.node.localFile.childImageSharp.fluid} alt={item.title} />}
                 <figcaption>
                   {item.title}
                 </figcaption>

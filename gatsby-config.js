@@ -18,16 +18,33 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        // Arbitrary name for the remote schema Query type
-        typeName: "WPGraphQL",
-        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-        fieldName: "wpgraphql",
-        // Url to query from
-        url: "https://trewknowledge.com/graphql",
+        url:
+          process.env.WPGRAPHQL_URL ||
+          `https://trewknowledge-com-develop.go-vip.net/graphql`,
+          // https://trewknowledge.com/graphql
+        verbose: true,
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+        debug: {
+          graphql: {
+            writeQueriesToDisk: true,
+          },
+        },
+        type: {
+          Post: {
+            limit:
+              process.env.NODE_ENV === `development`
+                ? // Lets just pull 50 posts in development to make it easy on ourselves.
+                  50
+                : // and we don't actually need more than 5000 in production for this particular site
+                  5000,
+          },
+        },
       },
-    },  
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

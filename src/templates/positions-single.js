@@ -13,7 +13,7 @@ export default ({ pageContext, location }) => {
       headerStyle={pageContext.headerStyle} 
       location={location.pathname}
       headerContent={pageContext.node.title}
-      pageRef={pageContext.node.__typename}
+      pageRef={pageContext.pageRef}
     >
       <article className="grid-container-narrow article">
           <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>

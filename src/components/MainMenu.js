@@ -5,18 +5,13 @@ import Navigation from './Navigation'
 const MobileMenu = ({menuOpen, handleMenu}) => {
   const data = useStaticQuery(graphql`
     query MobileMenuQuery {
-      wpgraphql {
-        generalSettings {
-          url
-        }
-        menus(where: {slug: "Main Menu"}) {
-          nodes {
-            menuItems {
-              nodes {
-                url
-                label
-                id
-              }
+      allWpMenu(filter: {slug: {eq: "main-menu"}}) {
+        nodes {
+          menuItems {
+            nodes {
+              label
+              id
+              path
             }
           }
         }
