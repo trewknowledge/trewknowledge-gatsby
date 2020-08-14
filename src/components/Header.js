@@ -63,7 +63,7 @@ const Header = ({
         {pageRef === "About" ? <HeroAbout/> : null}
         {pageRef === "Careers" ? <HeroCareers/> : null}
         {pageRef === "positionsArchive" ? <HeroPositions/> : null}
-        {pageRef === "WPGraphQL_Tk_position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
+        {pageRef === "TK_Position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
         {pageRef === "WordPress VIP" ? <HeroWpVip/> : null}
         {pageRef === "SAP" ? <HeroSAP/> : null}
       </div>

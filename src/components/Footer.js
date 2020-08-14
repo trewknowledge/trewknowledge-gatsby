@@ -11,18 +11,13 @@ const Footer = () => {
 
   const data = useStaticQuery(graphql`
     query FooterMenuQuery {
-      wpgraphql {
-        generalSettings {
-          url
-        }
-        menus(where: {slug: "Footer Menu"}) {
-          nodes {
-            menuItems {
-              nodes {
-                url
-                label
-                id
-              }
+      allWpMenu(filter: {slug: {eq: "footer-menu"}}) {
+        nodes {
+          menuItems {
+            nodes {
+              label
+              id
+              path
             }
           }
         }
@@ -30,11 +25,7 @@ const Footer = () => {
     }
   `)
 
-  const { url } = data.wpgraphql.generalSettings; 
-  const menuItems = data.wpgraphql.menus.nodes[0].menuItems.nodes.map(item => ({
-    ...item,
-    url: item.url.replace(url, "")
-  }));
+  const menuItems = data.allWpMenu.nodes[0].menuItems.nodes;
 
   return (
   <div className="footer">
@@ -62,7 +53,7 @@ const Footer = () => {
       <ul className="footer-links-menu vertical medium-horizontal menu">
         {menuItems.map(item => (
           <li key={item.id}>
-            <Link to={item.url}>
+            <Link to={item.path}>
               {item.label}
             </Link>
           </li>

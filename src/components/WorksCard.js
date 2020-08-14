@@ -3,12 +3,11 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image'
 
 const WorksCard = ({ postContext }) => {
-
   return (
     <Link to={postContext.uri}>
       <div className="works-card">
         <figure className="image-hover-wrapper">
-          {postContext.featuredImage.imageFile ? <Img fluid={postContext.featuredImage.imageFile.childImageSharp.fluid} alt={postContext.title} />  : <img src={postContext.featuredImage.sourceUrl} alt={postContext.title} />}
+          {postContext.featuredImage === null ? <h3>{postContext.title}</h3> : <Img fluid={postContext.featuredImage.node.localFile.childImageSharp.fluid} alt={postContext.title} />}
           <figcaption>{postContext.title}</figcaption>  
         </figure>
       </div>
