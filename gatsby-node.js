@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const thankYou = path.resolve('./src/templates/ThankYou.js');
 
   const result = await graphql(`
-    {
+    query {
       allWpPage {
         nodes {
           title

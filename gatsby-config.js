@@ -22,17 +22,23 @@ module.exports = {
       options: {
         url:
           process.env.WPGRAPHQL_URL ||
-          `https://trewknowledge-com-develop.go-vip.net/graphql`,
-          // https://trewknowledge.com/graphql
+          // `https://trewknowledge-com-develop.go-vip.net/graphql`,
+          'https://trewknowledge.com/graphql',
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
+        },
+        html: {
+          useGatsbyImage: true,
+          imageMaxWidth: 905,
+          imageQuality: 80,
         },
         debug: {
           graphql: {
             writeQueriesToDisk: true,
           },
         },
+        /*
         type: {
           Post: {
             limit:
@@ -43,6 +49,7 @@ module.exports = {
                   5000,
           },
         },
+        */
       },
     },
     `gatsby-transformer-sharp`,
