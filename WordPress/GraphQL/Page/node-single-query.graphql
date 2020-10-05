@@ -3,6 +3,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     ancestors(first: 100) {
       nodes {
         id
+        __typename
       }
     }
     author {
@@ -15,6 +16,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     wpChildren: children(first: 100) {
       nodes {
         id
+        __typename
       }
     }
     commentCount
@@ -91,6 +93,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     terms(first: 100) {
       nodes {
         id
+        __typename
       }
     }
     title

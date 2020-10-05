@@ -11,6 +11,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       contentNodes(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       deleteWithUser

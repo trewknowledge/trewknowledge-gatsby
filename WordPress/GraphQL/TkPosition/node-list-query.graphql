@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  tk_positions(first: $first, after: $after, where: { parent: null }) {
+  tkPositions(first: $first, after: $after) {
     nodes {
       content
       contentType {
@@ -57,6 +57,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       terms(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       title

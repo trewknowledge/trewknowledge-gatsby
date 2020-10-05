@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  categories(first: $first, after: $after, where: { parent: null }) {
+  categories(first: $first, after: $after) {
     nodes {
       ancestors(first: 100) {
         nodes {
@@ -37,7 +37,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       }
       termGroupId
       termTaxonomyId
-      tk_works(first: 100) {
+      tkWorks(first: 100) {
         nodes {
           id
         }

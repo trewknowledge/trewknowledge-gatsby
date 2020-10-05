@@ -10,6 +10,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     contentNodes(first: 100) {
       nodes {
         id
+        __typename
       }
     }
     deleteWithUser

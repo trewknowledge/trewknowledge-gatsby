@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const thankYou = path.resolve('./src/templates/ThankYou.js');
 
   const result = await graphql(`
-    query {
+    {
       allWpPage {
         nodes {
           title
@@ -52,7 +52,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allWpPost {
+      allWpPost(sort: {order: DESC, fields: date}) {
         nodes {
           id
           uri
@@ -78,7 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         } 
       }
-      allWpTkWork {
+      allWpTkWork(sort: {order: DESC, fields: date}) {
         nodes {
           id
           uri

@@ -1,9 +1,10 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  pages(first: $first, after: $after, where: { parent: null }) {
+  pages(first: $first, after: $after) {
     nodes {
       ancestors(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       author {
@@ -16,6 +17,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       wpChildren: children(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       commentCount
@@ -92,6 +94,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       terms(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       title

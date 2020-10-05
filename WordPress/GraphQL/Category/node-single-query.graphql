@@ -36,7 +36,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     }
     termGroupId
     termTaxonomyId
-    tk_works(first: 100) {
+    tkWorks(first: 100) {
       nodes {
         id
       }
