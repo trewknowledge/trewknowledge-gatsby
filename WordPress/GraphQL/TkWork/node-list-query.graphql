@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  tk_works(first: $first, after: $after, where: { parent: null }) {
+  tkWorks(first: $first, after: $after) {
     nodes {
       categories(first: 100) {
         nodes {
@@ -61,6 +61,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       terms(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       title

@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  comments(first: $first, after: $after, where: { parent: null }) {
+  comments(first: $first, after: $after) {
     nodes {
       agent
       approved

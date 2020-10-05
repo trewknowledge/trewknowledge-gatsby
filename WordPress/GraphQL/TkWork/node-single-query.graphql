@@ -1,5 +1,10 @@
 query SINGLE_CONTENT_QUERY($id: ID!) {
-  tk_position(id: $id) {
+  tkWork(id: $id) {
+    categories(first: 100) {
+      nodes {
+        id
+      }
+    }
     content
     contentType {
       node {
@@ -11,7 +16,6 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     dateGmt
     desiredSlug
     enclosure
-    excerpt
     featuredImage {
       node {
         id
@@ -56,6 +60,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     terms(first: 100) {
       nodes {
         id
+        __typename
       }
     }
     title

@@ -1,5 +1,5 @@
-query SINGLE_CONTENT_QUERY($id: ID!) {
-  tk_work(id: $id) {
+query PREVIEW_QUERY($id: ID!) {
+  tkWork(id: $id, idType: ID, asPreview: true) {
     categories(first: 100) {
       nodes {
         id
@@ -60,6 +60,7 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
     terms(first: 100) {
       nodes {
         id
+        __typename
       }
     }
     title

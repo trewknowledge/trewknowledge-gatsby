@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  posts(first: $first, after: $after, where: { parent: null }) {
+  posts(first: $first, after: $after) {
     nodes {
       author {
         node {
@@ -89,6 +89,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       terms(first: 100) {
         nodes {
           id
+          __typename
         }
       }
       title

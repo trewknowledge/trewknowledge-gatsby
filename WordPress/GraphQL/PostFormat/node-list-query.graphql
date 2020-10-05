@@ -1,5 +1,5 @@
 query NODE_LIST_QUERY($first: Int!, $after: String) {
-  postFormats(first: $first, after: $after, where: { parent: null }) {
+  postFormats(first: $first, after: $after) {
     nodes {
       count
       databaseId
