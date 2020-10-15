@@ -39,8 +39,8 @@ query PREVIEW_QUERY($id: ID!) {
     enclosure
     featuredImage {
       node {
+        __typename
         id
-        sourceUrl
       }
     }
     featuredImageDatabaseId

@@ -160,3 +160,9 @@ main > .hero-banner + .article.grid-container-narrow {
     margin-bottom: 38px;
   }
 }
+
+.gatsby-image-wrapper {
+  width: 100% !important;
+  // https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/issues/151
+}
+

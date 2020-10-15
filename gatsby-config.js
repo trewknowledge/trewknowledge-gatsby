@@ -32,6 +32,7 @@ module.exports = {
           useGatsbyImage: true,
           imageMaxWidth: 905,
           imageQuality: 80,
+          fallbackImageMaxWidth: 800,
         },
         debug: {
           graphql: {

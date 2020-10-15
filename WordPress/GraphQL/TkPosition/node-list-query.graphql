@@ -15,8 +15,8 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       excerpt
       featuredImage {
         node {
+          __typename
           id
-          sourceUrl
         }
       }
       featuredImageDatabaseId
