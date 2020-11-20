@@ -8,6 +8,7 @@
     "@wordpress/block-library": "^2.26.4",
     "aos": "^2.3.4",
     "babel-plugin-styled-components": "^1.12.0",
+    "cache-manager-fs-hash": "0.0.9",
     "foundation-sites": "^6.6.3",
     "gatsby": "^2.27.0",
     "gatsby-image": "^2.6.0",
