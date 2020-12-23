@@ -8,7 +8,7 @@ import FeaturedWork from "../components/FeaturedWork"
 import WpLogo from '../assets/img/svgs/wp-vip-cert-logo.svg';
 import SocialProof from "../components/SocialProof"
 
-const IndexPage = ({ pageContext, location }) => {
+const HomePage = ({ pageContext, location }) => {
   const data = useStaticQuery(graphql`
     query socialProofHomeQuery {
       allFile(filter: {relativeDirectory: {eq: "img/social-proof-home"}}, sort: {order: ASC, fields: base}) {
@@ -155,4 +155,4 @@ const IndexPage = ({ pageContext, location }) => {
   )
 }
 
-export default IndexPage
+export default HomePage;

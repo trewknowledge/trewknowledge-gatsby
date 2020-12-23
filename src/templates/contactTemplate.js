@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout'
 import ContactForm from '../components/ContactForm'
 
-export default ({ pageContext, location }) => {
+const Contact = ({ pageContext, location }) => {
 
   return (
     <Layout 
@@ -51,3 +51,5 @@ export default ({ pageContext, location }) => {
     </Layout>
   )
 }
+
+export default Contact;

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout';
 
-export default ({ pageContext, location }) => {
+const PositionsSingle = ({ pageContext, location }) => {
   
   const formatDate = () => {
     return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -32,3 +32,4 @@ export default ({ pageContext, location }) => {
   )
 }
 
+export default PositionsSingle;

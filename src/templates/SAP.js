@@ -7,7 +7,7 @@ import SocialProof from "../components/SocialProof"
 
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-export default({pageContext, location}) => {
+const SAP = ({pageContext, location}) => {
   const data = useStaticQuery(graphql`
     query socialProofSapQuery {
       allFile(filter: {relativeDirectory: {eq: "img/social-proof-sap"}}, sort: {order: ASC, fields: base}) {
@@ -128,3 +128,5 @@ export default({pageContext, location}) => {
       </Layout>
   )
 }
+
+export default SAP;

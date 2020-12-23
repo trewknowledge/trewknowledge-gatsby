@@ -9,7 +9,7 @@ import EngineeringIcon from '../assets/img/svgs/engineering-icon.svg';
 import InsightsIcon from '../assets/img/svgs/insights-icon.svg';
 import AdaptionIcon from '../assets/img/svgs/adaptation-icon.svg';
 
-export default ({pageContext, location}) => (
+const About = ({pageContext, location}) => (
 
   <Layout 
     pageTitle={pageContext.node.title} 
@@ -86,3 +86,5 @@ export default ({pageContext, location}) => (
     
   </Layout>
 )
+
+export default About;

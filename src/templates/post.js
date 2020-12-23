@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout';
 import WorksSlider from '../components/WorksSlider'
 
-export default ({ pageContext, location }) => {
+const postTemplate = ({ pageContext, location }) => {
   console.log(pageContext)
 
   const formatDate = () => {
@@ -37,3 +37,5 @@ export default ({ pageContext, location }) => {
     </Layout> 
   )
 }
+
+export default postTemplate;
