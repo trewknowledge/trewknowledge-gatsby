@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import parse from "html-react-parser";
 import Layout from '../components/layout';
 
 const PositionsSingle = ({ pageContext, location }) => {
@@ -16,10 +17,9 @@ const PositionsSingle = ({ pageContext, location }) => {
       pageRef={pageContext.pageRef}
     >
       <article className="grid-container-narrow article">
-          <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
-          <p className="article-date">{formatDate()}</p>
-          
-          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
+        <h2>{parse(pageContext.node.title)}</h2>
+        <p className="article-date">{formatDate()}</p>      
+        <div>{parse(pageContext.node.content)}</div>
       </article>
     
       <section className="grid-container-narrow pt0">
