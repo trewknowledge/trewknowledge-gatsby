@@ -13,7 +13,7 @@ const PositionsSingle = ({ pageContext, location }) => {
       pageTitle={pageContext.pageTitle} 
       headerStyle={pageContext.headerStyle} 
       location={location.pathname}
-      headerContent={pageContext.node.title}
+      headerTitle={pageContext.node.title}
       pageRef={pageContext.pageRef}
     >
       <article className="grid-container-narrow article">

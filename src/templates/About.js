@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from '../components/layout'
-import { Link } from 'gatsby'
-import LatestNews from '../components/LatestNews'
+import React from 'react';
+import Layout from '../components/layout';
+import { Link } from 'gatsby';
+import LatestNews from '../components/news/LatestNews';
 
 import DiscoveryIcon from '../assets/img/svgs/discovery-icon.svg';
 import UiuxIcon from '../assets/img/svgs/uiux-icon.svg';

@@ -6,7 +6,7 @@ import parse from "html-react-parser";
 import CarouselNext from "../assets/img/svgs/carousel-next.svg"
 import CarouselNextSmall from "../assets/img/svgs/carousel-next-small.svg"
 
-import LatestNews from '../components/LatestNews'
+import LatestNews from '../components/news/LatestNews'
 
 const ArchivePositions = ({pageContext, location}) => {
 
@@ -27,7 +27,7 @@ const ArchivePositions = ({pageContext, location}) => {
               <CarouselNext className="hide-for-small-only hide-for-large teal-arrow" alt="arrow right"/>
               <CarouselNextSmall className="hide-for-medium" alt="arrow right"/>
             </h2>
-            <p>{parse(post.excerpt)}</p>
+            {parse(post.excerpt)}
           </Link>
           
         ))}

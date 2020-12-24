@@ -4,6 +4,7 @@
   font-weight: normal;
   src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskDSPro-95Blk.otf')
     format('opentype');
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   font-weight: normal;
   src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskTXPro-55Rg.otf')
     format('opentype');
+  font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
   font-weight: bold;
   src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskDSPro-75Bd.otf')
     format('opentype');
+  font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
   font-weight: bold;
   src: url('../assets/fonts/neue-haas-grotesk/NHaasGroteskDSPro-76BdIt.otf')
     format('opentype');
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +40,7 @@
   font-weight: normal;
   src: url('../assets/fonts/noticia-text/NoticiaText-Regular.ttf')
     format('truetype');
+  font-display: swap;
 }
 
 @mixin noticia {

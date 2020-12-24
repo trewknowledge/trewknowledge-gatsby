@@ -1,7 +1,7 @@
 import React from 'react';
 import parse from "html-react-parser";
 import Layout from '../components/layout';
-import WorksSlider from '../components/WorksSlider';
+import WorksSlider from '../components/works/WorksSlider';
 
 const postTemplate = ({ pageContext, location }) => {
   console.log(pageContext)
@@ -25,7 +25,7 @@ const postTemplate = ({ pageContext, location }) => {
           {pageContext.pageTitle === "News" ? 
           <p className="article-date">{formatDate()}</p> : null} 
           
-          <div>{parse(pageContext.node.content)}</div>
+          {parse(pageContext.node.content)}
 
         </article>
         {pageContext.pageTitle !== "Privacy Policy" ? <hr/> : null} 

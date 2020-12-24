@@ -5,17 +5,17 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState, useEffect } from "react"
-import SEO from './seo'
+import React, { useState, useEffect } from "react";
+import SEO from './seo';
 
-import Header from "./Header"
-import Footer from "./Footer"
-import ContactSection from "./ContactSection"
+import Header from "./Header";
+import Footer from "./Footer";
+import ContactSection from "./ContactSection";
 
-import OverlayScrollbars from 'overlayscrollbars'
+import OverlayScrollbars from 'overlayscrollbars';
 
-import '@wordpress/block-library/build-style/style.css'
-import '../scss/main.scss'
+import '@wordpress/block-library/build-style/style.css';
+import '../scss/main.scss';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 const Layout = ( props ) => {
@@ -121,7 +121,7 @@ const Layout = ( props ) => {
         handleMenu={handleMenu} 
         pageTitle={props.pageTitle} 
         headerStyle={props.headerStyle}
-        headerContent={props.headerContent}
+        headerTitle={props.headerTitle}
         pageRef={props.pageRef}
         navStuck={navStuck}
       />
@@ -134,4 +134,4 @@ const Layout = ( props ) => {
   )
 }
 
-export default Layout
+export default Layout;
