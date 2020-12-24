@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import parse from "html-react-parser";
 import Layout from '../components/layout';
-import WorksSlider from '../components/WorksSlider'
+import WorksSlider from '../components/WorksSlider';
 
 const postTemplate = ({ pageContext, location }) => {
   console.log(pageContext)
@@ -18,15 +19,13 @@ const postTemplate = ({ pageContext, location }) => {
     
       <div className="grid-container-narrow article pb0">
         <article className="article-content">
-          <h2 
-            dangerouslySetInnerHTML={{ __html: pageContext.node.title }} 
-            className={pageContext.pageTitle === "News" ? "article-title" : "article-section-title"} 
-          />
-
+          <h2 className={pageContext.pageTitle === "News" ? "article-title" : "article-section-title"}>
+            {parse(pageContext.node.title)}
+          </h2> 
           {pageContext.pageTitle === "News" ? 
           <p className="article-date">{formatDate()}</p> : null} 
           
-          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }} />
+          <div>{parse(pageContext.node.content)}</div>
 
         </article>
         {pageContext.pageTitle !== "Privacy Policy" ? <hr/> : null} 
