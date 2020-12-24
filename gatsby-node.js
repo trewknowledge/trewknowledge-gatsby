@@ -145,8 +145,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(careersTemplate),
         context: {
           node: node,
-          headerStyle: 'blue',
-          headerContent: 'HeroCareers',
+          headerStyle: 'blue'
         }
       })
     } else if (node.template.templateName === 'About') {
@@ -155,8 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(aboutTemplate),
         context: {
           node: node,
-          headerContent: 'HeroAbout',
-          allPosts: allWpPost.nodes.slice(0, 2),
+          allPosts: allWpPost.nodes.slice(0, 2)
         }
       })
     } else if (node.template.templateName === 'Contact') {

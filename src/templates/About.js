@@ -16,7 +16,6 @@ const About = ({pageContext, location}) => (
     location={location.pathname} 
     pageRef={pageContext.node.template.templateName}
   >
-    
       <section className="grid-container-narrow pb0">
 
         <p className="lead lead-narrow">Our team of dedicated professionals align themselves with your particular business goals, creating digital development, brand strategy, and customer identity management solutions that take your brand where you want it to be.</p>

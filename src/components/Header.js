@@ -13,11 +13,13 @@ import HeroSAP from './headerTemplates/HeroSAP';
 const Header = ({ 
   menuOpen, 
   handleMenu, 
-  pageTitle, 
-  headerStyle, 
-  headerTitle,
-  pageRef,
-  navStuck 
+  navStuck, 
+  pageProps: {
+    headerStyle, 
+    headerTitle, 
+    pageTitle, 
+    pageRef
+  },
 }) => {
 
   const [headerColor, setHeaderColor] = useState('hero hero-bg-dark');
@@ -39,6 +41,8 @@ const Header = ({
       case 'black':
         setHeaderColor('hero hero-bg-black');
         break;
+      default:
+        setHeaderColor('hero hero-bg-dark');
     }
   }, [headerStyle]);
 
