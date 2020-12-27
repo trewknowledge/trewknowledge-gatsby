@@ -21,16 +21,15 @@ const postTemplate = ({ pageContext, location }) => {
           <h2 className={pageContext.pageTitle === "News" ? "article-title" : "article-section-title"}>
             {parse(pageContext.node.title)}
           </h2> 
-          {pageContext.pageTitle === "News" ? 
-          <p className="article-date">{formatDate()}</p> : null} 
+          {pageContext.pageTitle === "News" && <p className="article-date">{formatDate()}</p>} 
           
           {parse(pageContext.node.content)}
 
         </article>
-        {pageContext.pageTitle !== "Privacy Policy" ? <hr/> : null} 
+        {pageContext.pageTitle !== "Privacy Policy" && <hr/>} 
       </div>
       
-      {pageContext.allWorks ? <WorksSlider pageContext={pageContext} /> : null}
+      {pageContext.allWorks && <WorksSlider pageContext={pageContext} />}
         
     </Layout> 
   )

@@ -33,11 +33,11 @@ const ArchiveNews = ({pageContext, location}) => {
         })}
       </div>
 
-      {posts.length < allPosts.length ? 
+      {posts.length < allPosts.length && 
         <div className="infinite-handle">
           <button className="button" onClick={() => handleClick()}>Load More</button> 
         </div>
-      : null}
+      }
       
     </div>
   </Layout>

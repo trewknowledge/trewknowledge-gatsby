@@ -7,14 +7,13 @@ const SocialProof = ({data}) => {
       <div className="grid-x small-up-2 medium-up-4 grid-margin-x">
         {data.allFile.edges.map((edge, id) => (
           <span className="social-proof-logo cell img-hover-link social-proof-logo-tall" key={id}>
-          {edge.node.childImageSharp ? 
+          {edge.node.childImageSharp && 
             <Img 
               objectFit="contain"
               fluid={edge.node.childImageSharp.fluid} 
               alt={edge.node.base.split(/-(.+)/).join(',').split('.').join(',').split(',')[1]}
               // Replace each seperator with a comma and do a final split on the comma. Refs below.
             /> 
-            : null 
           }
           </span>
         ))}

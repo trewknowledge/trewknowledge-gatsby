@@ -7,13 +7,12 @@ const HeroDefault = ( {content} ) => {
       { content && (
         <>
           <h1 className="hero-title">
-            {content.title ? content.title : null}
+            {content.title && content.title}
           </h1>
-          {content.lead ? 
+          {content.lead && 
             <p className="lead">
               {content.lead}	
             </p> 
-            : null
           }
         </>
       )}

@@ -148,8 +148,8 @@ const HomePage = ({ pageContext, location }) => {
 
       <SocialProof data={brandLogos} />
 
-      {pageContext.allWorks ? <FeaturedWork allWorks={pageContext.allWorks} /> : null}
-      {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
+      {pageContext.allWorks && <FeaturedWork allWorks={pageContext.allWorks} />}
+      {pageContext.allPosts && <LatestNews latestNews={pageContext.allPosts} />}
       
     </Layout>
   )

@@ -81,7 +81,7 @@ const About = ({pageContext, location}) => (
         </ul>
       </section>
 
-      {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
+      {pageContext.allPosts && <LatestNews latestNews={pageContext.allPosts} />}
     
   </Layout>
 )

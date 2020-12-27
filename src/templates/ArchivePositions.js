@@ -36,7 +36,7 @@ const ArchivePositions = ({pageContext, location}) => {
       <hr/>
     </div>
     
-    {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null }
+    {pageContext.allPosts && <LatestNews latestNews={pageContext.allPosts} /> }
     
   </Layout>
   )
