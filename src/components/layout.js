@@ -4,7 +4,7 @@ import SEO from './seo';
 import Header from "./Header";
 import Footer from "./Footer";
 import ContactSection from "./ContactSection";
-import { loadOverlayScrollbars, scrollEventHandler, loadAOS } from '../utils/utils';
+import { loadOverlayScrollbars, loadAOS } from '../utils/utils';
 
 import '@wordpress/block-library/build-style/style.css';
 import '../scss/main.scss';
@@ -12,7 +12,13 @@ import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 const Layout = ( props ) => {
 
-  // ----------------- Handle Nav Menu -----------------
+  // ----------------- OverlayScrollbars Library -----------------
+  // Must load first since it generates elements
+  useEffect(() => {
+    loadOverlayScrollbars();
+  }, []);
+
+  // ----------------- Toggle nav menu -----------------
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenu = () => {
@@ -25,19 +31,31 @@ const Layout = ( props ) => {
     }
   }
 
-  // ----------------- Nav Logo Show/Hide -----------------
+  // ----------------- Show/hide nav logo on scroll -----------------
   const [navStuck, setNavStuck] = useState(false);
 
   // Add scroll event listener to '.os-viewport' to handle nav logo hiding event
   useEffect(() => {
-    scrollEventHandler( setNavStuck );
+    let pageWrapper = document.querySelector('.os-viewport');
+    pageWrapper.scrollTo(0, 0);
+    
+    function handleScrollEvent() {
+      let scrollPosY = pageWrapper.scrollTop;
+      if(scrollPosY > 50) {
+        setNavStuck(true)      
+      } else {
+        setNavStuck(false)
+      }
+    }
+    
+    if (pageWrapper) {
+      pageWrapper.addEventListener("scroll", handleScrollEvent, true);
+    }
+    // clean up event listener when component unmounts
+    return () => {
+      pageWrapper.removeEventListener("scroll", handleScrollEvent, true);
+    }
   }, [props.location])
-
-  // ----------------- OverlayScrollbars Library -----------------
-  // Must load first since it generates elements
-  useEffect(() => {
-    loadOverlayScrollbars();
-  }, []);
 
   // ----------------- AOS library -----------------
   useEffect(() => {

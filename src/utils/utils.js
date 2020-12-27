@@ -23,28 +23,6 @@ export const loadOverlayScrollbars = () => (
   })  
 );
 
-export const scrollEventHandler = ( setNavStuck ) => {
-  let pageWrapper = document.querySelector('.os-viewport');
-  pageWrapper.scrollTo(0, 0);
-  
-  function handleScrollEvent() {
-    let scrollPosY = pageWrapper.scrollTop;
-    if(scrollPosY > 50) {
-      setNavStuck(true)      
-    } else {
-      setNavStuck(false)
-    }
-  }
-  
-  if (pageWrapper) {
-    pageWrapper.addEventListener("scroll", handleScrollEvent, true);
-  }
-  // this cleanup is performed when the component unmounts
-  return () => {
-    pageWrapper.removeEventListener("scroll", handleScrollEvent, true);
-  }
-};
-
 export const loadAOS = () => {
   /**
    * Server-side rendering does not provide the 'document' object

@@ -62,6 +62,8 @@ const Header = ({
         return <HeroWpVip/>;
       case 'SAP':
         return <HeroSAP/>;
+      default:
+        return <HeroDefault />
     };
   };
 
