@@ -12,7 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
-  const homeTemplate = path.resolve('./src/templates/Home.js');
+  const homeTemplate = path.resolve('./src/templates/home.js');
   const contactTemplate = path.resolve('./src/templates/Contact.js');
   const aboutTemplate = path.resolve('./src/templates/About.js');
   const careersTemplate = path.resolve('./src/templates/Careers.js');
