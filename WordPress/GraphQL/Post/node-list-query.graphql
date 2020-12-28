@@ -43,6 +43,7 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
       guid
       id
       isRevision
+      isSticky
       lastEditedBy {
         node {
           id
@@ -66,25 +67,8 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
         }
       }
       template {
+        templateName
         __typename
-        ... on DefaultTemplate {
-          templateName
-        }
-        ... on AboutTemplate {
-          templateName
-        }
-        ... on CareersTemplate {
-          templateName
-        }
-        ... on ContactTemplate {
-          templateName
-        }
-        ... on SAPTemplate {
-          templateName
-        }
-        ... on WordPressVIPTemplate {
-          templateName
-        }
       }
       terms(first: 100) {
         nodes {

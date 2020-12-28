@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SEO from './seo';
 
 import Header from "./Header";
@@ -11,7 +11,7 @@ import '../scss/main.scss';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 const Layout = ( props ) => {
-
+console.log(props)
   // ----------------- OverlayScrollbars Library -----------------
   // Must load first since it generates elements
   useEffect(() => {

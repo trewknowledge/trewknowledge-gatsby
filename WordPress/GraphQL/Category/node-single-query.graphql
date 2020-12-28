@@ -10,6 +10,12 @@ query SINGLE_CONTENT_QUERY($id: ID!) {
         id
       }
     }
+    contentNodes(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
     count
     databaseId
     description

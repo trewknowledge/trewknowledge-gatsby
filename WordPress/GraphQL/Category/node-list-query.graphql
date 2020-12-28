@@ -11,6 +11,12 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
           id
         }
       }
+      contentNodes(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
       count
       databaseId
       description

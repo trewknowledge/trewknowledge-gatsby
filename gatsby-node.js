@@ -34,19 +34,19 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           link
           template {
-            ... on WpCareersTemplate {
+            ... on WpTemplate_Careers {
               templateName
             }
-            ... on WpAboutTemplate {
+            ... on WpTemplate_About {
               templateName
             }
-            ... on WpContactTemplate {
+            ... on WpTemplate_Contact {
               templateName
             }
-            ... on WpWordPressVIPTemplate {
+            ... on WpTemplate_WordPressVIP {
               templateName
             }
-            ... on WpSAPTemplate {
+            ... on WpTemplate_SAP {
               templateName
             }
           }
