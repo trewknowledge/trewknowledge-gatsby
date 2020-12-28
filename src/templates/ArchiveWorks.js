@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/layout'
-import WorksCard from '../components/WorksCard';
+import Layout from '../components/layout';
+import WorksCard from '../components/works/WorksCard';
 
 const ArchiveWorks = ({ pageContext, location }) => {
 

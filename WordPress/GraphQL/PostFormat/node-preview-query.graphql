@@ -1,5 +1,11 @@
 query PREVIEW_QUERY($id: ID!) {
   postFormat(id: $id, idType: ID, asPreview: true) {
+    contentNodes(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
     count
     databaseId
     description

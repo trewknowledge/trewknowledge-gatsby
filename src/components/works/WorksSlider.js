@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import Slider from 'react-slick'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import CarouselNext from "../assets/img/svgs/carousel-next.svg"
-import CarouselPrevious from "../assets/img/svgs/carousel-previous.svg"
-import CarouselNextSmall from "../assets/img/svgs/carousel-next-small.svg"
-import CarouselPreviousSmall from "../assets/img/svgs/carousel-previous-small.svg"
+import CarouselNext from "../../assets/img/svgs/carousel-next.svg";
+import CarouselPrevious from "../../assets/img/svgs/carousel-previous.svg";
+import CarouselNextSmall from "../../assets/img/svgs/carousel-next-small.svg";
+import CarouselPreviousSmall from "../../assets/img/svgs/carousel-previous-small.svg";
 
 const NextArrow = (props) => {
   const { onClick, customClass } = props;
@@ -14,7 +14,7 @@ const NextArrow = (props) => {
     if (ev.keyCode === 13) {
       onClick()
     }
-  }
+  };
   
   return (
     <div className={customClass} onClick={onClick} onKeyDown={handleKeyDown} role="button" tabIndex='0'>
@@ -22,7 +22,7 @@ const NextArrow = (props) => {
       <CarouselNext className="show-for-medium" alt="Next arrow"/>
     </div>
   );
-}
+};
 
 const PrevArrow = (props) => {
   const { onClick, customClass } = props;
@@ -31,7 +31,7 @@ const PrevArrow = (props) => {
     if (ev.keyCode === 13) {
       onClick()
     }
-  }
+  };
 
   return (
     <div className={customClass} onClick={onClick} onKeyDown={handleKeyDown} role="button" tabIndex='0'>
@@ -39,7 +39,7 @@ const PrevArrow = (props) => {
       <CarouselPrevious className="show-for-medium" alt="Previous arrow"/>
     </div>
   );
-}
+};
 
 export default class WorksSlider extends Component {
   
@@ -80,4 +80,4 @@ export default class WorksSlider extends Component {
       </div>
     );
   }
-}
+};

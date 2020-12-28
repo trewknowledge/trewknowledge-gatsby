@@ -3,7 +3,7 @@ module.exports = {
     title: `Trew Knowledge`,
     description: `Trew Knowledge company website build with Gatsby & Wordpress`,
     url: 'gatsby.trewknowledge.com',
-    image: `src/images/tk-site-icon.png`,
+    image: `src/assets/img/tk-site-icon.png`,
     author: `Trew Knowledge`,
   },
   plugins: [
@@ -64,7 +64,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/tk-site-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/img/tk-site-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -77,12 +77,6 @@ module.exports = {
         //
         // Defaults to gatsby-route-change
         // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
       },
     },
     {

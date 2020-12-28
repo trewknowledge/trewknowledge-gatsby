@@ -2,45 +2,70 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import TkLogo from '../assets/img/svgs/logo-main.svg'
-
 import MainMenu from './MainMenu';
-import HeroCareers from './header-content/HeroCareers'
-import HeroPositionSingle from './header-content/HeroPositionSingle'
-import HeroPositions from './header-content/HeroPositions'
-import HeroAbout from './header-content/HeroAbout'
-import HeroHome from './header-content/HeroHome'
-import HeroWpVip from './header-content/HeroWpVip'
-import HeroSAP from './header-content/HeroSAP'
+
+import headerContent from '../utils/headerContent';
+import HeroDefault from './headerTemplates/HeroDefault';
+import HeroPositionSingle from './headerTemplates/HeroPositionSingle';
+import HeroWpVip from './headerTemplates/HeroWpVip';
+import HeroSAP from './headerTemplates/HeroSAP';
 
 const Header = ({ 
   menuOpen, 
   handleMenu, 
-  pageTitle, 
-  headerStyle, 
-  headerContent,
-  pageRef,
-  navStuck 
+  navStuck, 
+  pageProps: {
+    headerStyle, 
+    headerTitle, 
+    pageTitle, 
+    pageRef
+  },
 }) => {
 
   const [headerColor, setHeaderColor] = useState('hero hero-bg-dark');
 
   useEffect(() => {
-    if (headerStyle === 'blue') {
-      setHeaderColor('hero hero-bg-light')
-    } 
-    if (headerStyle === 'white') {
-      setHeaderColor('hero hero-bg-white')
-    } 
-    if (headerStyle === 'empty') {
-      setHeaderColor('hero hero-empty')
+    switch (headerStyle) {
+      case 'blue':
+        setHeaderColor('hero hero-bg-light');
+        break;
+      case 'white':
+        setHeaderColor('hero hero-bg-white');
+        break;
+      case 'empty':
+        setHeaderColor('hero hero-empty');
+        break;
+      case 'contact':
+        setHeaderColor('hero hero-bg-contact');
+        break;  
+      case 'black':
+        setHeaderColor('hero hero-bg-black');
+        break;
+      default:
+        setHeaderColor('hero hero-bg-dark');
     }
-    if (headerStyle === 'contact') {
-      setHeaderColor('hero hero-bg-contact')
-    }
-    if (headerStyle === 'black') {
-      setHeaderColor('hero hero-bg-black')
-    }
-  }, [headerStyle])
+  }, [headerStyle]);
+
+  const renderHeaderContent = () => {
+    switch (pageRef) {
+      case 'Home':
+        return <HeroDefault content={headerContent.home} />;
+      case 'About':
+        return <HeroDefault content={headerContent.about} />;
+      case 'Careers':
+        return <HeroDefault content={headerContent.careers} />;
+      case 'positionsArchive':
+        return <HeroDefault content={headerContent.positions} />;
+      case 'TK_Position':
+        return <HeroPositionSingle headerTitle={headerTitle} />;
+      case 'WordPress VIP':
+        return <HeroWpVip/>;
+      case 'SAP':
+        return <HeroSAP/>;
+      default:
+        return <HeroDefault />
+    };
+  };
 
   return(
     <header className={headerColor}>
@@ -59,16 +84,10 @@ const Header = ({
       </nav>
       <MainMenu menuOpen={menuOpen} handleMenu={handleMenu}/>
       <div className="grid-container-narrow">
-        {pageRef === "Home" ? <HeroHome/> : null}
-        {pageRef === "About" ? <HeroAbout/> : null}
-        {pageRef === "Careers" ? <HeroCareers/> : null}
-        {pageRef === "positionsArchive" ? <HeroPositions/> : null}
-        {pageRef === "TK_Position" ? <HeroPositionSingle headerContent={headerContent} /> : null}
-        {pageRef === "WordPress VIP" ? <HeroWpVip/> : null}
-        {pageRef === "SAP" ? <HeroSAP/> : null}
+        {renderHeaderContent()}
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

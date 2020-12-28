@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout'
-import NewsCard from '../components/NewsCard';
+import NewsCard from '../components/news/NewsCard';
 
 const ArchiveNews = ({pageContext, location}) => {
   const [postsToShow, setPostsToShow] = useState(9);
@@ -33,11 +33,11 @@ const ArchiveNews = ({pageContext, location}) => {
         })}
       </div>
 
-      {posts.length < allPosts.length ? 
+      {posts.length < allPosts.length && 
         <div className="infinite-handle">
           <button className="button" onClick={() => handleClick()}>Load More</button> 
         </div>
-      : null}
+      }
       
     </div>
   </Layout>

@@ -13,15 +13,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const pageTemplate = path.resolve('./src/templates/page.js');
   const postTemplate = path.resolve('./src/templates/post.js');
   const homeTemplate = path.resolve('./src/templates/home.js');
-  const contactTemplate = path.resolve('./src/templates/contactTemplate.js');
-  const aboutTemplate = path.resolve('./src/templates/aboutTemplate.js');
-  const careersTemplate = path.resolve('./src/templates/careersTemplate.js');
-  const wpVipTemplate = path.resolve('./src/templates/wpVipTemplate.js');
-  const sapTemplate = path.resolve('./src/templates/sapTemplate.js');
-  const archiveNews = path.resolve('./src/templates/archive-news.js');
-  const archiveWorks = path.resolve('./src/templates/archive-works.js');
-  const archivePositions = path.resolve('./src/templates/archive-positions.js');
-  const positionsSingle = path.resolve('./src/templates/positions-single.js');
+  const contactTemplate = path.resolve('./src/templates/Contact.js');
+  const aboutTemplate = path.resolve('./src/templates/About.js');
+  const careersTemplate = path.resolve('./src/templates/Careers.js');
+  const wpVipTemplate = path.resolve('./src/templates/WpVip.js');
+  const sapTemplate = path.resolve('./src/templates/SAP.js');
+  const archiveNews = path.resolve('./src/templates/ArchiveNews.js');
+  const archiveWorks = path.resolve('./src/templates/ArchiveWorks.js');
+  const archivePositions = path.resolve('./src/templates/ArchivePositions.js');
+  const positionsSingle = path.resolve('./src/templates/PositionsSingle.js');
   const thankYou = path.resolve('./src/templates/ThankYou.js');
 
   const result = await graphql(`
@@ -34,19 +34,19 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           link
           template {
-            ... on WpCareersTemplate {
+            ... on WpTemplate_Careers {
               templateName
             }
-            ... on WpAboutTemplate {
+            ... on WpTemplate_About {
               templateName
             }
-            ... on WpContactTemplate {
+            ... on WpTemplate_Contact {
               templateName
             }
-            ... on WpWordPressVIPTemplate {
+            ... on WpTemplate_WordPressVIP {
               templateName
             }
-            ... on WpSAPTemplate {
+            ... on WpTemplate_SAP {
               templateName
             }
           }
@@ -145,8 +145,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(careersTemplate),
         context: {
           node: node,
-          headerStyle: 'blue',
-          headerContent: 'HeroCareers',
+          headerStyle: 'blue'
         }
       })
     } else if (node.template.templateName === 'About') {
@@ -155,8 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(aboutTemplate),
         context: {
           node: node,
-          headerContent: 'HeroAbout',
-          allPosts: allWpPost.nodes.slice(0, 2),
+          allPosts: allWpPost.nodes.slice(0, 2)
         }
       })
     } else if (node.template.templateName === 'Contact') {

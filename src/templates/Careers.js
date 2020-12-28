@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
 
-export default ({pageContext, location}) => (
+const Careers = ({pageContext, location}) => (
 
   <Layout 
     pageTitle={pageContext.node.title} 
@@ -58,3 +58,5 @@ export default ({pageContext, location}) => (
     
   </Layout>
 )
+
+export default Careers;

@@ -2,14 +2,14 @@ import React from "react"
 import Layout from "../components/layout"
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import LatestNews from '../components/LatestNews'
-import FeaturedWork from "../components/FeaturedWork"
+import LatestNews from '../components/news/LatestNews';
+import FeaturedWork from "../components/works/FeaturedWork";
 
 import WpLogo from '../assets/img/svgs/wp-vip-cert-logo.svg';
 import SocialProof from "../components/SocialProof"
 
-const IndexPage = ({ pageContext, location }) => {
-  const data = useStaticQuery(graphql`
+const HomePage = ({ pageContext, location }) => {
+  const brandLogos = useStaticQuery(graphql`
     query socialProofHomeQuery {
       allFile(filter: {relativeDirectory: {eq: "img/social-proof-home"}}, sort: {order: ASC, fields: base}) {
         edges {
@@ -146,13 +146,13 @@ const IndexPage = ({ pageContext, location }) => {
         </div>
       </section>
 
-      <SocialProof data={data} />
+      <SocialProof data={brandLogos} />
 
-      {pageContext.allWorks ? <FeaturedWork allWorks={pageContext.allWorks} /> : null}
-      {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
+      {pageContext.allWorks && <FeaturedWork allWorks={pageContext.allWorks} />}
+      {pageContext.allPosts && <LatestNews latestNews={pageContext.allPosts} />}
       
     </Layout>
   )
 }
 
-export default IndexPage
+export default HomePage;

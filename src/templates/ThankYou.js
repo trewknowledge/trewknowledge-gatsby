@@ -14,4 +14,4 @@ const ThankYou = ({pageContext, location}) => (
   </Layout>
 )
 
-export default ThankYou
+export default ThankYou;

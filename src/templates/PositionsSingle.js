@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import parse from "html-react-parser";
 import Layout from '../components/layout';
 
-export default ({ pageContext, location }) => {
+const PositionsSingle = ({ pageContext, location }) => {
   
   const formatDate = () => {
     return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -12,14 +13,13 @@ export default ({ pageContext, location }) => {
       pageTitle={pageContext.pageTitle} 
       headerStyle={pageContext.headerStyle} 
       location={location.pathname}
-      headerContent={pageContext.node.title}
+      headerTitle={pageContext.node.title}
       pageRef={pageContext.pageRef}
     >
       <article className="grid-container-narrow article">
-          <h2 dangerouslySetInnerHTML={{ __html: pageContext.node.title }}/>
-          <p className="article-date">{formatDate()}</p>
-          
-          <div dangerouslySetInnerHTML={{ __html: pageContext.node.content }}/>
+        <h2>{parse(pageContext.node.title)}</h2>
+        <p className="article-date">{formatDate()}</p>      
+        <div>{parse(pageContext.node.content)}</div>
       </article>
     
       <section className="grid-container-narrow pt0">
@@ -32,3 +32,4 @@ export default ({ pageContext, location }) => {
   )
 }
 
+export default PositionsSingle;

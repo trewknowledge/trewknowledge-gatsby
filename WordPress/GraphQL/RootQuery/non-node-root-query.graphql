@@ -38,6 +38,10 @@ query NON_NODE_QUERY {
     postsPerPage
   }
 
+  wpGatsby {
+    arePrettyPermalinksEnabled
+  }
+
   writingSettings {
     defaultCategory
     defaultPostFormat

@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from '../components/layout'
-import { Link } from 'gatsby'
-import LatestNews from '../components/LatestNews'
+import React from 'react';
+import Layout from '../components/layout';
+import { Link } from 'gatsby';
+import LatestNews from '../components/news/LatestNews';
 
 import DiscoveryIcon from '../assets/img/svgs/discovery-icon.svg';
 import UiuxIcon from '../assets/img/svgs/uiux-icon.svg';
@@ -9,14 +9,13 @@ import EngineeringIcon from '../assets/img/svgs/engineering-icon.svg';
 import InsightsIcon from '../assets/img/svgs/insights-icon.svg';
 import AdaptionIcon from '../assets/img/svgs/adaptation-icon.svg';
 
-export default ({pageContext, location}) => (
+const About = ({pageContext, location}) => (
 
   <Layout 
     pageTitle={pageContext.node.title} 
     location={location.pathname} 
     pageRef={pageContext.node.template.templateName}
   >
-    
       <section className="grid-container-narrow pb0">
 
         <p className="lead lead-narrow">Our team of dedicated professionals align themselves with your particular business goals, creating digital development, brand strategy, and customer identity management solutions that take your brand where you want it to be.</p>
@@ -82,7 +81,9 @@ export default ({pageContext, location}) => (
         </ul>
       </section>
 
-      {pageContext.allPosts ? <LatestNews latestNews={pageContext.allPosts} /> : null}
+      {pageContext.allPosts && <LatestNews latestNews={pageContext.allPosts} />}
     
   </Layout>
 )
+
+export default About;

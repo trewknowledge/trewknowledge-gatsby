@@ -7,7 +7,7 @@ import SocialProof from "../components/SocialProof"
 
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-export default({pageContext, location}) => {
+const WpVip = ({pageContext, location}) => {
   const data = useStaticQuery(graphql`
     query socialProofVipQuery {
       allFile(filter: {relativeDirectory: {eq: "img/social-proof-vip"}}, sort: {order: ASC, fields: base}) {
@@ -135,3 +135,5 @@ export default({pageContext, location}) => {
     </Layout>
   )
 }
+
+export default WpVip;
