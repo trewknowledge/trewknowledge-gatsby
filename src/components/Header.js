@@ -24,6 +24,7 @@ const Header = ({
 
   const [headerColor, setHeaderColor] = useState('hero hero-bg-dark');
 
+  // determines header bg color based on page template
   useEffect(() => {
     switch (headerStyle) {
       case 'blue':
@@ -46,6 +47,7 @@ const Header = ({
     }
   }, [headerStyle]);
 
+  // determines header content based on page template
   const renderHeaderContent = () => {
     switch (pageRef) {
       case 'Home':
