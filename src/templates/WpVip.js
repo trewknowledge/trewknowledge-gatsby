@@ -59,7 +59,9 @@ const WpVip = ({pageContext, location}) => {
               <ul className="feature-list-options">
                 <li>Monetization Strategy</li>
                 <li>Editorial Strategy</li>
+                <li>Metered Paywalls</li>
                 <li>Goal Setting & Benchmarking</li>
+                <li>On-Going Support</li>
               </ul>
             </li>
             <li className="feature-list-item">
