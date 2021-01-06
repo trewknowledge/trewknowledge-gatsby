@@ -21,6 +21,18 @@ img {
 	height: auto;
 }
 
+.wp-block-image {
+	margin-bottom: 30px;
+
+	.aligncenter {
+		display: block;
+
+		> figcaption {
+			display: block;
+		}
+	}
+}
+
 figure {
 	width: 100%;
 	height: 100%;
