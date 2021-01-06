@@ -6,6 +6,7 @@ import WpVipLogo from '../assets/img/svgs/wpvip-logo.svg'
 import TwitterLogo from '../assets/img/svgs/twitter-logo.svg'
 import FacebookLogo from '../assets/img/svgs/facebook-logo.svg'
 import LinkedinLogo from '../assets/img/svgs/linkedin-logo.svg'
+import InstagramLogo from '../assets/img/svgs/instagram-logo.svg'
 
 const Footer = () => {
 
@@ -43,6 +44,9 @@ const Footer = () => {
         </a>
         <a className="footer-branding-social" href="https://www.linkedin.com/company/1022792/" target="_blank" rel="noopener noreferrer" aria-label="linkedin logo">
           <LinkedinLogo alt="linkedin logo"/>
+        </a>
+        <a className="footer-branding-social" href="https://www.instagram.com/trewknowledge/" target="_blank" rel="noopener noreferrer" aria-label="linkedin logo">
+          <InstagramLogo alt="instagram logo"/>
         </a>
       </div>
       <Link to="/wordpress-vip" className="hide-for-large" aria-label="To Wordpress VIP page">
