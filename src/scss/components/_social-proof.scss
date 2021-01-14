@@ -13,6 +13,10 @@
       max-height: 22px;
     }
 
+    .gatsby-image-wrapper > div{
+      padding-bottom: 60% !important;
+    }
+
     &.social-proof-logo-tall {
       img,
       svg {
