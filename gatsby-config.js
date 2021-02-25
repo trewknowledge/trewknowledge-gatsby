@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
-    description: `Trew Knowledge company website build with Gatsby & Wordpress`,
+    description: ``,
     url: 'gatsby.trewknowledge.com',
     image: `src/assets/img/tk-site-icon.png`,
     author: `Trew Knowledge`,
