@@ -47,6 +47,26 @@ query NODE_LIST_QUERY($first: Int!, $after: String) {
           id
         }
       }
+      seo {
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        schema {
+          raw
+        }
+        social {
+          facebook
+          instagram
+          linkedIn
+          mySpace
+          pinterest
+          soundCloud
+          twitter
+          wikipedia
+          youTube
+        }
+        title
+      }
       slug
       uri
       url

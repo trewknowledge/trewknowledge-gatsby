@@ -9,12 +9,13 @@ import EngineeringIcon from '../assets/img/svgs/engineering-icon.svg';
 import InsightsIcon from '../assets/img/svgs/insights-icon.svg';
 import AdaptionIcon from '../assets/img/svgs/adaptation-icon.svg';
 
-const About = ({pageContext, location}) => (
+const About = ({ pageContext, location}) => (
 
   <Layout 
     pageTitle={pageContext.node.title} 
     location={location.pathname} 
     pageRef={pageContext.node.template.templateName}
+    seoTitle={pageContext.node.seo.title}
   >
       <section className="grid-container-narrow pb0">
 

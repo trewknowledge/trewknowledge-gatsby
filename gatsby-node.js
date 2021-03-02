@@ -33,6 +33,9 @@ exports.createPages = async ({ graphql, actions }) => {
           uri
           content
           link
+          seo {
+            title
+          }
           template {
             ... on WpTemplate_Careers {
               templateName
@@ -60,6 +63,9 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           excerpt
           date
+          seo {
+            title
+          }
           featuredImage {
             node {
               sourceUrl
@@ -85,6 +91,9 @@ exports.createPages = async ({ graphql, actions }) => {
           title
           content
           date
+          seo {
+            title
+          }
           featuredImage {
             node {
               sourceUrl
@@ -111,6 +120,9 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           excerpt
           date
+          seo {
+            title
+          }
         }
       }
     }
@@ -220,14 +232,12 @@ const archivesArray = [
     pageTemplate: archiveNews,
     path: '/news/',
     archiveTitle: 'News',
-    
   },
   {
     postsArray: allWpTkWork.nodes,
     pageTemplate: archiveWorks,
     path: '/work',
     archiveTitle: 'Work',
-    
   },
   {
     postsArray: allWpTkPosition.nodes,
@@ -236,7 +246,8 @@ const archivesArray = [
     archiveTitle: 'Careers',
     newsPosts: allWpPost.nodes.slice(0, 2),
     headerStyle: "white",
-    pageRef: "positionsArchive" 
+    pageRef: "positionsArchive", 
+    seoTitle: "Open Positions"
   }
 ]
 
@@ -251,6 +262,7 @@ const createArchivePage = (archiveObject) => {
       newsPosts: archiveObject.newsPosts,
       headerStyle: archiveObject.headerStyle,
       pageRef: archiveObject.pageRef,
+      seoTitle: archiveObject.seoTitle,
     }
   })
 }

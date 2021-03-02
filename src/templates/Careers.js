@@ -2,13 +2,14 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
 
-const Careers = ({pageContext, location}) => (
+const Careers = ( { pageContext, location } ) => (
 
   <Layout 
     pageTitle={pageContext.node.title} 
     location={location.pathname} 
     headerStyle={pageContext.headerStyle}
     pageRef={pageContext.node.template.templateName}
+    seoTitle={pageContext.node.seo.title}
   >
     
       <div className="grid-container-narrow">
