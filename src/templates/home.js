@@ -35,6 +35,7 @@ const HomePage = ({ pageContext, location }) => {
       pageTitle={"Trew Knowledge"} 
       location={location.pathname} 
       pageRef={"Home"}
+      seoTitle={pageContext.node.seo.title}
     > 
       
       <section className="grid-container-narrow">

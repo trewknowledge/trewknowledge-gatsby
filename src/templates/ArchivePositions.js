@@ -9,13 +9,13 @@ import CarouselNextSmall from "../assets/img/svgs/carousel-next-small.svg"
 import LatestNews from '../components/news/LatestNews'
 
 const ArchivePositions = ({pageContext, location}) => {
-
   return (
   <Layout 
     pageTitle={pageContext.archiveTitle} 
     location={location.pathname} 
     headerStyle={pageContext.headerStyle}
     pageRef={pageContext.pageRef}
+    seoTitle={pageContext.seoTitle}
   >
     
     <div className="grid-container-narrow pt0">

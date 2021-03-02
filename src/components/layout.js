@@ -65,6 +65,7 @@ const Layout = ( props ) => {
     <div className="site">
       <SEO 
         title={props.pageTitle}
+        seoTitle={props.seoTitle}
       />
       <Header 
         menuOpen={menuOpen} 
