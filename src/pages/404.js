@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 
-const NotFoundPage = ({location}) => (
+const NotFoundPage = ({pageContext, location}) => (
   <Layout 
     pageTitle={"Trew Knowledge"} 
     location={location.pathname} 

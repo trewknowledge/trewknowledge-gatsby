@@ -25,7 +25,8 @@ function SEO({ meta, lang, seo, author }) {
     `
   )
 
-  const { title: seoTitle, opengraphDescription: seoDesc } = seo;
+  const seoTitle = seo?.title;
+  const seoDesc = seo?.opengraphDescription;
   const seoAuthor = author?.node?.seo?.title;
 
   const metaTitle = seoTitle || site.siteMetadata.title
