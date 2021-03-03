@@ -5,7 +5,7 @@ import WorksCard from '../components/works/WorksCard';
 const ArchiveWorks = ({ pageContext, location }) => {
 
 return (
-  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname} seoTitle={pageContext.archiveTitle}>
+  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname} seo={pageContext.seo}>
       <div className="grid-container-narrow section-overlap-hero">
         <div className="grid-x grid-margin-x">
           {pageContext.posts.map((post, index) => {

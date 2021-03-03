@@ -13,7 +13,7 @@ const ArchiveNews = ({pageContext, location}) => {
   }
 
   return (
-  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname} seoTitle={pageContext.archiveTitle}>
+  <Layout pageTitle={pageContext.archiveTitle} location={location.pathname} seo={pageContext.seo}>
     <div className="grid-container-narrow section-overlap-hero">
       <div className="grid-x grid-margin-x gallery">
         {posts.map((post, index) => {
