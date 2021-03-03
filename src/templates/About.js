@@ -15,7 +15,7 @@ const About = ({ pageContext, location}) => (
     pageTitle={pageContext.node.title} 
     location={location.pathname} 
     pageRef={pageContext.node.template.templateName}
-    seoTitle={pageContext.node.seo.title}
+    seo={pageContext.node.seo}
   >
       <section className="grid-container-narrow pb0">
 

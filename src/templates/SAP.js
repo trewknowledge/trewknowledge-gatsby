@@ -35,7 +35,7 @@ const SAP = ({pageContext, location}) => {
         location={location.pathname}
         pageRef={pageContext.node.template.templateName}
         headerStyle={pageContext.headerStyle}
-        seoTitle={pageContext.node.seo.title}
+        seo={pageContext.node.seo}
       >
         <section className="section-background-white">
           <div className="grid-container-narrow">

@@ -35,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
           link
           seo {
             title
+            opengraphDescription
           }
           template {
             ... on WpTemplate_Careers {
@@ -65,6 +66,14 @@ exports.createPages = async ({ graphql, actions }) => {
           date
           seo {
             title
+            opengraphDescription
+          }
+          author {
+            node {
+              seo {
+                title
+              }
+            }
           }
           featuredImage {
             node {
@@ -93,6 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
           date
           seo {
             title
+            opengraphDescription
           }
           featuredImage {
             node {
@@ -122,6 +132,7 @@ exports.createPages = async ({ graphql, actions }) => {
           date
           seo {
             title
+            opengraphDescription
           }
         }
       }
@@ -232,12 +243,18 @@ const archivesArray = [
     pageTemplate: archiveNews,
     path: '/news/',
     archiveTitle: 'News',
+    seo: {
+      title: "News - Trew Knowledge Inc."
+    } 
   },
   {
     postsArray: allWpTkWork.nodes,
     pageTemplate: archiveWorks,
     path: '/work',
     archiveTitle: 'Work',
+    seo: {
+      title: "Work - Trew Knowledge Inc."
+    }
   },
   {
     postsArray: allWpTkPosition.nodes,
@@ -247,7 +264,9 @@ const archivesArray = [
     newsPosts: allWpPost.nodes.slice(0, 2),
     headerStyle: "white",
     pageRef: "positionsArchive", 
-    seoTitle: "Open Positions"
+    seo: {
+      title: "Open Positions - Trew Knowledge Inc."
+    }
   }
 ]
 
@@ -262,7 +281,7 @@ const createArchivePage = (archiveObject) => {
       newsPosts: archiveObject.newsPosts,
       headerStyle: archiveObject.headerStyle,
       pageRef: archiveObject.pageRef,
-      seoTitle: archiveObject.seoTitle,
+      seo: archiveObject.seo,
     }
   })
 }

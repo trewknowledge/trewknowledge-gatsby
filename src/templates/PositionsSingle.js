@@ -15,7 +15,7 @@ const PositionsSingle = ({ pageContext, location }) => {
       location={location.pathname}
       headerTitle={pageContext.node.title}
       pageRef={pageContext.pageRef}
-      seoTitle={pageContext.node.seo.title}
+      seo={pageContext.node.seo}
     >
       <article className="grid-container-narrow article">
         <h2>{parse(pageContext.node.title)}</h2>
