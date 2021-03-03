@@ -32,8 +32,6 @@ function SEO({ meta, lang, seo, author }) {
   const metaDescription = seoDesc || site.siteMetadata.description
   const metaAuthor = seoAuthor || site.siteMetadata.title
 
-  console.log(metaAuthor);
-
   return (
     <Helmet
       htmlAttributes={{
