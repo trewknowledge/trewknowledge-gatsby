@@ -19,6 +19,7 @@ function SEO({ meta, lang, seo, author }) {
             title
             description
             author
+            image
           }
         }
       }
@@ -72,6 +73,14 @@ function SEO({ meta, lang, seo, author }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: site.siteMetadata.image,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: 'Trew Knowledge Logo',
         },
       ].concat(meta)}
     />
