@@ -19,7 +19,6 @@ function SEO({ meta, lang, seo, author }) {
             title
             description
             author
-            image
           }
         }
       }
@@ -59,6 +58,10 @@ function SEO({ meta, lang, seo, author }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: 'https://trewknowledge.com/static/tk-site-icon.png',
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -76,7 +79,7 @@ function SEO({ meta, lang, seo, author }) {
         },
         {
           name: `twitter:image`,
-          content: site.siteMetadata.image,
+          content: 'https://trewknowledge.com/static/tk-site-icon.png',
         },
         {
           name: `twitter:image:alt`,
