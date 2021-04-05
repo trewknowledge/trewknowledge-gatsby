@@ -59,11 +59,11 @@ function SEO({ meta, lang, seo, author }) {
         },
         {
           property: `og:image`,
-          content: '../tk-site-icon.png',
+          content: 'https://trewknowledge.com/static/tk-site-icon.png',
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -79,7 +79,7 @@ function SEO({ meta, lang, seo, author }) {
         },
         {
           name: `twitter:image`,
-          content: '../tk-site-icon.png',
+          content: 'https://trewknowledge.com/static/tk-site-icon.png',
         },
         {
           name: `twitter:image:alt`,
