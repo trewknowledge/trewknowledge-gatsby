@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
     description: ``,
-    url: 'gatsby.trewknowledge.com',
+    url: 'www.trewknowledge.com',
     image: `src/assets/img/tk-site-icon.png`,
     author: `Trew Knowledge`,
   },
@@ -21,9 +25,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url:
-          process.env.WPGRAPHQL_URL ||
-          // `https://trewknowledge-com-develop.go-vip.net/graphql`,
-          'https://admin.trewknowledge.com/graphql',
+          process.env.WPGRAPHQL_URL,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
