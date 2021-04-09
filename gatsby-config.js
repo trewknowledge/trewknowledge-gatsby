@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-no-index`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
