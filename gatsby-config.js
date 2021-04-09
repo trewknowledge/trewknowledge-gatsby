@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
     description: ``,
-    url: 'gatsby.trewknowledge.com',
+    url: 'www.trewknowledge.com',
     image: `src/assets/img/tk-site-icon.png`,
     author: `Trew Knowledge`,
     siteUrl: `https://trewknowledge.com/`
