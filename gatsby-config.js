@@ -9,11 +9,13 @@ module.exports = {
     url: 'www.trewknowledge.com',
     image: `src/assets/img/tk-site-icon.png`,
     author: `Trew Knowledge`,
+    siteUrl: `https://trewknowledge.com/`
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
