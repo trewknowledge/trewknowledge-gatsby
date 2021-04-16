@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
-    description: ``,
+    description: `We are a digital marketing agency creating award-winning experiences for our modern world.`,
     url: 'www.trewknowledge.com',
     image: `src/assets/img/tk-site-icon.png`,
     author: `Trew Knowledge`,
