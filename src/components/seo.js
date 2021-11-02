@@ -86,7 +86,21 @@ function SEO({ meta, lang, seo, author }) {
           content: 'Trew Knowledge Logo',
         },
       ].concat(meta)}
-    />
+      >
+      <script type="application/ld+json">
+        {`{
+          '@context': 'http://schema.org',
+          '@type': 'NewsArticle',
+          'headline': '${metaTitle}',
+          'url': 'https://blog.parse.ly/post/57821746552',
+          'thumbnailUrl': 'https://blog.parse.ly/inline_mra670hTvL1qz4rgp.png',
+          'datePublished': '2013-08-15T13:00:00Z',
+          'articleSection': 'Programming',
+          'creator': ['Alan Alexander Milne'],
+          'keywords': ['statistics','zipf','internet','behavior']
+        }`}
+      </script>
+    </Helmet>
   )
 }
 
