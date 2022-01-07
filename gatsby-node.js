@@ -33,6 +33,18 @@ exports.createPages = async ({ graphql, actions }) => {
           uri
           content
           link
+          date
+          author {
+            node {
+              name
+            }
+          }
+          featuredImage {
+            node {
+              uri
+              altText
+            }
+          }
           seo {
             title
             opengraphDescription
@@ -64,6 +76,11 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           excerpt
           date
+          author {
+            node {
+              name
+            }
+          }
           seo {
             title
             opengraphDescription
@@ -77,6 +94,8 @@ exports.createPages = async ({ graphql, actions }) => {
           }
           featuredImage {
             node {
+              uri
+              altText
               sourceUrl
               localFile {
                 childImageSharp {
@@ -106,6 +125,8 @@ exports.createPages = async ({ graphql, actions }) => {
           }
           featuredImage {
             node {
+              uri
+              altText
               sourceUrl
               localFile {
                 childImageSharp {
@@ -130,6 +151,12 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           excerpt
           date
+          featuredImage {
+            node {
+              uri
+              altText
+            }
+          }
           seo {
             title
             opengraphDescription

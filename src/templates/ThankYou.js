@@ -6,6 +6,7 @@ const ThankYou = ({pageContext, location}) => (
     pageTitle={"Trew Knowledge"} 
     location={location.pathname} 
     headerStyle={pageContext.headerStyle}
+    pageContext={pageContext}
   >
     <div className="grid-container-narrow pt0 pb0 text-center">
       <h1>Thank You!</h1>

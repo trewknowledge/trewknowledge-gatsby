@@ -16,6 +16,7 @@ const ArchivePositions = ({pageContext, location}) => {
     headerStyle={pageContext.headerStyle}
     pageRef={pageContext.pageRef}
     seo={pageContext.seo}
+    pageContext={pageContext}
   >
     
     <div className="grid-container-narrow pt0">

@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-
-function SEO({ meta, lang, seo, author }) {
+import { formatDate } from '../utils/utils'
+function SEO(props) {
+  const { meta, lang, seo, author, location, pageContext } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +20,8 @@ function SEO({ meta, lang, seo, author }) {
             title
             description
             author
+            siteUrl
+            image
           }
         }
       }
@@ -32,6 +35,20 @@ function SEO({ meta, lang, seo, author }) {
   const metaTitle = seoTitle || site.siteMetadata.title
   const metaDescription = seoDesc || site.siteMetadata.description
   const metaAuthor = seoAuthor || site.siteMetadata.title
+
+  const canonicalUrl = `${site.siteMetadata.siteUrl}${location}`;
+
+  const pageDate = () => {
+    if ( formatDate(pageContext?.node?.date) === 'Invalid Date' ) {
+      return ''
+    } else {
+      return formatDate(pageContext?.node?.date);
+    }
+  }
+
+  console.log(site.siteMetadata.siteUrl);
+  console.log(site.siteMetadata.image);
+  console.log(`${site.siteMetadata.siteUrl}/${site.siteMetadata.image}`);
 
   return (
     <Helmet
@@ -92,9 +109,9 @@ function SEO({ meta, lang, seo, author }) {
           '@context': 'http://schema.org',
           '@type': 'NewsArticle',
           'headline': '${metaTitle}',
-          'url': 'https://blog.parse.ly/post/57821746552',
+          'url': '${canonicalUrl}',
           'thumbnailUrl': 'https://blog.parse.ly/inline_mra670hTvL1qz4rgp.png',
-          'datePublished': '2013-08-15T13:00:00Z',
+          'datePublished': '${pageDate()}',
           'articleSection': 'Programming',
           'creator': ['Alan Alexander Milne'],
           'keywords': ['statistics','zipf','internet','behavior']

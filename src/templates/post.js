@@ -16,6 +16,7 @@ const postTemplate = ({ pageContext, location }) => {
       location={location.pathname}
       seo={pageContext.node.seo}
       author={pageContext.node.author}
+      pageContext={pageContext}
     >
     
       <div className="grid-container-narrow article pb0">
