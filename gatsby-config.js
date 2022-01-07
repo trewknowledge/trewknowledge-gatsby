@@ -3,7 +3,7 @@ module.exports = {
     title: `Trew Knowledge`,
     description: `We are a digital marketing agency creating award-winning experiences for our modern world.`,
     url: 'www.trewknowledge.com',
-    image: `src/assets/img/tk-site-icon.png`,
+    image: `/tk-site-icon.png`,
     author: `Trew Knowledge`,
     siteUrl: `https://trewknowledge.com/`
   },

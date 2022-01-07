@@ -37,6 +37,7 @@ function SEO(props) {
   const metaAuthor = seoAuthor || site.siteMetadata.title
 
   const canonicalUrl = `${site.siteMetadata.siteUrl}${location}`;
+  const defaultImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`;
 
   const pageDate = () => {
     if ( formatDate(pageContext?.node?.date) === 'Invalid Date' ) {
@@ -45,10 +46,6 @@ function SEO(props) {
       return formatDate(pageContext?.node?.date);
     }
   }
-
-  console.log(site.siteMetadata.siteUrl);
-  console.log(site.siteMetadata.image);
-  console.log(`${site.siteMetadata.siteUrl}/${site.siteMetadata.image}`);
 
   return (
     <Helmet
@@ -110,7 +107,7 @@ function SEO(props) {
           '@type': 'NewsArticle',
           'headline': '${metaTitle}',
           'url': '${canonicalUrl}',
-          'thumbnailUrl': 'https://blog.parse.ly/inline_mra670hTvL1qz4rgp.png',
+          'thumbnailUrl': '${defaultImage}',
           'datePublished': '${pageDate()}',
           'articleSection': 'Programming',
           'creator': ['Alan Alexander Milne'],
