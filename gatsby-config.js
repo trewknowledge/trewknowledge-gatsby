@@ -28,7 +28,7 @@ module.exports = {
           'https://admin.trewknowledge.com/graphql',
         verbose: true,
         develop: {
-          hardCacheMediaFiles: true,
+          hardCacheMediaFiles: false,
         },
         html: {
           useGatsbyImage: true,
@@ -39,6 +39,13 @@ module.exports = {
         debug: {
           graphql: {
             writeQueriesToDisk: true,
+          },
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 10,
+            },
           },
         },
         /*
