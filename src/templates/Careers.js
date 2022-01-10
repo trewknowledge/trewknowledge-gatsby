@@ -10,6 +10,7 @@ const Careers = ( { pageContext, location } ) => (
     headerStyle={pageContext.headerStyle}
     pageRef={pageContext.node.template.templateName}
     seo={pageContext.node.seo}
+    pageContext={pageContext}
   >
     
       <div className="grid-container-narrow">

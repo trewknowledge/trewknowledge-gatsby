@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-
-function SEO({ meta, lang, seo, author }) {
+import { formatDate } from '../utils/utils'
+function SEO(props) {
+  const { meta, lang, seo, author, location, pageContext } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +20,8 @@ function SEO({ meta, lang, seo, author }) {
             title
             description
             author
+            siteUrl
+            image
           }
         }
       }
@@ -29,10 +32,20 @@ function SEO({ meta, lang, seo, author }) {
   const seoDesc = seo?.opengraphDescription;
   const seoAuthor = author?.node?.seo?.title;
 
-  const metaTitle = seoTitle || site.siteMetadata.title
-  const metaDescription = seoDesc || site.siteMetadata.description
-  const metaAuthor = seoAuthor || site.siteMetadata.title
+  const metaTitle = seoTitle || site?.siteMetadata?.title
+  const metaDescription = seoDesc || site?.siteMetadata?.description
+  const metaAuthor = seoAuthor || site?.siteMetadata?.author
 
+  // Parsly data
+  const canonicalUrl = `${site?.siteMetadata?.siteUrl}${location}`;
+  const formattedDate = formatDate(pageContext?.node?.date);
+  const defaultImageUrl = `${site?.siteMetadata?.siteUrl}${site?.siteMetadata.image}`;
+  const featuredImage = pageContext?.node?.featuredImage?.node?.localFile?.publicURL;
+  const featuredImageUrl = `${site?.siteMetadata?.siteUrl}${pageContext?.node?.featuredImage?.node?.localFile?.publicURL}`;
+  const thumbnailUrl = featuredImage ? featuredImageUrl : defaultImageUrl;
+  const keywordList = pageContext?.node?.categories?.nodes?.map(node => (node.name));
+  const keywords = keywordList?.map(keyword => `'${keyword}'`).join(', ');
+  
   return (
     <Helmet
       htmlAttributes={{
@@ -86,7 +99,32 @@ function SEO({ meta, lang, seo, author }) {
           content: 'Trew Knowledge Logo',
         },
       ].concat(meta)}
-    />
+    >
+      { pageContext?.isNewsArticle ? (
+        <script type="application/ld+json">
+          {`{
+            '@context': 'http://schema.org',
+            '@type': 'NewsArticle',
+            'headline': '${metaTitle}',
+            'url': '${canonicalUrl}',
+            'thumbnailUrl': '${thumbnailUrl}',
+            'datePublished': '${formattedDate}',
+            'articleSection': '${pageContext.pageTitle}',
+            'creator': ['${metaAuthor}'],
+            'keywords': [${keywords}]
+          }`}
+        </script>
+      ) : (
+        <script type="application/ld+json">
+          { `{
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "headline": '${metaTitle}',
+            "url": '${canonicalUrl}'
+          }` }
+        </script>
+      ) }
+    </Helmet>
   )
 }
 

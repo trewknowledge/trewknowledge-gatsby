@@ -36,6 +36,7 @@ const HomePage = ({ pageContext, location }) => {
       location={location.pathname} 
       pageRef={"Home"}
       seo={pageContext.node.seo}
+      pageContext={pageContext}
     > 
       
       <section className="grid-container-narrow">
