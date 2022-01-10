@@ -43,9 +43,8 @@ function SEO(props) {
   const featuredImage = pageContext?.node?.featuredImage?.node?.localFile?.publicURL;
   const featuredImageUrl = `${site?.siteMetadata?.siteUrl}${pageContext?.node?.featuredImage?.node?.localFile?.publicURL}`;
   const thumbnailUrl = featuredImage ? featuredImageUrl : defaultImageUrl;
-  const keywords = pageContext?.node?.categories?.nodes?.map(node => (node.name));
-
-  console.log(keywords);
+  const keywordList = pageContext?.node?.categories?.nodes?.map(node => (node.name));
+  const keywords = keywordList?.map(keyword => `'${keyword}'`).join(', ');
   
   return (
     <Helmet
@@ -110,9 +109,9 @@ function SEO(props) {
             'url': '${canonicalUrl}',
             'thumbnailUrl': '${thumbnailUrl}',
             'datePublished': '${formattedDate}',
-            'articleSection': '',
+            'articleSection': '${pageContext.pageTitle}',
             'creator': ['${metaAuthor}'],
-            'keywords': ${keywords}
+            'keywords': [${keywords}]
           }`}
         </script>
       ) : (
