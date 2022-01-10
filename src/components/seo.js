@@ -44,7 +44,7 @@ function SEO(props) {
   const featuredImageUrl = `${site?.siteMetadata?.siteUrl}${pageContext?.node?.featuredImage?.node?.localFile?.publicURL}`;
   const thumbnailUrl = featuredImage ? featuredImageUrl : defaultImageUrl;
   const keywordList = pageContext?.node?.categories?.nodes?.map(node => (node.name));
-  const keywords = keywordList?.map(keyword => `'${keyword}'`).join(', ');
+  const keywords = keywordList?.map(keyword => `"${keyword}"`).join(', ');
   
   return (
     <Helmet
@@ -103,15 +103,15 @@ function SEO(props) {
       { pageContext?.isNewsArticle ? (
         <script type="application/ld+json">
           {`{
-            '@context': 'http://schema.org',
-            '@type': 'NewsArticle',
-            'headline': '${metaTitle}',
-            'url': '${canonicalUrl}',
-            'thumbnailUrl': '${thumbnailUrl}',
-            'datePublished': '${formattedDate}',
-            'articleSection': '${pageContext.pageTitle}',
-            'creator': ['${metaAuthor}'],
-            'keywords': [${keywords}]
+            "@context": "http://schema.org",
+            "@type": "NewsArticle",
+            "headline": "${metaTitle}",
+            "url": "${canonicalUrl}",
+            "thumbnailUrl": "${thumbnailUrl}",
+            "datePublished": "${formattedDate}",
+            "articleSection": "${pageContext.pageTitle}",
+            "creator": ["${metaAuthor}"],
+            "keywords": [${keywords}]
           }`}
         </script>
       ) : (
@@ -119,8 +119,8 @@ function SEO(props) {
           { `{
             "@context": "http://schema.org",
             "@type": "WebPage",
-            "headline": '${metaTitle}',
-            "url": '${canonicalUrl}'
+            "headline": "${metaTitle}",
+            "url": "${canonicalUrl}"
           }` }
         </script>
       ) }
