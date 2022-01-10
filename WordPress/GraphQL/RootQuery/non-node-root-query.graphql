@@ -38,6 +38,8 @@ query NON_NODE_QUERY {
     postsPerPage
   }
 
+  schemaMd5
+
   seo {
     breadcrumbs {
       archivePrefix
@@ -223,6 +225,10 @@ query NON_NODE_QUERY {
       msVerify
       yandexVerify
     }
+  }
+
+  viewer {
+    id
   }
 
   wpGatsby {
