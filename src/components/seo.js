@@ -100,7 +100,7 @@ function SEO(props) {
         },
       ].concat(meta)}
     >
-      { pageContext.isNewsArticle ? (
+      { pageContext?.isNewsArticle ? (
         <script type="application/ld+json">
           {`{
             '@context': 'http://schema.org',
