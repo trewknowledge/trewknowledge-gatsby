@@ -2,13 +2,9 @@ import React from 'react';
 import parse from "html-react-parser";
 import Layout from '../components/layout';
 import WorksSlider from '../components/works/WorksSlider';
+import { formatDate } from '../utils/utils';
 
 const postTemplate = ({ pageContext, location }) => {
-
-  const formatDate = () => {
-    return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  }
-
   return (
     <Layout 
       pageTitle={pageContext.pageTitle} 
@@ -24,7 +20,7 @@ const postTemplate = ({ pageContext, location }) => {
           <h2 className={pageContext.pageTitle === "News" ? "article-title" : "article-section-title"}>
             {parse(pageContext.node.title)}
           </h2> 
-          {pageContext.pageTitle === "News" && <p className="article-date">{formatDate()}</p>} 
+          {pageContext.pageTitle === "News" && <p className="article-date">{formatDate(pageContext.node.date)}</p>} 
           
           {parse(pageContext.node.content)}
 

@@ -76,21 +76,27 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           excerpt
           date
+          tags {
+            nodes {
+              name
+            }
+          }
+          categories {
+            nodes {
+              name
+            }
+          }
           author {
             node {
               name
+              seo {
+                title
+              }
             }
           }
           seo {
             title
             opengraphDescription
-          }
-          author {
-            node {
-              seo {
-                title
-              }
-            }
           }
           featuredImage {
             node {
@@ -98,6 +104,7 @@ exports.createPages = async ({ graphql, actions }) => {
               altText
               sourceUrl
               localFile {
+                publicURL
                 childImageSharp {
                   fluid(maxWidth: 905, quality: 80) {
                     base64
@@ -119,6 +126,11 @@ exports.createPages = async ({ graphql, actions }) => {
           title
           content
           date
+          categories {
+            nodes {
+              name
+            }
+          }
           seo {
             title
             opengraphDescription
@@ -129,6 +141,7 @@ exports.createPages = async ({ graphql, actions }) => {
               altText
               sourceUrl
               localFile {
+                publicURL
                 childImageSharp {
                   fluid(maxWidth: 905, quality: 80) {
                     base64
@@ -326,7 +339,8 @@ archivesArray.forEach(archivePage => (
         node: node,
         allWorks: allWpTkWork.nodes,
         pageTitle: "News",
-        headerStyle: "empty"
+        headerStyle: "empty",
+        isNewsArticle: true,
       }
     })
   })
@@ -339,7 +353,8 @@ archivesArray.forEach(archivePage => (
         node: node,
         allWorks: allWpTkWork.nodes,
         pageTitle: "Work",
-        headerStyle: "empty"
+        headerStyle: "empty",
+        isNewsArticle: true,
       }
     })
   })

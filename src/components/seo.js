@@ -32,21 +32,21 @@ function SEO(props) {
   const seoDesc = seo?.opengraphDescription;
   const seoAuthor = author?.node?.seo?.title;
 
-  const metaTitle = seoTitle || site.siteMetadata.title
-  const metaDescription = seoDesc || site.siteMetadata.description
-  const metaAuthor = seoAuthor || site.siteMetadata.title
+  const metaTitle = seoTitle || site?.siteMetadata?.title
+  const metaDescription = seoDesc || site?.siteMetadata?.description
+  const metaAuthor = seoAuthor || site?.siteMetadata?.author
 
-  const canonicalUrl = `${site.siteMetadata.siteUrl}${location}`;
-  const defaultImage = `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`;
+  // Parsly data
+  const canonicalUrl = `${site?.siteMetadata?.siteUrl}${location}`;
+  const formattedDate = formatDate(pageContext?.node?.date);
+  const defaultImageUrl = `${site?.siteMetadata?.siteUrl}${site?.siteMetadata.image}`;
+  const featuredImage = pageContext?.node?.featuredImage?.node?.localFile?.publicURL;
+  const featuredImageUrl = `${site?.siteMetadata?.siteUrl}${pageContext?.node?.featuredImage?.node?.localFile?.publicURL}`;
+  const thumbnailUrl = featuredImage ? featuredImageUrl : defaultImageUrl;
+  const keywords = pageContext?.node?.categories?.nodes?.map(node => (node.name));
 
-  const pageDate = () => {
-    if ( formatDate(pageContext?.node?.date) === 'Invalid Date' ) {
-      return ''
-    } else {
-      return formatDate(pageContext?.node?.date);
-    }
-  }
-
+  console.log(keywords);
+  
   return (
     <Helmet
       htmlAttributes={{
@@ -100,20 +100,31 @@ function SEO(props) {
           content: 'Trew Knowledge Logo',
         },
       ].concat(meta)}
-      >
-      <script type="application/ld+json">
-        {`{
-          '@context': 'http://schema.org',
-          '@type': 'NewsArticle',
-          'headline': '${metaTitle}',
-          'url': '${canonicalUrl}',
-          'thumbnailUrl': '${defaultImage}',
-          'datePublished': '${pageDate()}',
-          'articleSection': 'Programming',
-          'creator': ['Alan Alexander Milne'],
-          'keywords': ['statistics','zipf','internet','behavior']
-        }`}
-      </script>
+    >
+      { pageContext.isNewsArticle ? (
+        <script type="application/ld+json">
+          {`{
+            '@context': 'http://schema.org',
+            '@type': 'NewsArticle',
+            'headline': '${metaTitle}',
+            'url': '${canonicalUrl}',
+            'thumbnailUrl': '${thumbnailUrl}',
+            'datePublished': '${formattedDate}',
+            'articleSection': '',
+            'creator': ['${metaAuthor}'],
+            'keywords': ${keywords}
+          }`}
+        </script>
+      ) : (
+        <script type="application/ld+json">
+          { `{
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "headline": '${metaTitle}',
+            "url": '${canonicalUrl}'
+          }` }
+        </script>
+      ) }
     </Helmet>
   )
 }
