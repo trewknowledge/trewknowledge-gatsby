@@ -24,8 +24,8 @@ module.exports = {
       options: {
         url:
           process.env.WPGRAPHQL_URL ||
-          // `https://trewknowledge-com-develop.go-vip.net/graphql`,
-          'https://admin.trewknowledge.com/graphql',
+          `https://trewknowledge-com-develop.go-vip.net/graphql`,
+          // 'https://admin.trewknowledge.com/graphql',
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
