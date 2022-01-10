@@ -92,7 +92,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-parsely-analytics`,
       options: {
-        apikey: "trewknowledge.com",
+        apikey: "sandbox.trewknowledge.com",
         enableInDevelopment: false // send page views when NODE_ENV !== prod
       }
     }
