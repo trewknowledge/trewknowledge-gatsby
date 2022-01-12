@@ -6,10 +6,10 @@ module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
     description: `We are a digital marketing agency creating award-winning experiences for our modern world.`,
-    url: 'www.trewknowledge.com',
+    url: 'www.gatsby-staging.trewknowledge.com',
     image: `/tk-site-icon.png`,
     author: `Trew Knowledge`,
-    siteUrl: `https://trewknowledge.com/`
+    siteUrl: `https://gatsby-staging.trewknowledge.com/`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -28,7 +28,9 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         url:
-          process.env.WPGRAPHQL_URL,
+          process.env.WPGRAPHQL_URL ||
+          `https://trewknowledge-com-develop.go-vip.net/graphql`,
+          // 'https://admin.trewknowledge.com/graphql',
         verbose: true,
         develop: {
           hardCacheMediaFiles: false,
@@ -102,7 +104,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-parsely-analytics`,
       options: {
-        apikey: "trewknowledge.com",
+        apikey: "sandbox.trewknowledge.com",
         enableInDevelopment: false // send page views when NODE_ENV !== prod
       }
     }
