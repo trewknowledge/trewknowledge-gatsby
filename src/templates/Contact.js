@@ -11,6 +11,7 @@ const Contact = ({ pageContext, location }) => {
       pageRef={pageContext.node.template.templateName}
       headerStyle={pageContext.headerStyle}
       seo={pageContext.node.seo}
+      pageContext={pageContext}
     >
         <div className="header-contact">
           <address>

@@ -3,7 +3,7 @@ module.exports = {
     title: `Trew Knowledge`,
     description: `We are a digital marketing agency creating award-winning experiences for our modern world.`,
     url: 'www.trewknowledge.com',
-    image: `src/assets/img/tk-site-icon.png`,
+    image: `/tk-site-icon.png`,
     author: `Trew Knowledge`,
     siteUrl: `https://trewknowledge.com/`
   },
@@ -89,6 +89,13 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-parsely-analytics`,
+      options: {
+        apikey: "trewknowledge.com",
+        enableInDevelopment: false // send page views when NODE_ENV !== prod
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

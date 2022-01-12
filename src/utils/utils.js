@@ -48,3 +48,7 @@ export const loadAOS = () => {
     pageWrapper.removeEventListener("scroll", refreshAOS);
   }
 };
+
+export const formatDate = (date) => {
+  return new Date(date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}

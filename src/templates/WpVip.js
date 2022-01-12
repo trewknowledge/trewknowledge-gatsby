@@ -36,6 +36,7 @@ const WpVip = ({pageContext, location}) => {
       pageRef={pageContext.node.template.templateName}
       headerStyle={pageContext.headerStyle}
       seo={pageContext.node.seo}
+      pageContext={pageContext}
     >
       <section className="section-background-black section-overlap">
         <div className="grid-container-narrow">

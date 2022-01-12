@@ -67,6 +67,8 @@ const Layout = ( props ) => {
         title={props.pageTitle}
         seo={props.seo}
         author={props.author}
+        location={props.location}
+        pageContext={props.pageContext}
       />
       <Header 
         menuOpen={menuOpen} 

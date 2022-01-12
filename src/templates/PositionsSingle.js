@@ -1,13 +1,9 @@
 import React from 'react';
 import parse from "html-react-parser";
 import Layout from '../components/layout';
+import { formatDate } from '../utils/utils';
 
 const PositionsSingle = ({ pageContext, location }) => {
-  
-  const formatDate = () => {
-    return new Date(pageContext.node.date).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  }
-
   return (
     <Layout 
       pageTitle={pageContext.pageTitle} 
@@ -16,10 +12,11 @@ const PositionsSingle = ({ pageContext, location }) => {
       headerTitle={pageContext.node.title}
       pageRef={pageContext.pageRef}
       seo={pageContext.node.seo}
+      pageContext={pageContext}
     >
       <article className="grid-container-narrow article">
         <h2>{parse(pageContext.node.title)}</h2>
-        <p className="article-date">{formatDate()}</p>      
+        <p className="article-date">{formatDate(pageContext.node.date)}</p>      
         <div>{parse(pageContext.node.content)}</div>
       </article>
     
