@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { formatDate } from '../utils/utils'
 function SEO(props) {
-  const { meta, lang, seo, author, location, pageContext } = props;
+  const { meta, lang, seo, location, pageContext } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,10 +28,9 @@ function SEO(props) {
     `
   )
 
-  const seoTitle = seo?.title;
   const seoDesc = seo?.opengraphDescription;
 
-  const metaTitle = seoTitle || site?.siteMetadata?.title
+  const metaTitle = pageContext?.node?.title|| site?.siteMetadata?.title
   const metaDescription = seoDesc || site?.siteMetadata?.description
   const metaAuthor = pageContext?.node?.author?.node?.name || site?.siteMetadata?.author
 
