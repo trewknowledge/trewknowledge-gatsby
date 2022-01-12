@@ -30,11 +30,10 @@ function SEO(props) {
 
   const seoTitle = seo?.title;
   const seoDesc = seo?.opengraphDescription;
-  const seoAuthor = author?.node?.seo?.title;
 
   const metaTitle = seoTitle || site?.siteMetadata?.title
   const metaDescription = seoDesc || site?.siteMetadata?.description
-  const metaAuthor = seoAuthor || site?.siteMetadata?.author
+  const metaAuthor = pageContext?.node?.author?.node?.name || site?.siteMetadata?.author
 
   // Parsly data
   const canonicalUrl = `${site?.siteMetadata?.siteUrl}${location}`;
