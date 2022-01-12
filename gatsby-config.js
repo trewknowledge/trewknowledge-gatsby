@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
@@ -12,6 +16,7 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-no-index`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,7 +33,7 @@ module.exports = {
           // 'https://admin.trewknowledge.com/graphql',
         verbose: true,
         develop: {
-          hardCacheMediaFiles: true,
+          hardCacheMediaFiles: false,
         },
         html: {
           useGatsbyImage: true,
@@ -39,6 +44,13 @@ module.exports = {
         debug: {
           graphql: {
             writeQueriesToDisk: true,
+          },
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 10,
+            },
           },
         },
         /*
