@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Trew Knowledge`,
     description: `We are a digital marketing agency creating award-winning experiences for our modern world.`,
-    url: 'www.trewknowledge.com',
+    url: 'www.gatsby-staging.trewknowledge.com',
     image: `/tk-site-icon.png`,
     author: `Trew Knowledge`,
-    siteUrl: `https://trewknowledge.com/`
+    siteUrl: `https://gatsby-staging.trewknowledge.com/`
   },
   plugins: [
     `gatsby-plugin-sass`,
