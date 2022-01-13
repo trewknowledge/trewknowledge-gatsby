@@ -112,9 +112,8 @@ function SEO(props) {
             "datePublished": "${formattedDate}",
             "articleSection": "${pageContext.pageTitle}",
             "creator": ["${metaAuthor}"],
-            "keywords": [${keywords}],
-            "postId": "${postId}", 
-            "post_id": "${testPostId}"
+            "keywords": [${keywords}], 
+            "post_id": "${postId}"
           }`}
         </script>
       ) : (
