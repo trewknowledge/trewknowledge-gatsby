@@ -44,6 +44,8 @@ function SEO(props) {
   const keywordList = pageContext?.node?.categories?.nodes?.map(node => (node.name));
   const keywords = keywordList?.map(keyword => `"${keyword}"`).join(', ');
   const postId = pageContext?.node?.databaseId;
+
+  const testPostId = 123;
   
   return (
     <Helmet
@@ -111,7 +113,8 @@ function SEO(props) {
             "articleSection": "${pageContext.pageTitle}",
             "creator": ["${metaAuthor}"],
             "keywords": [${keywords}],
-            "postId": "${postId}",  
+            "postId": "${postId}", 
+            "post_id": "${testPostId}"
           }`}
         </script>
       ) : (
