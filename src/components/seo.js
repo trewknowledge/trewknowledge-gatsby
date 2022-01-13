@@ -111,7 +111,7 @@ function SEO(props) {
             "articleSection": "${pageContext.pageTitle}",
             "creator": ["${metaAuthor}"],
             "keywords": [${keywords}],
-            "postId": '${postId}',  
+            "postId": "${postId}",  
           }`}
         </script>
       ) : (
