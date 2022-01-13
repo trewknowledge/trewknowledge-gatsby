@@ -44,8 +44,6 @@ function SEO(props) {
   const keywordList = pageContext?.node?.categories?.nodes?.map(node => (node.name));
   const keywords = keywordList?.map(keyword => `"${keyword}"`).join(', ');
   const postId = pageContext?.node?.databaseId;
-
-  const testPostId = 123;
   
   return (
     <Helmet
