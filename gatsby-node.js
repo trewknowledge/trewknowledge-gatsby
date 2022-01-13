@@ -70,6 +70,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allWpPost(sort: {order: DESC, fields: date}) {
         nodes {
+          databaseId
           id
           uri
           title
@@ -121,6 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allWpTkWork(sort: {order: DESC, fields: date}) {
         nodes {
+          databaseId
           id
           uri
           title

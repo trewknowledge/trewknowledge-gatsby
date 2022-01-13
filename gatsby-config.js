@@ -35,6 +35,9 @@ module.exports = {
         develop: {
           hardCacheMediaFiles: false,
         },
+        production: {
+          allow404Images: true,
+        },
         html: {
           useGatsbyImage: true,
           imageMaxWidth: 905,
