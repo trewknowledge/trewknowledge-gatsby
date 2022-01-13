@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { formatDate } from '../utils/utils'
 function SEO(props) {
   const { meta, lang, seo, location, pageContext } = props;
   const { site } = useStaticQuery(
@@ -36,7 +35,6 @@ function SEO(props) {
 
   // Parsly data
   const canonicalUrl = `${site?.siteMetadata?.siteUrl}${location}`;
-  const formattedDate = formatDate(pageContext?.node?.date);
   const defaultImageUrl = `${site?.siteMetadata?.siteUrl}${site?.siteMetadata.image}`;
   const featuredImage = pageContext?.node?.featuredImage?.node?.localFile?.publicURL;
   const featuredImageUrl = `${site?.siteMetadata?.siteUrl}${pageContext?.node?.featuredImage?.node?.localFile?.publicURL}`;
@@ -44,6 +42,18 @@ function SEO(props) {
   const keywordList = pageContext?.node?.categories?.nodes?.map(node => (node.name));
   const keywords = keywordList?.map(keyword => `"${keyword}"`).join(', ');
   const postId = pageContext?.node?.databaseId;
+  let dateObject;
+  let ISODate;
+
+  if ( pageContext?.isNewsArticle ) {
+    if (pageContext?.node?.date) {
+      dateObject = new Date(pageContext?.node?.date);
+    }
+  }
+
+  if (dateObject) {
+    ISODate = dateObject.toISOString();
+  } 
   
   return (
     <Helmet
@@ -107,7 +117,7 @@ function SEO(props) {
             "headline": "${metaTitle}",
             "url": "${canonicalUrl}",
             "thumbnailUrl": "${thumbnailUrl}",
-            "datePublished": "${formattedDate}",
+            "datePublished": "${ISODate}",
             "articleSection": "${pageContext.pageTitle}",
             "creator": ["${metaAuthor}"],
             "keywords": [${keywords}], 
