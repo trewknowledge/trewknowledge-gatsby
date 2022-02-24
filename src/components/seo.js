@@ -45,6 +45,11 @@ function SEO(props) {
   let dateObject;
   let ISODate;
 
+  const featuredImageStaticUrl = `${site?.siteMetadata?.siteUrl}${pageContext?.node?.featuredImage?.node?.localFile?.childImageSharp?.fluid?.src}` || 'https://trewknowledge.com/tk-site-icon.png';
+  
+
+  console.log('featured image', pageContext?.node?.featuredImage?.node);
+  
   if ( pageContext?.isNewsArticle ) {
     if (pageContext?.node?.date) {
       dateObject = new Date(pageContext?.node?.date);
@@ -81,7 +86,7 @@ function SEO(props) {
         },
         {
           property: `og:image`,
-          content: 'https://trewknowledge.com/tk-site-icon.png',
+          content: featuredImageStaticUrl,
         },
         {
           name: `twitter:card`,
@@ -101,7 +106,7 @@ function SEO(props) {
         },
         {
           name: `twitter:image`,
-          content: 'https://trewknowledge.com/tk-site-icon.png',
+          content: featuredImageStaticUrl,
         },
         {
           name: `twitter:image:alt`,
