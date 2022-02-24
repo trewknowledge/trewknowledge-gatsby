@@ -130,6 +130,16 @@
 }
 
 .wp-block-gallery {
+	width: 100%;
+
+	> .wp-block-image {
+		@media (min-width: 767px) {
+			margin-bottom: 16px;
+			width: calc(50% - 16px);
+			margin-right: 16px;
+		}
+	}
+	
 	.blocks-gallery-grid {
 		width: 100%;
 
