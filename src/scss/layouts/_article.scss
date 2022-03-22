@@ -34,9 +34,7 @@
   }
 
   .article-details {
-    list-style-type: none;
     margin-bottom: 40px;
-    margin-left: 0;
 
     li {
       line-height: 20px;
@@ -45,6 +43,14 @@
       strong {
         text-transform: uppercase;
       }
+    }
+  }
+
+  ul {
+    margin-left: 16px;
+
+    li {
+      list-style-type: disc;
     }
   }
 
