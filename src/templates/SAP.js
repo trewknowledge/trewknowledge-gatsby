@@ -122,7 +122,7 @@ const SAP = ({pageContext, location}) => {
         <SocialProof data={data} />
 
         <div className="grid-container-narrow">
-          <h2 className="contact-form-title" id="contactFormTitle">Contact us about WordPress VIP.</h2>
+          <h2 className="contact-form-title" id="contactFormTitle">Contact us about SAP.</h2>
           <ContactForm formTitle={pageContext.node.title} />
           <p className="form-helper-text">By sending this message you agree to the Privacy Policy.</p>
         </div>
