@@ -69,7 +69,7 @@ const Footer = () => {
         </li>
       </ul>
       <div className="footer-links-menu-secondary">
-        <span>© 2020 Trew Knowledge Inc.</span>
+        <span>© {(new Date().getFullYear())} Trew Knowledge Inc.</span>
         <Link to={"/privacy-policy"} className="footer-links-menu-secondary-link">Privacy Policy</Link>
       </div>
     </div>
