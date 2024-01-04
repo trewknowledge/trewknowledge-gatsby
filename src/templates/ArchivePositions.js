@@ -21,19 +21,8 @@ const ArchivePositions = ({pageContext, location}) => {
     
     <div className="grid-container-narrow pt0">
       <div className="block-list">      
-        {pageContext.posts.map((post) => (
-          <Link to={post.uri} key={post.id} className="block-list-item">
-            <h2 className="block-list-title">
-              {post.title}
-              <CarouselNext className="hide-for-small-only hide-for-large teal-arrow" alt="arrow right"/>
-              <CarouselNextSmall className="hide-for-medium" alt="arrow right"/>
-            </h2>
-            {parse(post.excerpt)}
-          </Link>
-          
-        ))}
+        <div id="HumiJobBoard" data-company="trewknowledge"></div><script src="https://trewknowledge.applytojobs.ca/embed.js" async defer></script>
       </div>
-
       <hr/>
     </div>
     
